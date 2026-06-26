@@ -1,0 +1,46 @@
+name: memolingo_app
+description: "MemoLingo Flutter language learning app."
+publish_to: 'none'
+
+version: 1.0.3+17
+
+environment:
+  sdk: '>=3.3.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  provider: ^6.1.2
+  get_it: ^8.2.0
+  csv: ^6.0.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.1
+  in_app_purchase: ^3.1.13
+  flutter_tts: ^4.0.2
+  confetti: ^0.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/memolingo/data/words_list_full.csv
+    - assets/memolingo/images/
+    - assets/memolingo/categories/
+    - assets/memolingo/nostalgia/
+    - assets/legacy_icons/
+
+  fonts:
+    - family: CaviarDreams
+      fonts:
+        - asset: assets/fonts/CaviarDreams.ttf
+    - family: DeliusUnicase
+      fonts:
+        - asset: assets/fonts/DeliusUnicase-Bold.ttf
+          weight: 700

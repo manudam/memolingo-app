@@ -1,0 +1,851 @@
+Category,category image name,Level,Filename,English,fr,nl,de,it,es,ru,ko,zh-CN,ja
+animals,CategoryAnimals.png,2,bird.jpg,bird,oiseau,vogel,Vogel,uccello,pájaro,птица,새,鸟,鳥
+animals,CategoryAnimals.png,2,cat.jpg,cat,chat,kat,Katze,gatto,gato,кошка ,고양이,猫,ネコ
+animals,CategoryAnimals.png,2,deer.jpg,deer,cerf,hert,Reh,cervo,ciervo,олень,사슴,鹿,鹿
+animals,CategoryAnimals.png,2,dog.jpg,dog,chien,hond,Hund,cane,perro,собака,개,狗,犬
+animals,CategoryAnimals.png,2,duck.jpg,duck,canard,eend,Ente,anatra,pato,утка,오리,鸭,アヒル
+animals,CategoryAnimals.png,2,goat.jpg,goat,chèvre,geit,Ziege,capra,cabra,козел,염소,山羊,ヤギ
+animals,CategoryAnimals.png,2,horse.jpg,horse,cheval,paard,Pferd,cavallo,caballo,лошадь,말,马,うま
+animals,CategoryAnimals.png,2,monkey.jpg,monkey,singe,aap,Affe,scimmia,mono,обезьяна,원숭이,猴子,サル
+animals,CategoryAnimals.png,2,mouse.jpg,mouse,souris,muis,Maus,topo,ratón,мышь,쥐,老鼠,鼠
+animals,CategoryAnimals.png,2,sheep.jpg,sheep,mouton,schaap,Schaf,pecora,oveja,овца,양,绵羊,羊
+animals,CategoryAnimals.png,2,squirrel.jpg,squirrel,écureuil,eekhoorn,Eichhörnchen,scoiattolo,ardilla,белка,다람쥐,松鼠,リス
+animals,CategoryAnimals.png,2,tiger.jpg,tiger,tigre,tijger,Tiger,tigre,tigre,тигр,호랑이,虎,虎
+everyday objects,CategoryObjects.png,1,basket.jpg,basket,panier,mand,Korb,paniere,cesta,корзина,바구니,篮子,バスケット
+everyday objects,CategoryObjects.png,1,bin.jpg,bin,poubelle,prullenbak,Mülleimer,cestino,bote de basura,мусорное ведро,쓰레기통,垃圾桶,ごみ箱
+everyday objects,CategoryObjects.png,1,book.jpg,book,livre,boek,Buch,libro,libro,книга,책,书,本
+everyday objects,CategoryObjects.png,1,bottle.jpg,bottle,bouteille,fles,Flasche,bottiglia,botella,бутылка,병,瓶子,瓶
+everyday objects,CategoryObjects.png,1,bowl.jpg,bowl,bol,kom,Schüssel,ciotola,cuenco,миска, 사발,碗,ボウル
+everyday objects,CategoryObjects.png,1,clock.jpg,clock,horloge,klok,Uhr,orologio,reloj,Часы,시계,时钟,時計
+everyday objects,CategoryObjects.png,1,cup.jpg,cup,tasse,kop,Tasse,tazza,taza,кружка,컵,杯,コップ
+in the home,CategoryInHome.png,3,duvet.jpg,duvet,couette,dekbed,Daunendecke,piumone,edredón,одеяло,이불,被子,羽毛布団
+everyday objects,CategoryObjects.png,1,fire.jpg,fire,incendie,brand,Feuer,fuoco,fuego,Огонь,화재,火,火
+everyday objects,CategoryObjects.png,1,flowers.jpg,flowers,fleurs,bloemen,Blumen,fiori,flores,цветы,꽃,花卉,花
+everyday objects,CategoryObjects.png,1,fork.jpg,fork,fourchette,vork,Gabel,forchetta,tenedor,вилка,포크,叉子,フォーク
+everyday objects,CategoryObjects.png,1,glass.jpg,glass,verre,glas,Glas,bicchiere,vaso,стакан,유리잔,玻璃杯,ガラス
+everyday objects,CategoryObjects.png,1,grass.jpg,grass,herbe,gras,Gras,erba,césped,трава,잔디,草,草
+everyday objects,CategoryObjects.png,1,knife.jpg,knife,couteau,mes,Messer,coltello,cuchillo,нож,칼,刀,ナイフ
+everyday objects,CategoryObjects.png,1,magazine.jpg,magazine,magazine,tijdschrift,Magazin,rivista,revista,журнал,잡지,杂志,雑誌
+everyday objects,CategoryObjects.png,1,map.jpg,map,carte,kaart,Karte,mappa,mapa,карта,지도,地图,地図
+everyday objects,CategoryObjects.png,1,moon.jpg,moon,lune,maan,Mond,luna,luna,луна,달,月亮,月
+everyday objects,CategoryObjects.png,1,newspaper.jpg,newspaper,journal,krant,Zeitung,giornale,periódico,газета,신문,报纸,新聞
+everyday objects,CategoryObjects.png,1,painting.jpg,painting,peinture,schilderij,Gemälde,pittura,cuadro,картина,그림,绘画,絵画
+everyday objects,CategoryObjects.png,1,paper.jpg,paper,papier,papier,Papier,carta,papel,бумага,종이,纸,紙
+everyday objects,CategoryObjects.png,1,phone.jpg,phone,téléphone,telefoon,Telefon,telefono,teléfono,Телефон,전화,电话,電話
+everyday objects,CategoryObjects.png,1,photo.jpg,photograph,photo,foto,Foto,fotografia,fotografía,фотография,사진,照片,写真
+everyday objects,CategoryObjects.png,1,plate.jpg,plate,assiette,bord,Teller,piatto,plato,тарелка ,접시,餐盘,皿
+everyday objects,CategoryObjects.png,1,radio.jpg,radio,radio,radio,Radio,radio,radio,радио,라디오,收音机,ラジオ
+everyday objects,CategoryObjects.png,1,scissors.jpg,scissors,ciseaux,schaar,Schere,forbici,tijeras,ножницы,가위,剪刀,はさみ
+everyday objects,CategoryObjects.png,1,money.jpg,money,argent,geld,geld,soldi,dinero,Деньги,돈,钱,お金
+everyday objects,CategoryObjects.png,1,soap.jpg,soap,savon,zeep,Seife,sapone,jabón,мыло,비누,肥皂,せっけん
+everyday objects,CategoryObjects.png,1,spoon.jpg,spoon,cuillère,lepel,Löffel,cucchiaio,cuchara,ложка,숟가락,勺子,スプーン
+everyday objects,CategoryObjects.png,1,star.jpg,star,étoile,ster,Stern,stella,estrella,звезда,별,星星,星
+everyday objects,CategoryObjects.png,1,towel.jpg,towel,serviette,handdoek,Handtuch,asciugamano,toalla,полотенце,수건,毛巾,タオル
+everyday objects,CategoryObjects.png,1,tree.jpg,tree,arbre,boom,Baum,albero,árbol,дерево,나무,树,木
+everyday objects,CategoryObjects.png,1,waste.jpg,rubbish,ordures,vuilnis,Müll,spazzatura,basura,мусор,쓰레기,垃圾,ごみ
+food,CategoryFood.png,5,apple.jpg,apple,pomme,appel,Apfel,mela,manzana,яблоко,사과,苹果,林檎
+food,CategoryFood.png,5,banana.jpg,banana,banane,banaan,Banane,banana,plátano,банан,바나나,香蕉,バナナ
+food,CategoryFood.png,5,beef.jpg,beef,bœuf,rundvlees,Rindfleisch,manzo,carne de vaca,говядина,쇠고기,牛肉,牛肉
+food,CategoryFood.png,5,beer.jpg,beer,bière,bier,Bier,birra,cerveza,пиво,맥주,啤酒,ビール
+food,CategoryFood.png,5,beverage.jpg,beverage,boisson,drank,Getränk,bevanda,bebida,напиток,음료,饮料,飲料
+food,CategoryFood.png,5,boiledegg.jpg,boiled egg,oeuf à la coque,gekookt ei,gekochtes Ei,uovo sodo,huevo duro,вареное яйцо,삶은 달걓,煮鸡蛋,ゆでたまご
+food,CategoryFood.png,5,bread.jpg,bread,pain,brood,Brot,pane,pan,хлеб,빵,面包,パン
+food,CategoryFood.png,5,breakfast.jpg,breakfast,petit-déjeuner,ontbijt,Frühstück,colazione,desayuno,завтрак,아침 식사,早餐,朝食
+food,CategoryFood.png,5,butter.jpg,butter,beurre,boter,Butter,burro,mantequilla,масло,버터,黄油,バター
+food,CategoryFood.png,5,cake.jpg,cake,gâteau,taart,Kuchen,torta,pastel,кекс,케이크,蛋糕,ケーキ
+food,CategoryFood.png,5,carrot.jpg,carrot,carotte,wortel,Karotte,carota,zanahoria,морковь,당근,胡萝卜,ニンジン
+food,CategoryFood.png,5,cheese.jpg,cheese,fromage,kaas,Käse,formaggio,queso,сыр,치즈,奶酪,チーズ
+food,CategoryFood.png,5,chicken.jpg,chicken,poulet,kip,Huhn,pollo,pollo,курица,닭고기,鸡,鶏肉
+food,CategoryFood.png,5,chocolate.jpg,chocolate,chocolat,chocolade,Schokolade,cioccolato,chocolate,шоколад,초콜렛,巧克力,チョコレート
+food,CategoryFood.png,5,coffee.jpg,coffee,café,koffie,Kaffee,caffè,café,кофе,커피,咖啡,コー​​​​ヒー
+food,CategoryFood.png,5,courgette.jpg,courgette,courgette,courgette,Zucchini,zucchine,calabacín,кабачок,애호박,小胡瓜,ズッキーニ
+food,CategoryFood.png,5,crisps.jpg,crisps,chips,chips,Chips,patatine,papas fritas,чипсы,포테이토 칩,薯片,ポテトチップス
+food,CategoryFood.png,5,cucumber.jpg,cucumber,concombre,komkommer,Gurke,cetriolo,pepino,огурец,오이,黄瓜,キュウリ
+food,CategoryFood.png,5,dinner.jpg,dinner,dîner,avondeten,Abendessen,cena,cena,ужин,저녁 식사,晚餐,夕食
+food,CategoryFood.png,5,drinkingwater.jpg,drinking water,eau potable,drinkbaar water,Trinkwasser,acqua potabile,agua potable,питьевая вода,식수,饮用水,飲料水
+food,CategoryFood.png,5,egg.jpg,egg,œuf,ei,Ei,uovo,huevo,яйцо,달걀,鸡蛋,卵
+food,CategoryFood.png,5,fish.jpg,fish,poisson,vis,Fisch,pesce,pescado,рыба,생선,鱼,魚
+food,CategoryFood.png,5,food.jpg,food,nourriture,eten,Lebensmittel,cibo,comida,еда,음식,食品,食品
+food,CategoryFood.png,5,friedegg.jpg,fried egg,oeuf sur le plat,gebakken ei,Spiegelei,uovo fritto,huevo frito,жаренное яйцо,계란후라이,煎鸡蛋,目玉焼き
+food,CategoryFood.png,5,fries.jpg,French fries,frites,frietjes,Pommes Frittes,patate fritte,patatas fritas,фри,감자 튀김,薯条,フライドポテト
+food,CategoryFood.png,5,garlic.jpg,garlic,ail,knoflook,Knoblauch,aglio,ajo,чеснок,마늘,大蒜,ニンニク
+food,CategoryFood.png,5,ice.jpg,ice,glace,ijs,Eis,ghiaccio,hielo,лед,얼음,冰,氷
+food,CategoryFood.png,5,icecream.jpg,ice cream,crème glacée,ijsje,Speiseeis,gelato,helado,мороженное,아이스크림,冰淇淋,アイスクリーム
+food,CategoryFood.png,5,jam.jpg,jam,confiture,jam,Marmelade,marmellata,mermelada,варенье,쨈,果酱,ジャム
+food,CategoryFood.png,5,lunch.jpg,lunch,déjeuner,lunch,Mittagessen,pranzo,almuerzo,обед,점심식사,午餐,昼食
+food,CategoryFood.png,5,meat.jpg,meat,viande,vlees,Fleisch,carne,carne,мясо,육류,肉,肉
+food,CategoryFood.png,5,milk.jpg,milk,lait,melk,Milch,latte,leche,молоко,우유,牛奶,ミルク
+food,CategoryFood.png,5,omlette.jpg,omelet,omelette,omelette,Omelette,frittata,tortilla,Омлет,오믈렛,鸡蛋饼,オムレツ
+food,CategoryFood.png,5,onion.jpg,onion,oignon,ui,Zwiebel,cipolla,cebolla,лук,양파,洋葱,タマネギ
+food,CategoryFood.png,5,orange.jpg,orange,orange,sinaasappel,Orange,arancia,naranja,апельсин,오렌지,橙,オレンジ
+food,CategoryFood.png,5,orangejuice.jpg,orange juice,du jus d'orange,sinaasappelsap,Orangensaft,succo d'arancia,zumo de naranja,апельсиновый сок,오렌지 주스,橙汁,オレンジジュース
+food,CategoryFood.png,5,pear.jpg,pear,poire,peer,Birne,pera,pera,груша,배,梨,梨
+food,CategoryFood.png,5,pork.jpg,pork,viande de porc,varkensvlees,Schweinefleisch,maiale,carne de cerdo,свинина,돼지고기,猪肉,豚肉
+food,CategoryFood.png,5,potato.jpg,potato,pomme de terre,aardappel,Kartoffel,patata,patata,картофель,감자,土豆,ジャガイモ
+food,CategoryFood.png,5,rice.jpg,rice,riz,rijst,Reis,riso,arroz,рис,밥,饭,ご飯
+food,CategoryFood.png,5,salt.jpg,salt,sel,zout,Salz,sale,sal,соль,소금,盐,塩
+food,CategoryFood.png,5,scrambledegg.jpg,scrambled egg,œufs brouillés,roerei,Rührei,uova strapazzate,huevos revueltos,яичница,계란볶음,炒鸡蛋,いり卵
+food,CategoryFood.png,5,soup.jpg,soup,soupe,soep,Suppe,zuppa,sopa,суп,국,汤,スープ
+food,CategoryFood.png,5,spaghetti.jpg,spaghetti,spaghetti,spaghetti,Spaghetti,spaghetti,espaguetis,спагетти,스파게티,意大利面条,スパゲッティ
+food,CategoryFood.png,5,strawberry.jpg,strawberry,fraise,aardbei,Erdbeere,fragola,fresa,клубника,딸기,草莓,イチゴ
+food,CategoryFood.png,5,sugar.jpg,sugar,sucre,suiker,Zucker,zucchero,azúcar,сахар,설탕,糖,砂糖
+food,CategoryFood.png,5,tea.jpg,tea,thé,thee,Tee,tè,té,чай,차,茶,茶
+food,CategoryFood.png,5,toast.jpg,toast,pain grillé,toast,Toast,brindisi,brindis,тост,토스트,烤面包,トースト
+food,CategoryFood.png,5,tomato.jpg,tomato,tomate,tomaat,Tomate,pomodoro,tomate,помидор,토마토,番茄,トマト
+food,CategoryFood.png,5,wine.jpg,wine,du vin,wijn,Wein,vino,vino,вино,와인,葡萄酒,ワイン
+everyday objects,CategoryObjects.png,1,bag.jpg,bag,sac,zak,Tasche,borsa,bolso,мешок,가방,包,バッグ
+personal belongings,CategoryPersonal.png,3,camera.jpg,camera,appareil photo,camera,Kamera,macchina fotografica,cámara,фотоаппарат ,카메라,相机,カメラ
+personal belongings,CategoryPersonal.png,3,coat.jpg,coat,manteau,jas,Mantel,cappotto,abrigo,Пальто,코트,大衣,コー​​ト
+personal belongings,CategoryPersonal.png,3,computer.jpg,computer,l'ordinateur,computer,Computer,computer,computadora,компьютер,컴퓨터,计算机,コンピューター
+personal belongings,CategoryPersonal.png,3,doll.jpg,doll,poupée,pop,Puppe,bambola,muñeca,кукла,인형,娃娃,人形
+personal belongings,CategoryPersonal.png,3,dress.jpg,dress,robe,jurk,Kleid,vestito,vestido,платье,드레스,连衣裙,ワンピース
+personal belongings,CategoryPersonal.png,3,hat.jpg,hat,chapeau,hoed,Hut,cappello,sombrero,шапка,모자,帽子,帽子
+personal belongings,CategoryPersonal.png,3,jacket.jpg,jacket,petite veste,jasje,Jacke,giacca,chaqueta,куртка,재킷,夹克,上着
+personal belongings,CategoryPersonal.png,3,keys.jpg,keys,clés,sleutels,Schlüssel,chiavi,llaves,ключи,열쇠,钥匙,キー
+personal belongings,CategoryPersonal.png,3,laptop.jpg,laptop,ordinateur portable,laptop,Laptop,computer portatile,computadora portátil,ноутбук,랩톱,笔记本电脑,ノートパソコン
+personal belongings,CategoryPersonal.png,3,mobilephone.jpg,mobile phone,téléphone portable,mobiele telefoon,Handy,cellulare,celular,мобильный телефон,휴대전화,手机,携帯電話
+personal belongings,CategoryPersonal.png,3,pen.jpg,pen,stylo,pen,Stift,penna,bolígrafo,ручка,펜,笔,ペン
+personal belongings,CategoryPersonal.png,3,pencil.jpg,pencil,crayon,potlood,Bleistift,matita,lápiz,карандаш,연필,铅笔,鉛筆
+personal belongings,CategoryPersonal.png,3,shoes.jpg,shoes,chaussures,schoenen,Schuhe,scarpe,zapatos,обувь,신발,鞋,靴
+personal belongings,CategoryPersonal.png,3,socks.jpg,socks,chaussettes,sokken,Socken,calze,calcetines,носки,양말,袜子,ソックス
+personal belongings,CategoryPersonal.png,3,trousers.jpg,trousers,pantalon,broek,Hose,pantaloni,pantalones,брюки,바지,裤子,ズボン
+personal belongings,CategoryPersonal.png,3,tshirt.jpg,t shirt,t-shirt,t-shirt,T-Shirt,maglietta,camiseta,Футболка,티셔츠,T恤,Tシャツ
+personal belongings,CategoryPersonal.png,3,underwear.jpg,underwear,sous-vêtements,ondergoed,Unterwäsche,biancheria intima,ropa interior,нижнее белье,속옷,内衣,下着
+personal belongings,CategoryPersonal.png,3,watch.jpg,watch,montre,horloge,Armbanduhr,orologio da polso,reloj de pulsera,наручные часы,손목시계,手表,腕時計
+verbs,CategoryVerbs.png,0,ask.jpg,to ask,demander,vragen,fragen,chiedere,preguntar,спрашивать,묻다,问,聞く
+verbs,CategoryVerbs.png,0,catchimage.jpg,to catch,attraper,vangen,fangen,catturare,atrapar,ловить,잡다,去抓,捕まえる
+verbs,CategoryVerbs.png,0,cooking.jpg,to cook,cuisiner,koken,kochen,cucinare,cocinar,готовить,요리하다,做饭,料理する
+verbs,CategoryVerbs.png,0,dancing.jpg,to dance,danser,dansen,tanzen,ballare,bailar,танцевать,춤추다,跳舞,踊る
+verbs,CategoryVerbs.png,0,drinking.jpg,to drink,boire,drinken,trinken,bere,beber,пить,마시다,喝,飲む
+verbs,CategoryVerbs.png,0,eat.jpg,to eat,manger,eten,essen,mangiare,comer,кушать,먹다,吃,食べる
+verbs,CategoryVerbs.png,0,give.jpg,to give,donner,geven,geben,dare,dar,давать,주다,给,与える
+verbs,CategoryVerbs.png,0,jump.jpg,to jump,sauter,springen,springen,saltare,saltar,прыгать,점프하다,跳,飛ぶ
+verbs,CategoryVerbs.png,0,kiss.jpg,to kiss,embrasser,kussen,küssen,baciare,besar,целовать,키스하다,亲吻,キスする
+verbs,CategoryVerbs.png,0,know.jpg,to know,savoir,weten,wissen,sapere,saber,знать,알다,要知道,知る
+verbs,CategoryVerbs.png,0,pray.jpg,to pray,prier,bidden,beten,pregare,orar,молиться,기도하다,祈祷,祈る
+verbs,CategoryVerbs.png,0,pull.jpg,to pull,tirer,trekken,ziehen,tirare,tirar,тянуть,당기다,拉,引っ張る
+verbs,CategoryVerbs.png,0,push.jpg,to push,pousser,duwen,drücken,spingere,empujar,толкать,밀다,推,押す
+verbs,CategoryVerbs.png,0,run.jpg,to run,courir,rennen,rennen,correre,correr,бежать,달리다,跑步,走らせる
+verbs,CategoryVerbs.png,0,say.jpg,to say,dire,zeggen,sagen,dire,decir,сказать,말하다,说,言う
+verbs,CategoryVerbs.png,0,see.jpg,to look,regarder,kijken,schauen,guardare,mirar,смотреть,쳐다보다,看看,見る
+verbs,CategoryVerbs.png,0,singing.jpg,to sing,chanter,zingen,singen,cantare,cantar,петь,노래하다,唱歌,歌う
+verbs,CategoryVerbs.png,0,sit.jpg,to sit,s'asseoir,zitten,sitzen,sedersi,sentar,сидеть,앉다,坐,座る
+verbs,CategoryVerbs.png,0,sleeping.jpg,to sleep,dormir,slapen,schlafen,dormire,dormir,спать,자다,睡觉,眠る
+verbs,CategoryVerbs.png,0,stop.jpg,stop,stop,stop,Stopp,stop,deténgase,Стоп,스톱,停止,止まる
+verbs,CategoryVerbs.png,0,take.jpg,to take,prendre,nemen,nehmen,prendere,tomar,брать,가져가다,取,取る
+verbs,CategoryVerbs.png,0,think.jpg,to think,penser,denken,denken,pensare,pensar,думать,생각하다,想,考える
+verbs,CategoryVerbs.png,0,throwimage.jpg,to throw,jeter,gooien,werfen,gettare,lanzar,бросать,던지다,扔,投げる
+verbs,CategoryVerbs.png,0,touch.jpg,to touch,toucher,aanraken,berühren,toccare,tocar,трогать,만지다,触摸,触る
+verbs,CategoryVerbs.png,0,walk.jpg,to walk,marcher,wandelen,gehen,camminare,caminar,гулять,걷다,行走,歩く
+verbs,CategoryVerbs.png,0,want.jpg,to want,vouloir,willen,wollen,volere,querer,Хотеть,원하다,想要,～したい
+verbs,CategoryVerbs.png,0,washing.jpg,to wash,laver,wassen,waschen,lavare,lavar,мыть,씻다,洗,洗う
+verbs,CategoryVerbs.png,0,watching.jpg,to watch,regarder,kijken,ansehen,guardare,mirar,смотреть,보다,观看,観る
+verbs,CategoryVerbs.png,0,work.jpg,to work,travailler,werken,arbeiten,lavorare,trabajar,работать,일할다,上班,働く
+describing things,CategoryAdj.png,7,big.jpg,big,grand,groot,groß,grande,grande,большой,큰,大,大きい
+describing things,CategoryAdj.png,7,cheap.jpg,cheap,bon marché,goedkoop,billig,a buon mercato,barato,дешево,싼,便宜,安い
+describing things,CategoryAdj.png,7,clean.jpg,clean,propre,schoon,sauber,pulito,limpio,чистый,깨끗한,清洁,きれい
+describing things,CategoryAdj.png,7,closed.jpg,closed,fermé,gesloten,geschlossen,chiuso,cerrado,закрыто,닫힌,关闭,閉まっている
+describing things,CategoryAdj.png,7,cloudy.jpg,cloudy,nuageux,bewolkt,bewölkt,nuvoloso,nublado,облачно ,흐린,多云,曇り
+describing things,CategoryAdj.png,7,cold.jpg,cold,froid,koud,kalt,freddo,frío,холодно,차가운,冷,冷たい
+describing things,CategoryAdj.png,7,dark.jpg,dark,sombre,donker,dunkel,buio,oscuro,темно,어두운,黑暗,暗い
+describing things,CategoryAdj.png,7,dirty.jpg,dirty,sale,vuil,schmutzig,sporco,sucio,грязный,더러운,脏,汚れた
+describing things,CategoryAdj.png,7,down.jpg,down,vers le bas,naar beneden,nach unten,giù,abajo,вниз,아래쪽,向下,下がる
+describing things,CategoryAdj.png,7,dry.jpg,dry,sec,droog,trocken,asciutto,seco,сухой,건조한,干燥的,乾いた
+describing things,CategoryAdj.png,7,expensive.jpg,expensive,cher,duur,teuer,caro,caro,дорого,비싼,贵,高い
+describing things,CategoryAdj.png,7,fast.jpg,fast,rapide,snel,schnell,veloce,rápido,быстро,빠른,快,早い
+describing things,CategoryAdj.png,7,fat.jpg,fat,gros,dik,fett,grasso,gordo,толстый,뚱뚱한,胖,太った
+describing things,CategoryAdj.png,7,here.jpg,here,Ici,hier,Hier,Qui,Aquí,сюда ,여기,这里,ここに
+describing things,CategoryAdj.png,7,high.jpg,high,haut,hoog,hoch,alto,alto,высоко ,높은,高,高い
+describing things,CategoryAdj.png,7,hot.jpg,hot,chaud,heet,heiß,molto caldo,caliente,жарко ,뜨거운,热,暑い
+describing things,CategoryAdj.png,7,left.jpg,left,gauche,links,links,sinistra,izquierda,налево ,왼쪽,左,左
+describing things,CategoryAdj.png,7,light.jpg,light,lumière,licht,hell,luce,claro,свет,밝은,光亮的,明るい
+describing things,CategoryAdj.png,7,loud.jpg,loud,bruyant,luid,laut,ad alta voce,ruidoso,громкий,큰 소리로,响,音が大きい
+describing things,CategoryAdj.png,7,low.jpg,low,faible,leeg,leer,scarica,baja,низкий,낮은,低,低
+describing things,CategoryAdj.png,7,narrow.jpg,narrow,étroit,smal,eng,stretto,estrecho,узкий,폭이 좁은,窄,狭い
+describing things,CategoryAdj.png,7,noisy.jpg,noisy,bruyant,luidruchtig,laut,rumoroso,ruidoso,шумный,시끄러운,吵闹,騒がしい
+describing things,CategoryAdj.png,7,off.jpg,off,éteint,af,aus,spegnere,apagado,выключи ,꺼진,关闭,切
+describing things,CategoryAdj.png,7,on.jpg,on,allumé,op,an,accendere,encendido,включи,켜진,开启,入
+describing things,CategoryAdj.png,7,open.jpg,open,ouvert,open,offen,aperto,abierto,открытый,열린,打开,開いている
+describing things,CategoryAdj.png,7,out.jpg,out,dehors,uit,aus,fuori,fuera,из ,밖에,出,の外に
+describing things,CategoryAdj.png,7,poor.jpg,poor,pauvre,arm,arm,povero,pobre,бедный ,가난한,贫穷,貧しい
+describing things,CategoryAdj.png,7,quiet.jpg,quiet,silencieux,rustig,ruhig,silenzioso,silencioso,тихо,조용한,安静,静かな
+describing things,CategoryAdj.png,7,rainy.jpg,rainy,pluvieux,regenachtig,regnerisch,piovoso,lluvioso,дождливо ,비오는,多雨的,雨の
+describing things,CategoryAdj.png,7,rich.jpg,wealthy,riche,vermogend,wohlhabend,ricco,rico,богатый,부유 한,富裕,裕福な
+describing things,CategoryAdj.png,7,right.jpg,right,droite,rechts,rechts,destra,la derecha,направо ,오른쪽,向右边,右
+describing things,CategoryAdj.png,7,rural.jpg,rural,rural,landelijk,ländlichen,rurale,rural,сельский,시골적인,乡村的,田舎
+describing things,CategoryAdj.png,7,shortimage.jpg,short,court,kort,kurz,breve,corto,короткий ,짧은,短,短い
+describing things,CategoryAdj.png,7,slow.jpg,slow,lent,traag,langsam,lento,lento,медленный,느린,慢,遅い
+describing things,CategoryAdj.png,7,small.jpg,small,petit,klein,klein,piccolo,pequeña,маленький,작은,小,小さい
+describing things,CategoryAdj.png,7,smelly.jpg,smelly,malodorant,stinkend,stinkend,puzzolente,maloliente,вонючий,냄새나는,臭,臭い
+describing things,CategoryAdj.png,7,snowy.jpg,snowy,enneigé,besneeuwd,schneebedeckt,nevoso,Nevado,снежно,눈오는,多雪的,雪の
+describing things,CategoryAdj.png,7,sour.jpg,sour,aigre,zuur,sauer,aspro,agrio,кислый,신,酸,酸っぱい
+describing things,CategoryAdj.png,7,spicy.jpg,spicy,épicé,gekruid,würzig,piccante,picante,острый,매운,辣,スパイシーな
+describing things,CategoryAdj.png,7,sunny.jpg,sunny,ensoleillé,zonnig,sonnig,soleggiato,soleado,солнечно,화창한,阳光明媚,晴れた
+describing things,CategoryAdj.png,7,sweet.jpg,sweet,sucrée,zoet,süß,dolce,dulce,сладкое ,단,甜的,甘い
+describing things,CategoryAdj.png,7,salty.jpg,salty,salé,zout,salzig,salato,salado,соленый,짠,咸,しょっぱい
+describing things,CategoryAdj.png,7,tall.jpg,tall,grand,lang,hoch,alto,alto,высокий,키가 큰,高大,背が高い
+describing things,CategoryAdj.png,7,there.jpg,there,Là,daar,dort,Là,ahi,Там,그곳,那里,そこに
+describing things,CategoryAdj.png,7,thin.jpg,slim,mince,slank,schlank,magro,delgado,стройный,날씬한,苗条,細い
+describing things,CategoryAdj.png,7,up.jpg,up,ascendant,omhoog,nach oben,su,arriba,вверх,위쪽,向上,上に
+describing things,CategoryAdj.png,7,urban.jpg,urban,urbain,stedelijk,städtisch,urbano,urbano,городской,도시적인,城市的,都会
+describing things,CategoryAdj.png,7,warm.jpg,warm,chaud,warm,warm,caldo,caliente,тепло,따뜻한,温暖,暖かい
+describing things,CategoryAdj.png,7,wet.jpg,wet,humide,nat,nass,bagnato,mojado,мокро ,젖은,湿,濡れた
+describing things,CategoryAdj.png,7,wide.jpg,wide,large,breed,breit,largo,amplio,широкий,폭이 넓은,宽,広い
+in the home,CategoryInHome.png,3,bath.jpg,bath,bain,bad,Bad,bagno,bañera,ванна,욕조,浴缸,風呂
+in the home,CategoryInHome.png,3,bed.jpg,bed,lit,bed,Bett,letto,cama,кровать,침대,床,ベッド
+in the home,CategoryInHome.png,3,bookcase.jpg,bookcase,bibliothèque,boekenkast,Bücherschrank,libreria,biblioteca,книжная полка ,책장,书柜,本棚
+in the home,CategoryInHome.png,3,ceiling.jpg,ceiling,plafond,plafond,Decke,soffitto,techo,потолок,천장,天花板,天井
+in the home,CategoryInHome.png,3,chair.jpg,chair,chaise,stoel,Stuhl,sedia,silla,стул,의자,椅子,椅子
+in the home,CategoryInHome.png,3,desk.jpg,desk,bureau,bureau,Schreibtisch,scrivania,escritorio,письменный стол ,책상,办公桌,机
+in the home,CategoryInHome.png,3,dishwasher.jpg,dishwasher,lave-vaisselle,vaatwasser,Spülmaschine,lavastoviglie,lavavajillas,посудомоечная машина,식기 세척기,洗碗机,食器洗い機
+in the home,CategoryInHome.png,3,door.jpg,door,porte,deur,Tür,porta,puerta,дверь,문,门,扉
+in the home,CategoryInHome.png,3,floor.jpg,floor,sol,vloer,Fußboden,pavimento,piso,пол,바닥,地板,床
+in the home,CategoryInHome.png,3,fridge.jpg,fridge,frigo,koelkast,Kühlschrank,frigo,nevera,холодильник,냉장고,冰箱,冷蔵庫
+in the home,CategoryInHome.png,3,houseplant.jpg,house plant,plante d'intérieur,kamerplant,Zimmerpflanze,pianta della casa,planta de casa,домашнее растение,화초,家庭盆栽,鉢植え
+in the home,CategoryInHome.png,3,lamp.jpg,lamp,lampe,lamp,Lampe,lampada,lámpara,лампа,전등,灯,灯り
+in the home,CategoryInHome.png,3,mirror.jpg,mirror,miroir,spiegel,Spiegel,specchio,espejo,зеркало,거울,镜子,鏡
+in the home,CategoryInHome.png,3,pillow.jpg,pillow,oreiller,kussen,Kissen,cuscino,almohada,подушка,베개,枕头,枕
+in the home,CategoryInHome.png,3,shower.jpg,shower,douche,douche,Schauer,doccia,ducha,душ,샤워,淋浴,シャワー
+in the home,CategoryInHome.png,3,sink.jpg,sink,lavabo,wastafel,Waschbecken,lavello,lavabo,раковина,싱크대,水槽,流し
+in the home,CategoryInHome.png,3,sofa.jpg,sofa,banc,bank,Sofa,divano,sofá,диван,소파,沙发,ソファ
+in the home,CategoryInHome.png,3,stairs.jpg,stairs,escaliers,trap,Treppe,scala,escalera,лестница,계단,楼梯,階段
+in the home,CategoryInHome.png,3,table.jpg,table,table,tafel,Tisch,tavola,mesa,Таблица,테이블,桌子,テーブル
+in the home,CategoryInHome.png,3,wall.jpg,wall,mur,muur,Mauer,muro,pared,стена,벽,墙,壁
+in the home,CategoryInHome.png,3,washingmachine.jpg,washing machine,machine à laver,wasmachine,Waschmaschine,lavatrice,lavadora,стиральная машина,세탁기,洗衣机,洗濯機
+in the home,CategoryInHome.png,3,window.jpg,window,fenêtre,raam,Fenster,finestra,ventana,окно,창문,窗户,窓
+places,CategoryPlaces.png,6,bank.jpg,bank,banque,bank,Bank,banca,banco,банк,은행,银行,銀行
+places,CategoryPlaces.png,6,bathroom.jpg,bathroom,salle de bain,badkamer,Badezimmer,bagno,baño,ванная,욕실,浴室,浴室
+places,CategoryPlaces.png,6,beach.jpg,beach,plage,strand,Strand,spiaggia,playa,пляж,해수욕장,海滩,浜辺
+places,CategoryPlaces.png,6,bedroom.jpg,bedroom,chambre à coucher,slaapkamer,Schlafzimmer,camera da letto,cuarto,Спальня,침실,卧室,寝室
+places,CategoryPlaces.png,6,farm.jpg,farm,ferme,boerderij,Bauernhof,fattoria,granja,ферма,농장,农场,農場
+places,CategoryPlaces.png,6,garden.jpg,garden,jardin,tuin,Garten,giardino,jardín,сад,정원,花园,庭
+places,CategoryPlaces.png,6,gym.jpg,gym,gym,gym,Fitnessstudio,palestra,gimnasio,фитнес-клуб,헬스클럽,健身会所,フィットネスクラブ
+places,CategoryPlaces.png,6,hallway.jpg,hallway,couloir,gang,Flur,corridoio,pasillo,прихожая,복도,门厅,廊下
+places,CategoryPlaces.png,6,hospital.jpg,hospital,hôpital,ziekenhuis,Krankenhaus,ospedale,hospital,больница,병원,医院,病院
+places,CategoryPlaces.png,6,hotel.jpg,hotel,hôtel,hotel,Hotel,albergo,hotel,Гостиница,호텔,饭店,ホテル
+places,CategoryPlaces.png,6,house.jpg,house,maison,huis,Haus,casa,casa,дом,집,房子,家
+places,CategoryPlaces.png,6,kitchen.jpg,kitchen,cuisine,keuken,Küche,cucina,cocina,кухня,부엌,厨房,台所
+places,CategoryPlaces.png,6,lake.jpg,lake,lac,meer,See,lago,lago,озеро,호수,湖,湖
+places,CategoryPlaces.png,6,library.jpg,library,bibliothèque,bibliotheek,Bibliothek,biblioteca,biblioteca,библиотека,도서관,图书馆,図書室
+places,CategoryPlaces.png,6,livingroom.jpg,living room,salle de séjour,huiskamer,Wohnzimmer,salotto,sala,гостиная,거실,客厅,居間
+places,CategoryPlaces.png,6,mall.jpg,shopping mall,centre commercial,winkelcentrum,Einkaufscenter,centro commerciale,centro comercial,супермаркет,쇼핑몰,购物中心,商店街
+places,CategoryPlaces.png,6,market.jpg,market,marché,markt,Markt,mercato,mercado,рынок,시장,市场,市場
+places,CategoryPlaces.png,6,office.jpg,office,bureau,kantoor,Büro,ufficio,oficina,офис,사무실,办公室,事務所
+places,CategoryPlaces.png,6,park.jpg,park,parc,park,Park,parco,parque,парк,공원,公园,公園
+places,CategoryPlaces.png,6,playground.jpg,playground,cour de récréation,speelplaats,Spielplatz,parco giochi,patio de recreo,Детская площадка,놀이터,操场,遊び場
+places,CategoryPlaces.png,6,pool.jpg,pool,piscine,zwembad,Pool,piscina,piscina,бассейн,수영장,池,プール
+places,CategoryPlaces.png,6,restaurant.jpg,restaurant,restaurant,restaurant,Restaurant,ristorante,restaurante,ресторан,레스토랑,餐厅,レストラン
+places,CategoryPlaces.png,6,river.jpg,river,rivière,rivier,Fluss,fiume,río,река,강,江,川
+places,CategoryPlaces.png,6,school.jpg,school,l'école,school,Schule,scuola,colegio,школа,학교,学校,学校
+places,CategoryPlaces.png,6,sea.jpg,sea,mer,zee,Meer,mare,mar,море,바다,海,海
+places,CategoryPlaces.png,6,shop.jpg,shop,magasin,winkel,Geschäft,negozio,tienda,магазин,가게,店,店
+places,CategoryPlaces.png,6,supermarket.jpg,supermarket,supermarché,supermarkt,Supermarkt,supermercato,supermercado,супермаркет,슈퍼마켓,超市,スーパーマーケット
+places,CategoryPlaces.png,6,toilet.jpg,toilet,toilette,toilet,Toilette,gabinetto,baño,туалет,화장실,洗手间,トイレ
+people,CategoryPeople.png,2,baby.jpg,baby,bébé,baby,Baby,neonato,bebé,ребенок,아기,婴儿,赤ちゃん
+people,CategoryPeople.png,2,boy.jpg,boy,garçon,jongen,Junge,ragazzo,chico,мальчик,소년,男孩,男の子
+people,CategoryPeople.png,2,doctor.jpg,doctor,docteur,dokter,Arzt,medico,doctor,врач,의사,医生,医師
+people,CategoryPeople.png,2,girl.jpg,girl,fille,meisje,Mädchen,ragazza,chica,девушка,소녀,女孩,女の子
+people,CategoryPeople.png,2,man.jpg,man,homme,man,Mann,uomo,hombre,мужчина ,남자,男人,男
+people,CategoryPeople.png,2,police.jpg,police,police,politie,Polizei,polizia,policía,полиция,경찰,警察,警察
+people,CategoryPeople.png,2,woman.jpg,woman,femme,vrouw,Frau,donna,mujer,женщина,여자,女人,女性
+sports,CategorySports.png,6,badminton.jpg,badminton,badminton,badminton,Badminton,badminton,bádminton,бадминтон,배드민턴,羽毛球,バドミントン
+sports,CategorySports.png,6,basketball.jpg,basketball,basket,basketbal,Basketball,pallacanestro,baloncesto,баскетбол,농구,篮球,バスケットボール
+sports,CategorySports.png,6,cycling.jpg,cycling,cyclisme,wielersport,Radfahren,ciclismo,ciclismo,езда на велосипеде,싸이클링,骑行,サイクリング
+sports,CategorySports.png,6,football.jpg,football,football,voetbal,Fußball,calcio,fútbol,футбол,축구,足球,サッカー
+sports,CategorySports.png,6,golf.jpg,golf,golf,golf,Golf,golf,golf,гольф,골프,高尔夫球,ゴルフ
+sports,CategorySports.png,6,skiing.jpg,skiing,ski,skiën,Skifahren,sciare,esquiando,кататься на лыжах,스키타기,滑雪,スキー
+sports,CategorySports.png,6,swimming.jpg,swimming,natation,zwemmen,Schwimmen,nuoto,nadando,плавание,수영,游泳,水泳
+sports,CategorySports.png,6,tennis.jpg,tennis,tennis,tennis,Tennis,tennis,tenis,Большой теннис,테니스,网球运动,テニス
+sports,CategorySports.png,6,windsurfing.jpg,watersports,sports nautiques,watersport,Wassersport,sport acquatici,deportes acuáticos,водные виды спорта,수상 스포츠,水上运动,ウォータースポーツ
+transport,CategoryTransport.png,6,aeroplane.jpg,aeroplane,avion,vliegtuig,Flugzeug,aeroplano,avión,самолет,비행기,飞机,飛行機
+transport,CategoryTransport.png,6,bicycle.jpg,bicycle,vélo,fiets,Fahrrad,bicicletta,bicicleta,велосипед,자전거,自行车,自転車
+transport,CategoryTransport.png,6,boat.jpg,boat,bateau,boot,Boot,barca,barco,лодка,보트,船,ボート
+transport,CategoryTransport.png,6,car.jpg,car,voiture,auto,Auto,macchina,auto,автомобиль,차,汽车,車
+transport,CategoryTransport.png,6,train.jpg,train,train,trein,Bahn,treno,entrenar,поезд,기차,火车,列車
+animals,CategoryAnimals.png,2,lion.jpg,lion,lion,leeuw,Löwe,leone,león,лев,사자,狮子,ライオン
+animals,CategoryAnimals.png,2,elephant.jpg,elephant,éléphant,olifant,Elefant,elefante,elefante,слон,코끼리,大象,象
+animals,CategoryAnimals.png,2,bear.jpg,bear,ours,beer,tragen,orso,oso,медведь,곰,熊,クマ
+animals,CategoryAnimals.png,2,wolf.jpg,wolf,loup,wolf,Wolf,lupo,lobo,волк,늑대,狼,狼
+animals,CategoryAnimals.png,2,fox.jpg,fox,renard,vos,Fuchs,volpe,zorro,лиса,여우,狐狸,キツネ
+animals,CategoryAnimals.png,2,rabbit.jpg,rabbit,lapin,konijn,Kaninchen,coniglio,conejo,кролик,토끼,兔子,うさぎ
+animals,CategoryAnimals.png,2,turtle.jpg,turtle,tortue,schildpad,Schildkröte,tartaruga,tortuga,черепаха,거북이,龟,カメ
+animals,CategoryAnimals.png,2,frog.jpg,frog,grenouille,kikker,Frosch,rana,rana,лягушка,개구리,青蛙,蛙
+animals,CategoryAnimals.png,2,snake.jpg,snake,serpent,slang,Schlange,serpente,serpiente,змея,뱀,蛇,蛇
+animals,CategoryAnimals.png,2,crocodile.jpg,crocodile,crocodile,krokodil,Krokodil,coccodrillo,cocodrilo,крокодил,악어,鳄鱼,クロコダイル
+animals,CategoryAnimals.png,2,shark.jpg,shark,requin,haai,Hai,squalo,tiburón,акула,상어,鲨鱼,サメ
+animals,CategoryAnimals.png,2,whale.jpg,whale,baleine,walvis,Wal,balena,ballena,кит,고래,鲸,鯨
+animals,CategoryAnimals.png,2,dolphin.jpg,dolphin,dauphin,dolfijn,Delphin,delfino,delfín,дельфин,돌고래,海豚,イルカ
+animals,CategoryAnimals.png,2,penguin.jpg,penguin,manchot,pinguïn,Pinguin,pinguino,pingüino,пингвин,펭귄,企鹅,ペンギン
+animals,CategoryAnimals.png,2,eagle.jpg,eagle,aigle,adelaar,Adler,aquila,águila,орел,독수리,鹰,イーグル
+animals,CategoryAnimals.png,2,owl.jpg,owl,hibou,uil,Eule,gufo,búho,сова,올빼미,猫头鹰,フクロウ
+animals,CategoryAnimals.png,2,parrot.jpg,parrot,perroquet,papegaai,Papagei,pappagallo,loro,попугай,앵무새,鹦鹉,オウム
+animals,CategoryAnimals.png,2,butterfly.jpg,butterfly,papillon,vlinder,Schmetterling,farfalla,mariposa,бабочка,나비,蝴蝶,蝶
+animals,CategoryAnimals.png,2,bee.jpg,bee,abeille,bij,Biene,ape,abeja,пчела,벌,蜜蜂,蜂
+animals,CategoryAnimals.png,2,ant.jpg,ant,fourmi,mier,Ameise,formica,hormiga,муравей,개미,蚂蚁,アリ
+animals,CategoryAnimals.png,2,spider.jpg,spider,araignée,spin,Spinne,ragno,araña,паук,거미,蜘蛛,スパイダー
+animals,CategoryAnimals.png,2,crab.jpg,crab,crabe,krab,Krabbe,granchio,cangrejo,краб,게,螃蟹,カニ
+animals,CategoryAnimals.png,2,lobster.jpg,lobster,homard,kreeft,Hummer,aragosta,langosta,Омар,새우,龙虾,ロブスター
+animals,CategoryAnimals.png,2,octopus.jpg,octopus,pieuvre,octopus,Oktopus,polpo,pulpo,осьминог,문어,章鱼,タコ
+animals,CategoryAnimals.png,2,jellyfish.jpg,jellyfish,méduse,kwal,Qualle,medusa,medusa,медуза,해파리,海蜇,クラゲ
+animals,CategoryAnimals.png,2,seahorse.jpg,seahorse,hippocampe,zeepaardje,Seepferdchen,cavalluccio marino,caballito de mar,морской конёк,해마,海马,タツノオトシゴ
+animals,CategoryAnimals.png,2,starfish.jpg,starfish,étoile de mer,zeester,Seestern,stella marina,estrella de mar,морская звезда,불가사리,海星,ヒトデ
+animals,CategoryAnimals.png,2,camel.jpg,camel,chameau,kameel,Kamel,cammello,camello,верблюд,낙다,骆驼,キャメル
+animals,CategoryAnimals.png,2,zebra.jpg,zebra,zèbre,zebra,Zebra,zebra,cebra,зебра,얼룩말,斑马,ゼブラ
+animals,CategoryAnimals.png,2,giraffe.jpg,giraffe,girafe,giraffe,Giraffe,giraffa,jirafa,жирафа,기린,长颈鹿,キリン
+animals,CategoryAnimals.png,2,hippopotamus.jpg,hippopotamus,hippopotame,nijlpaard,Nilpferd,ippopotamo,hipopótamo,бегемот,하마,河马,カバ
+animals,CategoryAnimals.png,2,rhinoceros.jpg,rhinoceros,rhinocéros,neushoorn,Nashorn,rinoceronte,rinoceronte,носорог,코뿔소,犀牛,サイ
+animals,CategoryAnimals.png,2,kangaroo.jpg,kangaroo,kangourou,kangoeroe,Känguru,canguro,canguro,кенгуру,캥거루,袋鼠,カンガルー
+animals,CategoryAnimals.png,2,koala.jpg,koala,koala,koala,Koala,koala,coala,коала,코알라,考拉,コアラ
+animals,CategoryAnimals.png,2,panda.jpg,panda,panda,panda,Panda,panda,panda,панда,팬더,熊猫,パンダ
+animals,CategoryAnimals.png,2,gorilla.jpg,gorilla,gorille,gorilla,Gorilla,gorilla,gorila,горилла,고릴라,大猩猩,ゴリラ
+animals,CategoryAnimals.png,2,chimpanzee.jpg,chimpanzee,chimpanzé,chimpansee,Schimpanse,scimpanzé,chimpancé,шимпанзе,침팬지,黑猩猩,チンパンジー
+animals,CategoryAnimals.png,2,sloth.jpg,sloth,paresseux,luiaard,Faultier,pigrizia,ranura,лень,나태,树懒,ナマケモノ
+everyday objects,CategoryObjects.png,1,umbrella.jpg,umbrella,parapluie,paraplu,Regenschirm,ombrello,paraguas,зонтик,우산,伞,傘
+everyday objects,CategoryObjects.png,1,wallet.jpg,wallet,portefeuille,portemonnee,Geldbörse,portafoglio,billetera,кошелек,지갑,钱包,財布
+everyday objects,CategoryObjects.png,1,sunglasses.jpg,sunglasses,lunettes de soleil,zonnebril,Sonnenbrille,occhiali da sole,gafas de sol,солнцезащитные очки,색안경,太阳镜,サングラス
+everyday objects,CategoryObjects.png,1,backpack.jpg,backpack,sac à dos,rugzak,Rucksack,zaino,mochila,рюкзак,배낭,背包,バックパック
+everyday objects,CategoryObjects.png,1,suitcase.jpg,suitcase,valise,koffer,Koffer,valigia,maleta,чемодан,여행 가방,手提箱,スーツケース
+everyday objects,CategoryObjects.png,1,brush.jpg,brush,brosse,borstel,Bürste,spazzola,cepillar,щетка,브러시,刷子,ブラシ
+everyday objects,CategoryObjects.png,1,comb.jpg,comb,peigne,kam,Kamm,pettine,peine,гребень,빗,梳子,櫛
+everyday objects,CategoryObjects.png,1,toothbrush.jpg,toothbrush,brosse à dents,tandenborstel,Zahnbürste,spazzolino da denti,cepillo de dientes,зубная щетка,칫솔,牙刷,歯ブラシ
+everyday objects,CategoryObjects.png,1,toothpaste.jpg,toothpaste,dentifrice,tandpasta,Zahnpasta,dentifricio,pasta dentífrica,зубная паста,치약,牙膏,歯磨き粉
+everyday objects,CategoryObjects.png,1,shampoo.jpg,shampoo,shampooing,shampoo,Shampoo,shampoo,champú,шампунь,샴푸,洗发水,シャンプー
+everyday objects,CategoryObjects.png,1,tissue.jpg,tissue,tissu,weefsel,Gewebe,tessuto,tejido,салфетка,조직,组织,組織
+everyday objects,CategoryObjects.png,1,toilet_paper.jpg,toilet paper,papier toilette,toiletpapier,Klopapier,carta igienica,papel higiénico,туалетная бумага,휴지,卫生纸,トイレットペーパー
+everyday objects,CategoryObjects.png,1,sponge.jpg,sponge,éponge,spons,Schwamm,spugna,esponja,губка,스펀지,海绵,スポンジ
+everyday objects,CategoryObjects.png,1,broom.jpg,broom,balai,bezem,Besen,scopa,escoba,метла,비,扫帚,ほうき
+everyday objects,CategoryObjects.png,1,mop.jpg,mop,serpillière,dweil,Mop,scopa,fregar,швабра,대걸레,拖把,モップ
+everyday objects,CategoryObjects.png,1,bucket.jpg,bucket,seau,emmer,Eimer,secchio,balde,ведро,버킷,桶,バケツ
+everyday objects,CategoryObjects.png,1,trash_can.jpg,trash can,poubelle,vuilnisbak,Mülleimer,bidone della spazzatura,bote de basura,мусорное ведро,쓰레기통,垃圾桶,ごみ箱
+in the home,CategoryInHome.png,3,couch.jpg,couch,canapé,bank,Couch,divano,sofá,диван,침상,长椅,ソファー
+in the home,CategoryInHome.png,3,armchair.jpg,armchair,fauteuil,fauteuil,Sessel,poltrona,sillón,кресло,안락의자,扶手椅,肘掛け椅子
+in the home,CategoryInHome.png,3,coffee_table.jpg,coffee table,table basse,salontafel,Couchtisch,tavolino da caffè,mesa de centro,кофейный столик,커피 테이블,茶几,コー​​ヒーテーブル
+in the home,CategoryInHome.png,3,bookshelf.jpg,bookshelf,bibliothèque,boekenplank,Bücherregal,libreria,estante para libros,книжная полка,책장,书架,本棚
+in the home,CategoryInHome.png,3,television.jpg,television,télévision,televisie,Fernsehen,televisione,televisión,телевидение,텔레비전,电视,テレビ
+in the home,CategoryInHome.png,3,remote_control.jpg,remote control,télécommande,afstandsbediening,Fernbedienung,telecomando,mando a distancia,пульт дистанционного управления,원격 제어,遥控,リモコン
+in the home,CategoryInHome.png,3,rug.jpg,rug,tapis,tapijt,Teppich,tappeto,alfombra,коврик,깔개,小地毯,ラグ
+in the home,CategoryInHome.png,3,carpet.jpg,carpet,tapis,tapijt,Teppich,tappeto,alfombra,ковер,양탄자,地毯,カーペット
+in the home,CategoryInHome.png,3,curtain.jpg,curtain,rideau,gordijn,Vorhang,tenda,cortina,занавес,커튼,窗帘,カーテン
+in the home,CategoryInHome.png,3,blind.jpg,blind,aveugle,blind,blind,cieco,ciego,слепой,눈이 먼,瞎的,盲目
+in the home,CategoryInHome.png,3,cushion.jpg,cushion,coussin,kussen,Kissen,cuscino,almohadón,подушка,쿠션,软垫,クッション
+in the home,CategoryInHome.png,3,blanket.jpg,blanket,couverture,deken,Decke,coperta,frazada,одеяло,담요,毯子,ブランケット
+in the home,CategoryInHome.png,3,sheet.jpg,sheet,feuille,laken,Blatt,foglio,hoja,лист,시트,床单,シート
+in the home,CategoryInHome.png,3,mattress.jpg,mattress,matelas,matras,Matratze,materasso,colchón,матрас,섶나무 다발,床垫,マットレス
+in the home,CategoryInHome.png,3,wardrobe.jpg,wardrobe,garde-robe,kledingkast,Kleiderschrank,armadio,armario,гардероб,옷장,衣柜,ワードローブ
+in the home,CategoryInHome.png,3,closet.jpg,closet,placard,kast,Kleiderschrank,guardaroba,armario,шкаф,벽장,壁橱,クローゼット
+in the home,CategoryInHome.png,3,dresser.jpg,dresser,buffet,dressoir,Kommode,comò,aparador,комод,경대,梳妆台,ドレッサー
+in the home,CategoryInHome.png,3,light_bulb.jpg,light bulb,ampoule,gloeilamp,Glühbirne,lampadina,bombilla,лампочка,전구,灯泡,電球
+in the home,CategoryInHome.png,3,switch.jpg,switch,changer,schakelaar,schalten,interruttore,cambiar,выключатель,스위치,转变,スイッチ
+in the home,CategoryInHome.png,3,plug.jpg,plug,prise,plug,Stecker,tappo,enchufar,затыкать,플러그,插头,プラグ
+in the home,CategoryInHome.png,3,socket.jpg,socket,douille,stopcontact,Buchse,PRESA,enchufe,розетка,소켓,插座,ソケット
+in the home,CategoryInHome.png,3,elevator.jpg,elevator,ascenseur,lift,Aufzug,ascensore,ascensor,лифт,엘리베이터,电梯,エレベーター
+in the home,CategoryInHome.png,3,balcony.jpg,balcony,balcon,balkon,Balkon,balcone,balcón,балкон,발코니,阳台,バルコニー
+in the home,CategoryInHome.png,3,terrace.jpg,terrace,terrasse,terras,Terrasse,terrazza,terraza,терраса,테라스,阳台,テラス
+in the home,CategoryInHome.png,3,roof.jpg,roof,toit,dak,Dach,tetto,techo,крыша,지붕,屋顶,屋根
+in the home,CategoryInHome.png,3,chimney.jpg,chimney,cheminée,schoorsteen,Schornstein,camino,tubo de lámpara,камин,굴뚝,烟囱,煙突
+in the home,CategoryInHome.png,3,fireplace.jpg,fireplace,cheminée,haard,Kamin,camino,hogar,камин,난로,壁炉,暖炉
+personal belongings,CategoryPersonal.png,3,purse.jpg,purse,bourse,tas,Geldbeutel,borsa,cartera,кошелек,지갑,钱包,財布
+personal belongings,CategoryPersonal.png,3,handbag.jpg,handbag,sac à main,handtas,Handtasche,borsetta,bolso,сумочка,핸드백,手提包,ハンドバッグ
+personal belongings,CategoryPersonal.png,3,briefcase.jpg,briefcase,mallette,aktentas,Aktentasche,valigetta,maletín,портфель,서류가방,公文包,ブリーフケース
+personal belongings,CategoryPersonal.png,3,luggage.jpg,luggage,bagage,bagage,Gepäck,bagaglio,equipaje,багаж,수화물,行李,荷物
+personal belongings,CategoryPersonal.png,3,passport.jpg,passport,passeport,paspoort,Reisepass,passaporto,pasaporte,паспорт,여권,护照,パスポート
+personal belongings,CategoryPersonal.png,3,id_card.jpg,ID card,Carte d'identité,ID-kaart,Ausweis,carta d'identità,tarjeta de identificación,Удостоверение личности,신분증,身份证,IDカード
+personal belongings,CategoryPersonal.png,3,driver's_license.jpg,driver's license,le permis de conduire,rijbewijs,Führerschein,patente di guida,Licencia de conducir,водительское удостоверение,운전면허증,驾照,運転免許証
+personal belongings,CategoryPersonal.png,3,credit_card.jpg,credit card,carte de crédit,creditcard,Kreditkarte,carta di credito,tarjeta de crédito,кредитная карта,신용카드,信用卡,クレジットカード
+personal belongings,CategoryPersonal.png,3,cash.jpg,cash,espèces,contant geld,Kasse,contanti,dinero,наличные,현금,现金,現金
+personal belongings,CategoryPersonal.png,3,coins.jpg,coins,pièces,munten,Münzen,monete,monedas,монеты,동전,硬币,コイン
+personal belongings,CategoryPersonal.png,3,receipt.jpg,receipt,reçu,ontvangst,Quittung,ricevuta,recibo,квитанция,영수증,收据,レシート
+personal belongings,CategoryPersonal.png,3,ticket.jpg,ticket,billet,ticket,Ticket,biglietto,boleto,билет,표,票,チケット
+personal belongings,CategoryPersonal.png,3,boarding_pass.jpg,boarding pass,carte d'embarquement,instapkaart,Bordkarte,carta d'imbarco,pase de abordar,посадочный талон,탑승권,扩大通行证,搭乗券
+personal belongings,CategoryPersonal.png,3,keychain.jpg,keychain,porte-clés,sleutelhanger,Schlüsselanhänger,portachiavi,llavero,брелок,열쇠고리,钥匙链,キーホルダー
+personal belongings,CategoryPersonal.png,3,glasses.jpg,glasses,lunettes,bril,Gläser,occhiali,anteojos,очки,안경,眼镜,眼鏡
+personal belongings,CategoryPersonal.png,3,contact_lenses.jpg,contact lenses,lentilles de contact,contactlenzen,Kontaktlinsen,lenti a contatto,lentes de contacto,контактные линзы,콘택트렌즈,隐形眼镜,コンタクトレンズ
+personal belongings,CategoryPersonal.png,3,jewelry.jpg,jewelry,bijoux,sieraden,Schmuck,gioielli,joyas,ювелирные изделия,보석류,珠宝,ジュエリー
+personal belongings,CategoryPersonal.png,3,necklace.jpg,necklace,collier,halsketting,Halskette,collana,collar,ожерелье,목걸이,项链,ネックレス
+personal belongings,CategoryPersonal.png,3,bracelet.jpg,bracelet,bracelet,armband,Armband,braccialetto,pulsera,браслет,팔찌,手镯,ブレスレット
+personal belongings,CategoryPersonal.png,3,ring.jpg,ring,anneau,ring,Ring,squillo,anillo,кольцо,반지,戒指,指輪
+personal belongings,CategoryPersonal.png,3,earrings.jpg,earrings,boucles d'oreilles,oorbellen,Ohrringe,orecchini,pendientes,серьги,귀걸이,耳环,イヤリング
+personal belongings,CategoryPersonal.png,3,makeup.jpg,makeup,se maquiller,make-up,bilden,trucco,constituir,составить,조립,化妆品,補う
+personal belongings,CategoryPersonal.png,3,lipstick.jpg,lipstick,rouge à lèvres,lippenstift,Lippenstift,rossetto,lápiz labial,помада,입술 연지,口红,口紅
+personal belongings,CategoryPersonal.png,3,perfume.jpg,perfume,parfum,parfum,Parfüm,profumo,perfume,духи,향수,香水,香水
+personal belongings,CategoryPersonal.png,3,cologne.jpg,cologne,eau de Cologne,Keulen,Köln,colonia,Colonia,одеколон,향수,科隆,ケルン
+personal belongings,CategoryPersonal.png,3,deodorant.jpg,deodorant,déodorant,deodorant,Deodorant,deodorante,desodorante,дезодорант,탈취제,除臭剂,デオドラント
+verbs,CategoryVerbs.png,0,read.jpg,read,lire,lezen,lesen,Leggere,leer,читать,읽다,读,読む
+verbs,CategoryVerbs.png,0,write.jpg,write,écrire,schrijven,schreiben,scrivere,escribir,писать,쓰다,写,書く
+verbs,CategoryVerbs.png,0,listen.jpg,listen,écouter,luisteren,Hören,Ascoltare,escuchar,слушать,듣다,听,聞く
+verbs,CategoryVerbs.png,0,speak.jpg,speak,parler,spreken,sprechen,parlare,hablar,говорить,말하다,说话,話す
+verbs,CategoryVerbs.png,0,talk.jpg,talk,parler,gesprek,sprechen,parlare,hablar,разговаривать,말하다,讲话,話す
+verbs,CategoryVerbs.png,0,study.jpg,study,étude,studie,Studie,studio,estudiar,изучать,공부하다,学习,勉強
+verbs,CategoryVerbs.png,0,learn.jpg,learn,apprendre,leren,lernen,Imparare,aprender,учиться,배우다,学习,学ぶ
+verbs,CategoryVerbs.png,0,teach.jpg,teach,enseigner,onderwijzen,unterrichten,insegnare,enseñar,учить,가르치다,教,教える
+verbs,CategoryVerbs.png,0,understand.jpg,understand,comprendre,begrijpen,verstehen,capire,entender,понимать,이해하다,理解,理解する
+verbs,CategoryVerbs.png,0,remember.jpg,remember,souviens-toi,herinneren,erinnern,Ricordare,recordar,помнить,기억하다,记住,覚えて
+verbs,CategoryVerbs.png,0,forget.jpg,forget,oublier,vergeten,vergessen,dimenticare,olvidar,забывать,잊다,忘记,忘れる
+verbs,CategoryVerbs.png,0,think.jpg,think,pense,denken,denken,pensare,pensar,думать,생각하다,思考,考える
+verbs,CategoryVerbs.png,0,believe.jpg,believe,croire,geloven,glauben,credere,creer,полагать,믿다,相信,信じる
+verbs,CategoryVerbs.png,0,know.jpg,know,savoir,weten,wissen,Sapere,saber,знать,알다,知道,知る
+verbs,CategoryVerbs.png,0,guess.jpg,guess,deviner,gok,erraten,Indovinare,adivinar,предполагать,추측하다,猜测,推測
+verbs,CategoryVerbs.png,0,dream.jpg,dream,rêve,droom,Traum,sogno,sueño,мечтать,꿈,梦,夢
+verbs,CategoryVerbs.png,0,imagine.jpg,imagine,imaginer,voorstellen,vorstellen,immaginare,imaginar,представлять себе,상상하다,想象,想像する
+verbs,CategoryVerbs.png,0,create.jpg,create,créer,creëren,erstellen,creare,crear,создавать,만들다,创造,作成する
+verbs,CategoryVerbs.png,0,build.jpg,build,construire,bouwen,bauen,costruire,construir,строить,짓다,建造,建てる
+verbs,CategoryVerbs.png,0,destroy.jpg,destroy,détruire,vernietigen,zerstören,distruggere,destruir,разрушать,파괴하다,破坏,破壊する
+verbs,CategoryVerbs.png,0,break.jpg,break,casser,pauze,brechen,rottura,romper,перерыв,부서지다,休息,壊す
+places,CategoryPlaces.png,6,city.jpg,city,ville,stad,Stadt,città,ciudad,город,도시,城市,市
+places,CategoryPlaces.png,6,town.jpg,town,ville,dorp,Stadt,città,ciudad,город,도시,镇,町
+places,CategoryPlaces.png,6,village.jpg,village,village,dorp,Dorf,villaggio,aldea,деревня,마을,村庄,村
+places,CategoryPlaces.png,6,countryside.jpg,countryside,campagne,platteland,Landschaft,campagna,campo,сельская местность,한 지방,农村,田舎
+places,CategoryPlaces.png,6,street.jpg,street,rue,straat,Straße,strada,calle,улица,거리,街道,通り
+places,CategoryPlaces.png,6,road.jpg,road,route,weg,Straße,strada,camino,дорога,도로,路,道
+places,CategoryPlaces.png,6,highway.jpg,highway,autoroute,snelweg,Autobahn,autostrada,carretera,шоссе,고속도로,公路,高速道路
+places,CategoryPlaces.png,6,bridge.jpg,bridge,pont,brug,Brücke,ponte,puente,мост,다리,桥,橋
+places,CategoryPlaces.png,6,tunnel.jpg,tunnel,tunnel,tunnel,Tunnel,tunnel,túnel,туннель,터널,隧道,トンネル
+places,CategoryPlaces.png,6,building.jpg,building,bâtiment,gebouw,Gebäude,edificio,edificio,здание,건물,建筑,建物
+places,CategoryPlaces.png,6,apartment.jpg,apartment,appartement,appartement,Wohnung,appartamento,departamento,квартира,아파트,公寓,アパート
+places,CategoryPlaces.png,6,castle.jpg,castle,château,kasteel,Schloss,castello,castillo,замок,성,城堡,城
+places,CategoryPlaces.png,6,palace.jpg,palace,palais,paleis,Palast,palazzo,palacio,дворец,궁전,宫殿,宮殿
+places,CategoryPlaces.png,6,tower.jpg,tower,tour,toren,Turm,torre,torre,башня,탑,塔,タワー
+places,CategoryPlaces.png,6,church.jpg,church,église,kerk,Kirche,Chiesa,iglesia,церковь,교회,教会,教会
+places,CategoryPlaces.png,6,temple.jpg,temple,temple,tempel,Tempel,tempio,templo,храм,절,寺庙,寺
+places,CategoryPlaces.png,6,mosque.jpg,mosque,mosquée,moskee,Moschee,moschea,mezquita,мечеть,사원,清真寺,モスク
+places,CategoryPlaces.png,6,clinic.jpg,clinic,clinique,kliniek,Klinik,clinica,clínica,клиника,진료소,诊所,クリニック
+places,CategoryPlaces.png,6,pharmacy.jpg,pharmacy,pharmacie,apotheek,Apotheke,farmacia,farmacia,аптека,약국,药店,薬局
+places,CategoryPlaces.png,6,police_station.jpg,police station,poste de police,politiebureau,Polizeistation,stazione di polizia,comisaría de policía,полицейский участок,경찰서,警察局,警察署
+places,CategoryPlaces.png,6,fire_station.jpg,fire station,caserne de pompiers,brandweerkazerne,Feuerwache,stazione dei vigili del fuoco,estación de bomberos,пожарная часть,소방서,消防局,消防署
+places,CategoryPlaces.png,6,post_office.jpg,post office,bureau de poste,Postkantoor,Postamt,ufficio postale,oficina de correos,почтовое отделение,우체국,邮局,郵便局
+people,CategoryPeople.png,2,family.jpg,family,famille,familie,Familie,famiglia,familia,семья,가족,家庭,家族
+people,CategoryPeople.png,2,parent.jpg,parent,mère,ouder,Elternteil,genitore,padre,родитель,조상,家长,親
+people,CategoryPeople.png,2,mother.jpg,mother,mère,moeder,Mutter,madre,madre,мать,어머니,母亲,母親
+people,CategoryPeople.png,2,father.jpg,father,père,vader,Vater,padre,padre,отец,아버지,父亲,父親
+people,CategoryPeople.png,2,child.jpg,child,enfant,kind,Kind,bambino,niño,ребенок,어린이,孩子,子供
+people,CategoryPeople.png,2,son.jpg,son,fils,zoon,Sohn,figlio,hijo,сын,아들,儿子,息子
+people,CategoryPeople.png,2,daughter.jpg,daughter,fille,dochter,Tochter,figlia,hija,дочь,딸,女儿,娘
+people,CategoryPeople.png,2,brother.jpg,brother,frère,broer,Bruder,fratello,hermano,брат,형제,兄弟,兄弟
+people,CategoryPeople.png,2,sister.jpg,sister,sœur,zus,Schwester,sorella,hermana,сестра,자매,姐姐,妹
+people,CategoryPeople.png,2,grandparent.jpg,grandparent,grand-parent,grootouder,Großeltern,nonno,abuelo,дедушка и бабушка,조부모,祖父母,祖父母
+people,CategoryPeople.png,2,grandmother.jpg,grandmother,grand-mère,grootmoeder,Großmutter,nonna,abuela,бабушка,할머니,祖母,祖母
+people,CategoryPeople.png,2,grandfather.jpg,grandfather,grand-père,grootvader,Großvater,nonno,abuelo,дедушка,할아버지,祖父,祖父
+people,CategoryPeople.png,2,grandchild.jpg,grandchild,petit enfant,kleinkind,Enkel,nipote,nieto,внук,손자,孙子,孫
+people,CategoryPeople.png,2,grandson.jpg,grandson,petit fils,kleinzoon,Enkel,nipote,nieto,внук,손자,孙子,孫
+people,CategoryPeople.png,2,granddaughter.jpg,granddaughter,petite fille,kleindochter,Enkelin,nipotina,nieta,внучка,손녀,孙女,孫娘
+people,CategoryPeople.png,2,uncle.jpg,uncle,oncle,oom,Onkel,zio,tío,дядя,삼촌,叔叔,叔父
+people,CategoryPeople.png,2,aunt.jpg,aunt,tante,tante,Tante,zia,tía,тетя,이모,阿姨,叔母
+people,CategoryPeople.png,2,nephew.jpg,nephew,neveu,neef,Neffe,nipote,sobrino,племянник,조카,侄子,甥
+people,CategoryPeople.png,2,niece.jpg,niece,nièce,nicht,Nichte,nipote,sobrina,племянница,조카,侄女,姪
+people,CategoryPeople.png,2,cousin.jpg,cousin,cousin,neef,Cousin,cugino,primo,двоюродный брат,사촌,表哥,いとこ
+people,CategoryPeople.png,2,husband.jpg,husband,mari,echtgenoot,Ehemann,marito,marido,муж,남편,丈夫,夫
+people,CategoryPeople.png,2,wife.jpg,wife,épouse,vrouw,Gattin,moglie,esposa,жена,부인,妻子,妻
+people,CategoryPeople.png,2,partner.jpg,partner,partenaire,partner,Partner,partner,pareja,партнер,파트너,伙伴,パートナー
+people,CategoryPeople.png,2,friend.jpg,friend,ami,vriend,Freund,amico,amigo,друг,친구,朋友,友人
+people,CategoryPeople.png,2,enemy.jpg,enemy,ennemi,vijand,Feind,nemico,enemigo,враг,적,敌人,敵
+people,CategoryPeople.png,2,neighbor.jpg,neighbor,voisin,buurman,Nachbar,vicino,vecino,сосед,이웃,邻居,近所の人
+people,CategoryPeople.png,2,colleague.jpg,colleague,collègue,collega,Kollege,collega,colega,коллега,동료,同事,同僚
+people,CategoryPeople.png,2,boss.jpg,boss,chef,baas,Chef,capo,jefe,босс,사장,老板,ボス
+people,CategoryPeople.png,2,employee.jpg,employee,employé,medewerker,Mitarbeiter,dipendente,empleado,сотрудник,직원,员工,従業員
+people,CategoryPeople.png,2,student.jpg,student,étudiant,student,Student,studente,alumno,студент,학생,学生,学生
+people,CategoryPeople.png,2,teacher.jpg,teacher,professeur,docent,Lehrer,insegnante,maestro,учитель,선생님,老师,教師
+people,CategoryPeople.png,2,nurse.jpg,nurse,infirmière,verpleegkundige,Krankenschwester,infermiera,enfermero,медсестра,간호사,护士,看護師
+people,CategoryPeople.png,2,police_officer.jpg,police officer,policier,politieagent,Polizist,ufficiale di polizia,oficial de policia,полицейский,경찰관,警官,警察官
+people,CategoryPeople.png,2,firefighter.jpg,firefighter,pompier,brandweerman,Feuerwehrmann,pompiere,bombero,пожарный,소방관,消防队员,消防士
+people,CategoryPeople.png,2,soldier.jpg,soldier,soldat,soldaat,Soldat,soldato,soldado,солдат,군인,士兵,兵士
+people,CategoryPeople.png,2,artist.jpg,artist,artiste,artiest,Künstler,artista,artista,художник,아티스트,艺术家,アーティスト
+people,CategoryPeople.png,2,musician.jpg,musician,musicien,muzikant,Musiker,musicista,músico,музыкант,음악가,音乐家,ミュージシャン
+people,CategoryPeople.png,2,writer.jpg,writer,écrivain,schrijver,Schriftsteller,scrittore,escritor,писатель,작가,作家,ライター
+people,CategoryPeople.png,2,actor.jpg,actor,acteur,acteur,Schauspieler,attore,actor,актер,배우,演员,俳優
+people,CategoryPeople.png,2,singer.jpg,singer,chanteur,zanger,Sänger,cantante,cantante,певец,가수,歌手,歌手
+people,CategoryPeople.png,2,dancer.jpg,dancer,danseur,danser,Tänzer,ballerino,bailarín,танцор,춤추는 사람,舞蹈家,ダンサー
+people,CategoryPeople.png,2,athlete.jpg,athlete,athlète,atleet,Athlet,atleta,atleta,спортсмен,운동 선수,运动员,アスリート
+people,CategoryPeople.png,2,scientist.jpg,scientist,scientifique,wetenschapper,Wissenschaftler,scienziato,científico,учёный,과학자,科学家,科学者
+sports,CategorySports.png,6,soccer.jpg,soccer,football,voetbal,Fußball,calcio,fútbol,футбольный,축구,足球,サッカー
+sports,CategorySports.png,6,baseball.jpg,baseball,base-ball,honkbal,Baseball,baseball,béisbol,бейсбол,야구,棒球,野球
+sports,CategorySports.png,6,volleyball.jpg,volleyball,volley-ball,volleybal,Volleyball,pallavolo,voleibol,волейбол,배구,排球,バレーボール
+sports,CategorySports.png,6,rugby.jpg,rugby,rugby,rugby,Rugby,rugby,rugby,регби,럭비,橄榄球,ラグビー
+sports,CategorySports.png,6,cricket.jpg,cricket,cricket,krekel,Kricket,cricket,cricket,крикет,크리켓,蟋蟀,クリケット
+sports,CategorySports.png,6,hockey.jpg,hockey,hockey,hockey,Eishockey,hockey,hockey,хоккей,하키,曲棍球,ホッケー
+sports,CategorySports.png,6,ice_hockey.jpg,ice hockey,hockey sur glace,ijshockey,Eishockey,hockey su ghiaccio,hockey sobre hielo,хоккей с шайбой,아이스 하키,冰球,アイスホッケー
+sports,CategorySports.png,6,table_tennis.jpg,table tennis,tennis de table,tafeltennis,Tischtennis,ping-pong,tenis de mesa,настольный теннис,탁구,乒乓球,卓球
+sports,CategorySports.png,6,boxing.jpg,boxing,boxe,boksen,Boxen,boxe,boxeo,бокс,권투,拳击,ボクシング
+sports,CategorySports.png,6,wrestling.jpg,wrestling,lutte,worstelen,Ringen,lotta,lucha,борьба,레슬링,摔角,レスリング
+sports,CategorySports.png,6,martial_arts.jpg,martial arts,arts martiaux,vechtsporten,Kampfkunst,arti marziali,artes marciales,боевые искусства,무술,武术,武道
+sports,CategorySports.png,6,karate.jpg,karate,karaté,karate,Karate,karatè,kárate,каратэ,카라테,空手道,空手
+sports,CategorySports.png,6,judo.jpg,judo,judo,judo,Judo,judo,judo,дзюдо,유도,柔道,柔道
+sports,CategorySports.png,6,taekwondo.jpg,taekwondo,taekwondo,taekwondo,Taekwondo,taekwondo,taekwondo,тхэквондо,태권도,跆拳道,テコンドー
+sports,CategorySports.png,6,diving.jpg,diving,plongée,duiken,Tauchen,immersione,buceo,дайвинг,다이빙,潜水,ダイビング
+sports,CategorySports.png,6,surfing.jpg,surfing,surf,surfen,Surfen,surf,surf,серфинг,서핑,冲浪,サーフィン
+sports,CategorySports.png,6,sailing.jpg,sailing,voile,zeilen,Segeln,navigazione,navegación,парусный спорт,범주,航行,セーリング
+sports,CategorySports.png,6,rowing.jpg,rowing,aviron,roeien,Rudern,canottaggio,remo,гребля,로잉,划船,漕ぐ
+sports,CategorySports.png,6,running.jpg,running,en cours d'exécution,rennen,läuft,corsa,correr,бег,달리기,跑步,走っている
+sports,CategorySports.png,6,marathon.jpg,marathon,marathon,marathon,Marathon,maratona,maratón,марафон,마라톤,马拉松,マラソン
+sports,CategorySports.png,6,sprinting.jpg,sprinting,sprinter,sprinten,Sprinten,sprint,corriendo,спринт,전력 질주,短跑,全力疾走
+sports,CategorySports.png,6,jumping.jpg,jumping,sauter,springen,Springen,saltando,saltando,прыжки,점프,跳跃,ジャンプする
+sports,CategorySports.png,6,throwing.jpg,throwing,lancement,gooien,werfen,lancio,lanzamiento,бросание,던지기,投掷,投げる
+sports,CategorySports.png,6,weightlifting.jpg,weightlifting,haltérophilie,gewichtheffen,Gewichtheben,sollevamento pesi,levantamiento de pesas,тяжелая атлетика,역도,举重,重量挙げ
+sports,CategorySports.png,6,gymnastics.jpg,gymnastics,gymnastique,gymnastiek,Gymnastik,ginnastica,gimnasia,гимнастика,체조,体操,体操
+sports,CategorySports.png,6,snowboarding.jpg,snowboarding,faire du snowboard,snowboarden,Snowboarden,snowboard,snowboard,сноуборд,스노보드,单板滑雪,スノーボード
+sports,CategorySports.png,6,skating.jpg,skating,patinage,het schaatsen,Skaten,pattinaggio,patinaje,катание на коньках,스케이팅,溜冰,スケート
+sports,CategorySports.png,6,ice_skating.jpg,ice skating,patinage sur glace,schaatsen,Eislaufen,Pattinaggio sul ghiaccio,patinaje sobre hielo,катание на коньках,아이스 스케이팅,溜冰,アイススケート
+sports,CategorySports.png,6,roller_skating.jpg,roller skating,patinage à roulettes,rolschaatsen,Rollschuhlaufen,pattinaggio a rotelle,patinaje sobre ruedas,катание на роликах,롤러 스케이트,轮滑,ローラースケート
+sports,CategorySports.png,6,skateboarding.jpg,skateboarding,faire de la planche à roulettes,skateboarden,Skateboarden,skateboard,patinar,скейтбординг,스케이트보드,滑板,スケートボード
+sports,CategorySports.png,6,archery.jpg,archery,tir à l'arc,boogschieten,Bogenschießen,tiro con l'arco,tiro al arco,стрельба из лука,양궁,射箭,アーチェリー
+sports,CategorySports.png,6,fencing.jpg,fencing,escrime,hekwerk,Fechten,scherma,esgrima,фехтование,펜싱,击剑,フェンシング
+sports,CategorySports.png,6,equestrian.jpg,equestrian,équestre,ruiter,Reiter,equestre,ecuestre,конный спорт,승마자,马术的,馬術
+sports,CategorySports.png,6,horse_racing.jpg,horse racing,course de chevaux,paardenrennen,Pferderennen,corse di cavalli,carreras de caballos,скачки,경마,赛马,競馬
+sports,CategorySports.png,6,motor_racing.jpg,motor racing,course automobile,motorracen,Rennsport,corse automobilistiche,automovilismo,автогонки,자동차 경주,赛车,自動車レース
+sports,CategorySports.png,6,billiards.jpg,billiards,billard,biljart,Billard,biliardo,billar,бильярд,당구,台球,ビリヤード
+sports,CategorySports.png,6,snooker.jpg,snooker,billard,snookeren,Snooker,biliardo,snooker,снукер,스누커,斯诺克,スヌーカー
+sports,CategorySports.png,6,darts.jpg,darts,fléchettes,darts,Darts,freccette,dardos,дартс,다트,飞镖,ダーツ
+sports,CategorySports.png,6,bowling.jpg,bowling,bowling,bowling,Bowling,bowling,bolos,боулинг,볼링,保龄球,ボーリング
+sports,CategorySports.png,6,chess.jpg,chess,échecs,schaken,Schach,scacchi,ajedrez,шахматы,체스,棋,チェス
+sports,CategorySports.png,6,poker.jpg,poker,poker,poker,Poker,poker,póker,покер,포커,扑克,ポーカー
+transport,CategoryTransport.png,6,taxi.jpg,taxi,Taxi,taxi,Taxi,Taxi,Taxi,такси,택시,出租车,タクシー
+transport,CategoryTransport.png,6,bus.jpg,bus,bus,bus,Bus,autobus,autobús,автобус,버스,公共汽车,バス
+transport,CategoryTransport.png,6,coach.jpg,coach,entraîneur,coach,Trainer,allenatore,entrenador,тренер,코치,教练,コーチ
+transport,CategoryTransport.png,6,minibus.jpg,minibus,minibus,minibus,Kleinbus,minibus,microbús,микроавтобус,소형 버스,小巴,ミニバス
+transport,CategoryTransport.png,6,van.jpg,van,van,busje,Transporter,furgone,furgoneta,фургон,봉고차,货车,バン
+transport,CategoryTransport.png,6,truck.jpg,truck,camion,vrachtwagen,LKW,camion,camión,грузовик,트럭,卡车,トラック
+transport,CategoryTransport.png,6,lorry.jpg,lorry,camion,vrachtwagen,LKW,camion,camión,грузовик,사륜 짐마차,货车,トラック
+transport,CategoryTransport.png,6,motorcycle.jpg,motorcycle,moto,motorfiets,Motorrad,motociclo,motocicleta,мотоцикл,오토바이,摩托车,オートバイ
+transport,CategoryTransport.png,6,scooter.jpg,scooter,scooter,scooter,Roller,scooter,scooter,скутер,스쿠터,小型摩托车,スクーター
+transport,CategoryTransport.png,6,moped.jpg,moped,vélomoteur,bromfiets,Moped,ciclomotore,ciclomotor,мопед,모터 달린 자전거,轻便摩托车,原付
+transport,CategoryTransport.png,6,tricycle.jpg,tricycle,tricycle,driewieler,Dreirad,triciclo,triciclo,трехколесный велосипед,세발자전거,三轮车,三輪車
+transport,CategoryTransport.png,6,unicycle.jpg,unicycle,monocycle,eenwieler,Einrad,monociclo,monociclo,одноколесный велосипед,외발자전거,独轮车,一輪車
+transport,CategoryTransport.png,6,skateboard.jpg,skateboard,skateboard,skateboard,Skateboard,skateboard,monopatín,скейтборд,스케이트보드,滑板,スケートボード
+transport,CategoryTransport.png,6,roller_skates.jpg,roller skates,patins à roulettes,rolschaatsen,Rollschuhe,pattini a rotelle,patines,роликовые коньки,롤러 스케이트,溜冰鞋,ローラースケート
+transport,CategoryTransport.png,6,subway.jpg,subway,métro,metro,U-Bahn,metropolitana,metro,метро,지하철,地铁,地下鉄
+transport,CategoryTransport.png,6,metro.jpg,metro,métro,metro,Metro,metropolitana,metro,метро,지하철,地铁,地下鉄
+transport,CategoryTransport.png,6,underground.jpg,underground,souterrain,ondergronds,unterirdisch,metropolitana,subterráneo,под землей,지하철,地下,地下
+transport,CategoryTransport.png,6,tram.jpg,tram,tram,tram,Tram,tram,tranvía,трамвай,시가 전차,电车,トラム
+transport,CategoryTransport.png,6,trolleybus.jpg,trolleybus,trolleybus,trolleybus,Obus,filobus,trolebús,троллейбус,무궤도 전차,电车,トロリーバス
+transport,CategoryTransport.png,6,monorail.jpg,monorail,monorail,monorail,Einschienenbahn,monorotaia,monocarril,монорельс,모노레일,单轨铁路,モノレール
+transport,CategoryTransport.png,6,cable_car.jpg,cable car,téléphérique,kabelbaan,Seilbahn,funivia,teleférico,канатная дорога,케이블 카,缆车,ケーブルカー
+transport,CategoryTransport.png,6,airplane.jpg,airplane,avion,vliegtuig,Flugzeug,aereo,avión,самолет,비행기,飞机,飛行機
+transport,CategoryTransport.png,6,helicopter.jpg,helicopter,hélicoptère,helikopter,Hubschrauber,elicottero,helicóptero,вертолет,헬리콥터,直升机,ヘリコプター
+transport,CategoryTransport.png,6,glider.jpg,glider,planeur,zweefvliegtuig,Segelflugzeug,aliante,planeador,планер,글라이더,滑翔机,グライダー
+transport,CategoryTransport.png,6,hot_air_balloon.jpg,hot air balloon,montgolfière,hete luchtballon,Heißluftballon,mongolfiera,globo aerostático,воздушный шар,열기구,热气球,熱気球
+transport,CategoryTransport.png,6,blimp.jpg,blimp,dirigeable,luchtballon,Luftschiff,dirigibile,dirigible,дирижабль,소형 연식 비행선,飞艇,飛行船
+transport,CategoryTransport.png,6,spaceship.jpg,spaceship,vaisseau spatial,ruimteschip,Raumschiff,astronave,astronave,космический корабль,우주선,飞船,宇宙船
+transport,CategoryTransport.png,6,rocket.jpg,rocket,fusée,raket,Rakete,razzo,cohete,ракета,로켓,火箭,ロケット
+transport,CategoryTransport.png,6,satellite.jpg,satellite,satellite,satelliet,Satellit,satellitare,satélite,спутник,위성,卫星,衛星
+transport,CategoryTransport.png,6,ship.jpg,ship,bateau,schip,Schiff,nave,barco,корабль,배,船,船
+transport,CategoryTransport.png,6,ferry.jpg,ferry,traversier,veerboot,Fähre,traghetto,transportar,перевозить,나룻배,渡船,フェリー
+transport,CategoryTransport.png,6,yacht.jpg,yacht,yacht,jacht,Yacht,yacht,yate,яхта,요트,游艇,ヨット
+transport,CategoryTransport.png,6,speedboat.jpg,speedboat,vedette,speedboot,Schnellboot,motoscafo,lancha rápida,быстроходный катер,쾌속정,快艇,スピードボート
+transport,CategoryTransport.png,6,sailboat.jpg,sailboat,voilier,zeilboot,Segelboot,barca a vela,velero,парусник,요트,帆船,ヨット
+transport,CategoryTransport.png,6,canoe.jpg,canoe,canoë,kano,Kanu,canoa,canoa,каноэ,카누,独木舟,カヌー
+transport,CategoryTransport.png,6,kayak.jpg,kayak,kayak,kajak,Kajak,kayak,kayac,каяк,카약,皮艇,カヤック
+transport,CategoryTransport.png,6,raft.jpg,raft,radeau,vlot,Floß,zattera,balsa,плот,뗏목,筏,ラフト
+transport,CategoryTransport.png,6,submarine.jpg,submarine,sous-marin,onderzeeër,U-Boot,sottomarino,submarino,подводная лодка,잠수함,潜艇,潜水艦
+transport,CategoryTransport.png,6,hovercraft.jpg,hovercraft,aéroglisseur,hovercraft,Hovercraft,hovercraft,aerodeslizador,судно на воздушной подушке,호버크라프트,气垫船,ホバークラフト
+transport,CategoryTransport.png,6,tractor.jpg,tractor,tracteur,tractor,Traktor,trattore,tractor,трактор,트랙터,拖拉机,トラクター
+transport,CategoryTransport.png,6,bulldozer.jpg,bulldozer,bulldozer,bulldozer,Bulldozer,bulldozer,excavadora,бульдозер,불도저,推土机,ブルドーザー
+transport,CategoryTransport.png,6,excavator.jpg,excavator,excavatrice,graafmachine,Bagger,escavatore,excavador,экскаватор,굴착기,挖掘机,掘削機
+transport,CategoryTransport.png,6,crane.jpg,crane,grue,kraan,Kran,gru,grúa,кран,기중기,起重机,クレーン
+transport,CategoryTransport.png,6,forklift.jpg,forklift,chariot élévateur,vorkheftruck,Gabelstapler,carrello elevatore,máquina elevadora,вилочный погрузчик,지게차,叉车,フォークリフト
+transport,CategoryTransport.png,6,ambulance.jpg,ambulance,ambulance,ambulance,Krankenwagen,ambulanza,ambulancia,машина скорой помощи,구급차,救护车,救急車
+Nature & Environment,CategoryNature.png,8,sun.jpg,sun,soleil,zon,Sonne,sole,sol,солнце,해,太阳,太陽
+Nature & Environment,CategoryNature.png,8,planet.jpg,planet,planète,planeet,Planet,pianeta,planeta,планета,행성,行星,惑星
+Nature & Environment,CategoryNature.png,8,sky.jpg,sky,ciel,lucht,Himmel,cielo,cielo,небо,하늘,天空,空
+Nature & Environment,CategoryNature.png,8,cloud.jpg,cloud,nuage,wolk,Wolke,nuvola,nube,облако,구름,云,雲
+Nature & Environment,CategoryNature.png,8,rain.jpg,rain,pluie,regen,Regen,piovere,lluvia,дождь,비,雨,雨
+Nature & Environment,CategoryNature.png,8,snow.jpg,snow,neige,sneeuw,Schnee,nevicare,nieve,снег,눈,雪,雪
+Nature & Environment,CategoryNature.png,8,wind.jpg,wind,vent,wind,Wind,vento,viento,ветер,바람,风,風
+Nature & Environment,CategoryNature.png,8,storm.jpg,storm,tempête,storm,Sturm,tempesta,tormenta,шторм,폭풍,风暴,嵐
+Nature & Environment,CategoryNature.png,8,lightning.jpg,lightning,foudre,bliksem,Blitz,fulmine,iluminación,молния,번개,闪电,稲妻
+Nature & Environment,CategoryNature.png,8,thunder.jpg,thunder,tonnerre,donder,Donner,tuono,trueno,гром,우뢰,雷,雷
+Nature & Environment,CategoryNature.png,8,fog.jpg,fog,brouillard,mist,Nebel,nebbia,niebla,туман,안개,多雾路段,霧
+Nature & Environment,CategoryNature.png,8,water.jpg,water,eau,water,Wasser,acqua,agua,вода,물,水,水
+Nature & Environment,CategoryNature.png,8,ocean.jpg,ocean,océan,oceaan,Ozean,oceano,océano,океан,대양,海洋,海
+Nature & Environment,CategoryNature.png,8,stream.jpg,stream,flux,stroom,Strom,flusso,arroyo,транслировать,개울,溪流,ストリーム
+Nature & Environment,CategoryNature.png,8,waterfall.jpg,waterfall,cascade,waterval,Wasserfall,cascata,cascada,водопад,폭포,瀑布,滝
+Nature & Environment,CategoryNature.png,8,sand.jpg,sand,sable,zand,Sand,sabbia,arena,песок,모래,沙,砂
+Nature & Environment,CategoryNature.png,8,island.jpg,island,île,eiland,Insel,isola,isla,остров,섬,岛,島
+Nature & Environment,CategoryNature.png,8,mountain.jpg,mountain,montagne,berg,Berg,montagna,montaña,гора,산,山,山
+Nature & Environment,CategoryNature.png,8,hill.jpg,hill,colline,heuvel,hügel,collina,colina,холм,언덕,爬坡道,丘
+Nature & Environment,CategoryNature.png,8,valley.jpg,valley,vallée,vallei,Schlucht,valle,valle,долина,골짜기,谷,谷
+Nature & Environment,CategoryNature.png,8,cave.jpg,cave,grotte,grot,Höhle,grotta,cueva,пещера,동굴,洞穴,洞窟
+Nature & Environment,CategoryNature.png,8,rock.jpg,rock,rocher,steen,Felsen,roccia,roca,камень,바위,岩石,ロック
+Nature & Environment,CategoryNature.png,8,stone.jpg,stone,pierre,steen,Stein,calcolo,piedra,камень,결석,石头,石
+Nature & Environment,CategoryNature.png,8,soil.jpg,soil,sol,bodem,Boden,suolo,suelo,земля,토양,土壤,土壌
+Nature & Environment,CategoryNature.png,8,earth.jpg,earth,Terre,aarde,Erde,terra,tierra,земля,지구,地球,地球
+Nature & Environment,CategoryNature.png,8,ground.jpg,ground,sol,grond,Boden,terra,suelo,земля,지면,地面,地面
+Nature & Environment,CategoryNature.png,8,flower.jpg,flower,fleur,bloem,Blume,fiore,flor,цветок,꽃,花,花
+Nature & Environment,CategoryNature.png,8,leaf.jpg,leaf,feuille,blad,Blatt,foglia,hoja,лист,잎,叶子,葉
+Nature & Environment,CategoryNature.png,8,branch.jpg,branch,bifurquer,tak,Zweig,ramo,rama,ветвь,나뭇가지,分支,支店
+Nature & Environment,CategoryNature.png,8,root.jpg,root,racine,wortel,Wurzel,radice,raíz,корень,뿌리,根,根
+Nature & Environment,CategoryNature.png,8,forest.jpg,forest,forêt,woud,Wald,foresta,bosque,лес,숲,森林,森
+Nature & Environment,CategoryNature.png,8,wood.jpg,wood,bois,hout,Holz,legna,madera,древесина,목재,木头,木材
+Nature & Environment,CategoryNature.png,8,jungle.jpg,jungle,jungle,oerwoud,Dschungel,giungla,selva,джунгли,밀림,丛林,ジャングル
+Nature & Environment,CategoryNature.png,8,desert.jpg,desert,désert,woestijn,Wüste,deserto,desierto,пустыня,사막,沙漠,砂漠
+Nature & Environment,CategoryNature.png,8,spring.jpg,spring,printemps,lente,Frühling,primavera,primavera,весна,봄,春天,春
+Nature & Environment,CategoryNature.png,8,summer.jpg,summer,été,zomer,Sommer,estate,verano,лето,여름,夏天,夏
+Nature & Environment,CategoryNature.png,8,autumn.jpg,autumn,automne,herfst,Herbst,autunno,otoño,осень,가을,秋天,秋
+Nature & Environment,CategoryNature.png,8,winter.jpg,winter,hiver,winter,Winter,inverno,invierno,зима,겨울,冬天,冬
+Nature & Environment,CategoryNature.png,8,weather.jpg,weather,météo,weer,Wetter,tempo atmosferico,clima,погода,날씨,天气,天気
+Nature & Environment,CategoryNature.png,8,climate.jpg,climate,climat,klimaat,Klima,clima,clima,климат,기후,气候,気候
+Professions,CategoryProfessions.png,8,accountant.jpg,accountant,comptable,accountant,Buchhalter,contabile,contador,бухгалтер,회계사,会计,会計士
+Professions,CategoryProfessions.png,8,actress.jpg,actress,actrice,actrice,Darstellerin,attrice,actriz,актриса,여배우,演员,女優
+Professions,CategoryProfessions.png,8,architect.jpg,architect,architecte,architect,Architekt,architetto,arquitecto,архитектор,건축가,建筑师,建築家
+Professions,CategoryProfessions.png,8,astronaut.jpg,astronaut,astronaute,astronaut,Astronaut,astronauta,astronauta,космонавт,우주 비행사,宇航员,宇宙飛行士
+Professions,CategoryProfessions.png,8,baker.jpg,baker,boulanger,bakker,Bäcker,panettiere,panadero,пекарь,빵 굽는 사람,贝克,パン屋
+Professions,CategoryProfessions.png,8,banker.jpg,banker,banquier,bankier,Banker,banchiere,banquero,банкир,은행가,银行家,バンカー
+Professions,CategoryProfessions.png,8,barber.jpg,barber,coiffeur,kapper,Barbier,barbiere,barbero,парикмахер,이발사,理发师,理容師
+Professions,CategoryProfessions.png,8,bartender.jpg,bartender,barman,barman,Barmann,barista,barman,бармен,바텐더,调酒师,バーテンダー
+Professions,CategoryProfessions.png,8,builder.jpg,builder,constructeur,bouwer,Baumeister,costruttore,constructor,строитель,건축업자,建设者,ビルダー
+Professions,CategoryProfessions.png,8,butcher.jpg,butcher,Boucher,slager,Metzger,macellaio,carnicero,мясник,푸주한,屠夫,肉屋
+Professions,CategoryProfessions.png,8,carpenter.jpg,carpenter,menuisier,timmerman,Tischler,falegname,carpintero,плотник,목수,木匠,大工
+Professions,CategoryProfessions.png,8,cashier.jpg,cashier,caissier,Kassa,Kassierer,cassiere,cajero,касса,출납원,出纳员,キャッシャー
+Professions,CategoryProfessions.png,8,chef.jpg,chef,cuisinier,chef,Küchenchef,cuoco,cocinero,повар,요리사,厨师,シェフ
+Professions,CategoryProfessions.png,8,cleaner.jpg,cleaner,nettoyeur,schoner,Reiniger,più pulito,limpiador,чище,청소기,清洁工,クリーナー
+Professions,CategoryProfessions.png,8,clerk.jpg,clerk,greffier,klerk,Sachbearbeiter,impiegato,oficinista,клерк,사무원,职员,店員
+Professions,CategoryProfessions.png,8,dentist.jpg,dentist,dentiste,tandarts,Zahnarzt,dentista,dentista,дантист,치과 의사,牙医,歯医者
+Professions,CategoryProfessions.png,8,designer.jpg,designer,designer,ontwerper,Designer,designer,diseñador,дизайнер,디자이너,设计师,デザイナー
+Professions,CategoryProfessions.png,8,driver.jpg,driver,conducteur,bestuurder,Treiber,autista,conductor,водитель,운전사,司机,ドライバ
+Professions,CategoryProfessions.png,8,electrician.jpg,electrician,électricien,elektricien,Elektriker,elettricista,electricista,электрик,전공,电工,電気技師
+Professions,CategoryProfessions.png,8,engineer.jpg,engineer,ingénieur,ingenieur,Ingenieur,ingegnere,ingeniero,инженер,엔지니어,工程师,エンジニア
+Professions,CategoryProfessions.png,8,farmer.jpg,farmer,fermier,boer,Bauer,contadino,agricultor,фермер,농장주,农民,農家
+Professions,CategoryProfessions.png,8,flight_attendant.jpg,flight attendant,hôtesse de l'air,stewardess,Flugbegleiterin,assistente di volo,auxiliar de vuelo,бортпроводник,승무원,空姐,客室乗務員
+Professions,CategoryProfessions.png,8,florist.jpg,florist,fleuriste,bloemist,Florist,fiorista,florista,флорист,꽃집,花店,花屋
+Professions,CategoryProfessions.png,8,guard.jpg,guard,garde,bewaker,bewachen,guardia,guardia,сторожить,경비원,警卫,ガード
+Professions,CategoryProfessions.png,8,hairdresser.jpg,hairdresser,coiffeur,kapper,Friseur,parrucchiere,peluquero,парикмахер,이발사,理发师,美容師
+Professions,CategoryProfessions.png,8,journalist.jpg,journalist,journaliste,journalist,Journalist,giornalista,periodista,журналист,기자,记者,ジャーナリスト
+Professions,CategoryProfessions.png,8,judge.jpg,judge,juge,rechter,Richter,giudice,juez,судить,판사,法官,裁判官
+Professions,CategoryProfessions.png,8,lawyer.jpg,lawyer,avocat,advocaat,Rechtsanwalt,avvocato,abogado,адвокат,변호사,律师,弁護士
+Professions,CategoryProfessions.png,8,librarian.jpg,librarian,bibliothécaire,bibliothecaris,Bibliothekar,bibliotecario,bibliotecario,библиотекарь,사서,图书管理员,図書館員
+Professions,CategoryProfessions.png,8,mechanic.jpg,mechanic,mécanicien,monteur,Mechaniker,meccanico,mecánico,механик,정비공,机械,メカニック
+Professions,CategoryProfessions.png,8,painter.jpg,painter,peintre,schilder,Maler,pittore,pintor,художник,화가,画家,画家
+Professions,CategoryProfessions.png,8,pharmacist.jpg,pharmacist,pharmacien,apotheker,Apotheker,farmacista,farmacéutico,фармацевт,제약사,药剂师,薬剤師
+Professions,CategoryProfessions.png,8,photographer.jpg,photographer,photographe,fotograaf,Fotograf,fotografo,fotógrafo,фотограф,사진작가,摄影师,写真家
+Professions,CategoryProfessions.png,8,pilot.jpg,pilot,pilote,piloot,Pilot,pilota,piloto,пилот,조종사,飞行员,パイロット
+Professions,CategoryProfessions.png,8,plumber.jpg,plumber,plombier,loodgieter,Klempner,idraulico,plomero,водопроводчик,배관공,水管工,配管工
+Professions,CategoryProfessions.png,8,politician.jpg,politician,politicien,politicus,Politiker,politico,político,политик,정치가,政治家,政治家
+Professions,CategoryProfessions.png,8,programmer.jpg,programmer,programmeur,programmeur,Programmierer,programmatore,programador,программист,프로그램 제작자,程序员,プログラマー
+Professions,CategoryProfessions.png,8,receptionist.jpg,receptionist,réceptionniste,receptioniste,Empfangsdame,receptionist,recepcionista,регистратор,접수원,接待员,受付
+Professions,CategoryProfessions.png,8,veterinarian.jpg,veterinarian,vétérinaire,dierenarts,Tierarzt,veterinario,veterinario,ветеринар,수의사,兽医,獣医
+Professions,CategoryProfessions.png,8,waiter.jpg,waiter,serveur,bediende,Kellner,cameriere,mesero,официант,웨이터,服务员,ウェイター
+Clothing & Accessories,CategoryClothing.png,8,shirt.jpg,shirt,chemise,shirt,Hemd,camicia,camisa,рубашка,셔츠,衬衫,シャツ
+Clothing & Accessories,CategoryClothing.png,8,t-shirt.jpg,t-shirt,T-shirt,T-shirt,T-Shirt,maglietta,camiseta,футболка,티셔츠,T恤,Tシャツ
+Clothing & Accessories,CategoryClothing.png,8,blouse.jpg,blouse,blouse,blouse,Bluse,camicetta,blusa,блуза,블라우스,女式衬衫,ブラウス
+Clothing & Accessories,CategoryClothing.png,8,sweater.jpg,sweater,pull-over,trui,Pullover,maglione,suéter,свитер,스웨터,毛衣,セーター
+Clothing & Accessories,CategoryClothing.png,8,jumper.jpg,jumper,cavalier,trui,Jumper,maglione,saltador,джемпер,점퍼,毛衣,ジャンパー
+Clothing & Accessories,CategoryClothing.png,8,cardigan.jpg,cardigan,cardigan,vest,Strickjacke,cardigan,cárdigan,кардиган,카디건,开襟衫,カーディガン
+Clothing & Accessories,CategoryClothing.png,8,hoodie.jpg,hoodie,sweatshirt à capuche,capuchon,Kapuzenpullover,felpa,sudadera,толстовка с капюшоном,까마귀,连帽衫,パーカー
+Clothing & Accessories,CategoryClothing.png,8,raincoat.jpg,raincoat,imperméable,regenjas,Regenmantel,impermeabile,impermeable,плащ,비옷,雨衣,レインコート
+Clothing & Accessories,CategoryClothing.png,8,suit.jpg,suit,costume,pak,Anzug,abito,traje,подходить,정장,套装,スーツ
+Clothing & Accessories,CategoryClothing.png,8,vest.jpg,vest,gilet,vest,Weste,maglia,chaleco,жилет,조끼,背心,ベスト
+Clothing & Accessories,CategoryClothing.png,8,tie.jpg,tie,cravate,stropdas,binden,cravatta,atar,галстук,묶다,领带,ネクタイ
+Clothing & Accessories,CategoryClothing.png,8,bowtie.jpg,bowtie,noeud papillon,vlinderdas,Fliege,Papillon,corbata de moño,галстук-бабочка,나비넥타이,领结,ちょうネクタイ
+Clothing & Accessories,CategoryClothing.png,8,skirt.jpg,skirt,jupe,rok,Rock,gonna,falda,юбка,치마,裙子,スカート
+Clothing & Accessories,CategoryClothing.png,8,pants.jpg,pants,pantalon,broek,Hose,pantaloni,pantalones,брюки,바지,裤子,パンツ
+Clothing & Accessories,CategoryClothing.png,8,jeans.jpg,jeans,jeans,jeans,Jeans,jeans,vaqueros,джинсы,청바지,牛仔裤,ジーンズ
+Clothing & Accessories,CategoryClothing.png,8,shorts.jpg,shorts,shorts,shorts,Shorts,pantaloncini,bermudas,шорты,반바지,短裤,ショートパンツ
+Clothing & Accessories,CategoryClothing.png,8,panties.jpg,panties,culotte,slipje,Höschen,mutandine,bragas,трусики,팬티,内裤,パンティー
+Clothing & Accessories,CategoryClothing.png,8,bra.jpg,bra,soutien-gorge,beha,BH,reggiseno,sostén,бюстгальтер,브래지어,胸罩,ブラジャー
+Clothing & Accessories,CategoryClothing.png,8,stockings.jpg,stockings,bas,kousen,Strümpfe,calze,medias,чулки,스타킹,丝袜,ストッキング
+Clothing & Accessories,CategoryClothing.png,8,tights.jpg,tights,collants,panty,Strumpfhosen,collant,medias,колготки,타이츠,紧身衣,タイツ
+Clothing & Accessories,CategoryClothing.png,8,boots.jpg,boots,bottes,laarzen,Stiefel,stivali,botas,сапоги,부츠,靴子,ブーツ
+Clothing & Accessories,CategoryClothing.png,8,sneakers.jpg,sneakers,baskets,sportschoenen,Turnschuhe,scarpe da ginnastica,zapatillas,кроссовки,운동화,运动鞋,スニーカー
+Clothing & Accessories,CategoryClothing.png,8,trainers.jpg,trainers,formateurs,trainers,Trainer,formatori,zapatos de deporte,тренеры,트레이너,培训师,トレーナー
+Clothing & Accessories,CategoryClothing.png,8,sandals.jpg,sandals,sandales,sandalen,Sandalen,sandali,sandalias,сандалии,샌들,凉鞋,サンダル
+Clothing & Accessories,CategoryClothing.png,8,slippers.jpg,slippers,pantoufles,slippers,Hausschuhe,pantofole,zapatillas,тапочки,슬리퍼,拖鞋,スリッパ
+Clothing & Accessories,CategoryClothing.png,8,heels.jpg,heels,talons,hakken,Absätze,tacchi,tacones,каблуки,뒷굽,高跟鞋,かかと
+Clothing & Accessories,CategoryClothing.png,8,cap.jpg,cap,capuchon,dop,Kappe,berretto,tapa,кепка,캡,帽,キャップ
+Clothing & Accessories,CategoryClothing.png,8,beanie.jpg,beanie,bonnet,muts,Mütze,berretto,gorro,шапочка,비니,毛线帽,ビーニー帽
+Clothing & Accessories,CategoryClothing.png,8,scarf.jpg,scarf,foulard,sjaal,Schal,sciarpa,bufanda,шарф,스카프,围巾,スカーフ
+Clothing & Accessories,CategoryClothing.png,8,gloves.jpg,gloves,gants,handschoenen,Handschuhe,guanti,guantes,перчатки,장갑,手套,手袋
+Clothing & Accessories,CategoryClothing.png,8,mittens.jpg,mittens,mitaines,wanten,Fäustlinge,guanti,guantes de boxeo,рукавицы,장갑,连指手套,ミトン
+Clothing & Accessories,CategoryClothing.png,8,belt.jpg,belt,ceinture,riem,Gürtel,cintura,cinturón,пояс,벨트,腰带,ベルト
+Technology & Electronics,CategoryTech.png,8,tablet.jpg,tablet,comprimé,tablet,Tablette,tavoletta,tableta,планшет,태블릿,药片,錠剤
+Technology & Electronics,CategoryTech.png,8,smartphone.jpg,smartphone,téléphone intelligent,smartphone,Smartphone,smartphone,teléfono inteligente,смартфон,스마트폰,手机,スマートフォン
+Technology & Electronics,CategoryTech.png,8,cell_phone.jpg,cell phone,téléphone portable,mobiele telefoon,Handy,cellulare,Teléfono móvil,сотовый телефон,휴대폰,手机,携帯電話
+Technology & Electronics,CategoryTech.png,8,telephone.jpg,telephone,téléphone,telefoon,Telefon,telefono,teléfono,телефон,전화,电话,電話
+Technology & Electronics,CategoryTech.png,8,smartwatch.jpg,smartwatch,montre intelligente,smartwatch,Smartwatch,orologio intelligente,reloj inteligente,умные часы,스마트워치,智能手表,スマートウォッチ
+Technology & Electronics,CategoryTech.png,8,stereo.jpg,stereo,stéréo,stereo,Stereo,stereo,estéreo,стерео,스테레오 재생,立体声,ステレオ
+Technology & Electronics,CategoryTech.png,8,speaker.jpg,speaker,conférencier,spreker,Lautsprecher,altoparlante,vocero,оратор,스피커,扬声器,スピーカー
+Technology & Electronics,CategoryTech.png,8,headphones.jpg,headphones,écouteurs,hoofdtelefoon,Kopfhörer,cuffie,auriculares,наушники,헤드폰,耳机,ヘッドフォン
+Technology & Electronics,CategoryTech.png,8,earbuds.jpg,earbuds,écouteurs,oordopjes,Ohrhörer,auricolari,auriculares,наушники,이어폰,耳塞,イヤホン
+Technology & Electronics,CategoryTech.png,8,microphone.jpg,microphone,microphone,microfoon,Mikrofon,microfono,micrófono,микрофон,마이크로폰,麦克风,マイクロフォン
+Technology & Electronics,CategoryTech.png,8,video_camera.jpg,video camera,caméra vidéo,videocamera,Videokamera,videocamera,cámara de video,видеокамера,비디오 카메라,摄像机,ビデオカメラ
+Technology & Electronics,CategoryTech.png,8,webcam.jpg,webcam,webcam,webcam,Webcam,webcam,cámara web,Веб-камера,웹캠,摄像头,ウェブカメラ
+Technology & Electronics,CategoryTech.png,8,projector.jpg,projector,projecteur,projector,Projektor,proiettore,proyector,проектор,영사기,投影仪,プロジェクター
+Technology & Electronics,CategoryTech.png,8,printer.jpg,printer,imprimante,printer,Drucker,stampante,impresora,принтер,인쇄기,打印机,プリンター
+Technology & Electronics,CategoryTech.png,8,scanner.jpg,scanner,scanner,scanner,Scanner,scanner,escáner,сканер,스캐너,扫描器,スキャナー
+Technology & Electronics,CategoryTech.png,8,photocopier.jpg,photocopier,photocopieur,kopieerapparaat,Kopiergerät,fotocopiatrice,fotocopiadora,копировальный аппарат,복사기,复印机,コピー機
+Technology & Electronics,CategoryTech.png,8,fax_machine.jpg,fax machine,télécopieur,faxapparaat,Faxgerät,fax,máquina de fax,факс,팩스기,传真机,ファックス機
+Technology & Electronics,CategoryTech.png,8,keyboard.jpg,keyboard,clavier,toetsenbord,Tastatur,tastiera,teclado,клавиатура,건반,键盘,キーボード
+Technology & Electronics,CategoryTech.png,8,monitor.jpg,monitor,moniteur,monitor,Monitor,monitorare,monitor,монитор,감시 장치,监视器,モニター
+Technology & Electronics,CategoryTech.png,8,screen.jpg,screen,écran,scherm,Bildschirm,schermo,pantalla,экран,화면,屏幕,画面
+Technology & Electronics,CategoryTech.png,8,router.jpg,router,routeur,router,Router,router,enrutador,маршрутизатор,라우터,路由器,ルーター
+Technology & Electronics,CategoryTech.png,8,modem.jpg,modem,modem,modem,Modem,modem,módem,модем,모뎀,调制解调器,モデム
+Technology & Electronics,CategoryTech.png,8,hard_drive.jpg,hard drive,disque dur,harde schijf,Festplatte,disco rigido,disco duro,жесткий диск,하드 드라이브,硬盘,ハードドライブ
+Technology & Electronics,CategoryTech.png,8,flash_drive.jpg,flash drive,clé USB,flashdrive,Flash-Laufwerk,unità flash,unidad flash,флэш-накопитель,플래시 드라이브,闪存盘,フラッシュドライブ
+Technology & Electronics,CategoryTech.png,8,usb_drive.jpg,USB drive,Clé USB,USB-station,USB-Laufwerk,Unità USB,unidad USB,USB-накопитель,USB 드라이브,USB驱动器,USBドライブ
+Technology & Electronics,CategoryTech.png,8,cd.jpg,CD,CD,CD,CD,CD,CD,компакт-диск,CD,光盘,CD
+Technology & Electronics,CategoryTech.png,8,dvd.jpg,DVD,DVD,DVD,DVD,DVD,DVD,DVD,DVD,DVD,DVD
+Technology & Electronics,CategoryTech.png,8,battery.jpg,battery,batterie,batterij,Batterie,batteria,batería,батарея,배터리,电池,バッテリー
+Technology & Electronics,CategoryTech.png,8,charger.jpg,charger,chargeur,oplader,Ladegerät,caricabatterie,cargador,зарядное устройство,충전기,充电器,充電器
+Technology & Electronics,CategoryTech.png,8,cable.jpg,cable,câble,kabel,Kabel,cavo,cable,кабель,케이블,电缆,ケーブル
+Technology & Electronics,CategoryTech.png,8,wire.jpg,wire,fil,draad,Draht,filo,cable,проволока,철사,金属丝,ワイヤー
+Technology & Electronics,CategoryTech.png,8,adapter.jpg,adapter,adaptateur,adapter,Adapter,adattatore,adaptador,адаптер,어댑터,适配器,アダプタ
+Technology & Electronics,CategoryTech.png,8,drone.jpg,drone,drone,drone,Drohne,drone,zumbido,дрон,무인 비행기,无人机,ドローン
+Technology & Electronics,CategoryTech.png,8,robot.jpg,robot,robot,robot,Roboter,robot,robot,робот,기계 인간,机器人,ロボット
+Technology & Electronics,CategoryTech.png,8,calculator.jpg,calculator,calculatrice,rekenmachine,Kalkulator,calcolatrice,calculadora,калькулятор,계산자,计算器,電卓
+Technology & Electronics,CategoryTech.png,8,game_console.jpg,game console,console de jeu,spelconsole,Spielkonsole,console di gioco,consola de juegos,игровая консоль,게임 콘솔,游戏机,ゲームコンソール
+Technology & Electronics,CategoryTech.png,8,controller.jpg,controller,contrôleur,controleur,Regler,controllore,controlador,контроллер,제어 장치,控制器,コントローラ
+Technology & Electronics,CategoryTech.png,8,joystick.jpg,joystick,manette de jeu,bedieningshendel,Joystick,joystick,palanca de mando,джойстик,조종간,操纵杆,ジョイスティック
+Technology & Electronics,CategoryTech.png,8,virtual_reality.jpg,virtual reality,réalité virtuelle,virtuele realiteit,virtuelle Realität,realtà virtuale,realidad virtual,виртуальная реальность,가상 현실,虚拟现实,仮想現実
+Technology & Electronics,CategoryTech.png,8,smart_home.jpg,smart home,maison intelligente,slim huis,Smart Home,casa intelligente,hogar inteligente,умный дом,스마트 홈,智能家居,スマートホーム
+Technology & Electronics,CategoryTech.png,8,thermostat.jpg,thermostat,thermostat,thermostaat,Thermostat,termostato,termostato,термостат,온도 조절 장치,恒温器,サーモスタット
+Technology & Electronics,CategoryTech.png,8,alarm.jpg,alarm,alarme,alarm,Alarm,allarme,alarma,тревога,경보,警报,アラーム
+Musical Instruments,CategoryMusic.png,8,piano.jpg,piano,piano,piano,Klavier,pianoforte,piano,фортепиано,피아노,钢琴,ピアノ
+Musical Instruments,CategoryMusic.png,8,synthesizer.jpg,synthesizer,synthétiseur,synthesizer,Synthesizer,sintetizzatore,sintetizador,синтезатор,신디사이저,合成器,シンセサイザー
+Musical Instruments,CategoryMusic.png,8,organ.jpg,organ,organe,orgaan,Orgel,organo,órgano,орган,오르간,器官,器官
+Musical Instruments,CategoryMusic.png,8,accordion.jpg,accordion,accordéon,accordeon,Akkordeon,fisarmonica,acordeón,аккордеон,아코디언,手风琴,アコーディオン
+Musical Instruments,CategoryMusic.png,8,guitar.jpg,guitar,guitare,gitaar,Gitarre,chitarra,guitarra,гитара,기타,吉他,ギター
+Musical Instruments,CategoryMusic.png,8,electric_guitar.jpg,electric guitar,guitare électrique,elektrische gitaar,elektrische Gitarre,chitarra elettrica,guitarra eléctrica,электрогитара,일렉트릭 기타,电吉他,エレキギター
+Musical Instruments,CategoryMusic.png,8,bass_guitar.jpg,bass guitar,guitare basse,basgitaar,Bassgitarre,basso elettrico,bajo,бас-гитара,베이스 기타,低音吉他,ベースギター
+Musical Instruments,CategoryMusic.png,8,acoustic_guitar.jpg,acoustic guitar,guitare acoustique,akoestische gitaar,Akustikgitarre,chitarra acustica,guitarra acustica,акустическая гитара,어쿠스틱 기타,原声吉他,アコースティックギター
+Musical Instruments,CategoryMusic.png,8,ukulele.jpg,ukulele,ukulélé,ukelele,Ukulele,ukulele,ukelele,гавайская гитара,우쿨렐레,尤克里里,ウクレレ
+Musical Instruments,CategoryMusic.png,8,banjo.jpg,banjo,banjo,banjo,Banjo,banjo,banjo,банджо,밴조,班卓琴,バンジョー
+Musical Instruments,CategoryMusic.png,8,mandolin.jpg,mandolin,mandoline,mandoline,Mandoline,mandolino,mandolina,мандолина,만돌린,曼陀林,マンドリン
+Musical Instruments,CategoryMusic.png,8,harp.jpg,harp,harpe,harp,Harfe,arpa,arpa,арфа,하프,竖琴,ハープ
+Musical Instruments,CategoryMusic.png,8,violin.jpg,violin,violon,viool,Violine,violino,violín,скрипка,바이올린,小提琴,バイオリン
+Musical Instruments,CategoryMusic.png,8,viola.jpg,viola,alto,altviool,Viola,viola,viola,альт,비올라,中提琴,ビオラ
+Musical Instruments,CategoryMusic.png,8,cello.jpg,cello,violoncelle,cello,Cello,violoncello,violonchelo,виолончель,첼로,大提琴,チェロ
+Musical Instruments,CategoryMusic.png,8,double_bass.jpg,double bass,contrebasse,contrabas,Kontrabass,contrabbasso,contrabajo,контрабас,더블베이스,低音提琴,コントラバス
+Musical Instruments,CategoryMusic.png,8,flute.jpg,flute,flûte,fluit,Flöte,flauto,flauta,флейта,플루트,长笛,フルート
+Musical Instruments,CategoryMusic.png,8,piccolo.jpg,piccolo,piccolo,piccolo,Piccoloflöte,ottavino,piccolo,пикколо,피콜로,短笛,ピッコロ
+Musical Instruments,CategoryMusic.png,8,clarinet.jpg,clarinet,clarinette,klarinet,Klarinette,clarinetto,clarinete,кларнет,클라리넷,单簧管,クラリネット
+Musical Instruments,CategoryMusic.png,8,oboe.jpg,oboe,hautbois,hobo,Oboe,oboe,oboe,гобой,오보에,双簧管,オーボエ
+Musical Instruments,CategoryMusic.png,8,bassoon.jpg,bassoon,basson,fagot,Fagott,fagotto,fagot,фагот,바순,巴松管,ファゴット
+Musical Instruments,CategoryMusic.png,8,saxophone.jpg,saxophone,saxophone,saxofoon,Saxophon,sassofono,saxófono,саксофон,색소폰,萨克斯管,サックス
+Musical Instruments,CategoryMusic.png,8,trumpet.jpg,trumpet,trompette,trompet,Trompete,tromba,trompeta,труба,트럼펫,喇叭,トランペット
+Musical Instruments,CategoryMusic.png,8,trombone.jpg,trombone,trombone,trombone,Posaune,trombone,trombón,тромбон,트롬본,长号,トロンボーン
+Musical Instruments,CategoryMusic.png,8,french_horn.jpg,french horn,cor français,franse hoorn,Waldhorn,corno francese,cuerno francés,валторна,프렌치 호른,圆号,フレンチホルン
+Musical Instruments,CategoryMusic.png,8,tuba.jpg,tuba,tuba,tuba,Tuba,tuba,tuba,туба,튜바,大号,チューバ
+Musical Instruments,CategoryMusic.png,8,drums.jpg,drums,batterie,trommels,Schlagzeug,batteria,batería,барабаны,드럼,鼓,ドラム
+Musical Instruments,CategoryMusic.png,8,drum_kit.jpg,drum kit,batterie,drumstel,Schlagzeug,batteria,batería,ударная установка,드럼 키트,架子鼓,ドラムキット
+Musical Instruments,CategoryMusic.png,8,snare_drum.jpg,snare drum,caisse claire,snaredrum,Kleine Trommel,rullante,caja,малый барабан,스네어 드럼,小军鼓,スネアドラム
+Musical Instruments,CategoryMusic.png,8,bass_drum.jpg,bass drum,grosse caisse,basdrum,Basstrommel,grancassa,bombo,большой барабан,베이스 드럼,低音鼓,バスドラム
+Musical Instruments,CategoryMusic.png,8,cymbals.jpg,cymbals,cymbales,bekkens,Becken,piatti,platillos,тарелки,심벌즈,钹,シンバル
+Musical Instruments,CategoryMusic.png,8,hi-hat.jpg,hi-hat,charleston,hi-hoed,Hi-Hat,ciao-hat,charles,хай-хэт,하이햇,踩镲,ハイハット
+Musical Instruments,CategoryMusic.png,8,tambourine.jpg,tambourine,tambourin,tamboerijn,Tambourin,tamburello,pandereta,бубен,탬버린,手鼓,タンバリン
+Musical Instruments,CategoryMusic.png,8,maracas.jpg,maracas,maracas,maraca's,Maracas,maracas,maracas,маракасы,마라카스,马拉卡斯,マラカス
+Musical Instruments,CategoryMusic.png,8,castanets.jpg,castanets,castagnettes,castagnetten,Kastagnetten,nacchere,castañuelas,кастаньеты,캐스터네츠,响板,カスタネット
+Musical Instruments,CategoryMusic.png,8,triangle.jpg,triangle,triangle,driehoek,Dreieck,triangolo,triángulo,треугольник,삼각형,三角形,三角形
+Musical Instruments,CategoryMusic.png,8,xylophone.jpg,xylophone,xylophone,xylofoon,Xylophon,xilofono,xilófono,ксилофон,목금,木琴,木琴
+Musical Instruments,CategoryMusic.png,8,marimba.jpg,marimba,marimba,marimba,Marimba,marimba,marimba,маримба,마림바,马林巴琴,マリンバ
+Musical Instruments,CategoryMusic.png,8,glockenspiel.jpg,glockenspiel,carillon,klokkenspel,Glockenspiel,carillon,carillón,глокеншпиль,글로켄슈필,钟琴,グロッケンシュピール
+Musical Instruments,CategoryMusic.png,8,timpani.jpg,timpani,timbales,pauken,Timpani,timpani,tímpanos,литавры,팀파니,定音鼓,ティンパニー
+Musical Instruments,CategoryMusic.png,8,bongo.jpg,bongo,bongo,bongo,Bongo,bongo,bongó,бонго,봉고,邦戈,ボンゴ
+Musical Instruments,CategoryMusic.png,8,conga.jpg,conga,conga,conga,Conga,conga,conga,конга,콩가,康加舞,コンガ
+Musical Instruments,CategoryMusic.png,8,djembe.jpg,djembe,djembé,djembé,Djembe,djembe,djembé,джембе,젬베,非洲鼓,ジャンベ
+Musical Instruments,CategoryMusic.png,8,didgeridoo.jpg,didgeridoo,didgeridoo,didgeridoo,Didgeridoo,didgeridoo,didgeridoo,диджериду,디저리두,迪吉里杜管,ディジュリドゥ
+Musical Instruments,CategoryMusic.png,8,bagpipes.jpg,bagpipes,cornemuse,doedelzakken,Dudelsack,cornamuse,gaita,волынка,백파이프,风笛,バグパイプ
+Musical Instruments,CategoryMusic.png,8,harmonica.jpg,harmonica,harmonica,mondharmonica,Mundharmonika,armonica,harmónica,губная гармошка,하모니카,口琴,ハーモニカ
+Musical Instruments,CategoryMusic.png,8,kazoo.jpg,kazoo,kazoo,kazoo,Kazoo,kazoo,kazoo,казу,카주,卡祖笛,カズー
+Musical Instruments,CategoryMusic.png,8,recorder.jpg,recorder,enregistreur,opnameapparaat,Recorder,registratore,grabadora,диктофон,기록계,录音机,レコーダー
+Musical Instruments,CategoryMusic.png,8,lute.jpg,lute,luth,luit,Laute,liuto,laúd,лютня,류트,琵琶,リュート
+Health & Medicine,CategoryHealth.png,8,drugstore.jpg,drugstore,pharmacie,drogisterij,Drogerie,farmacia,farmacia,аптека,약국,药店,薬局
+Health & Medicine,CategoryHealth.png,8,stretcher.jpg,stretcher,tendeur,brancard,Bahre,barella,camilla,носилки,들것,担架,担架
+Health & Medicine,CategoryHealth.png,8,wheelchair.jpg,wheelchair,fauteuil roulant,rolstoel,Rollstuhl,sedia a rotelle,silla de ruedas,инвалидная коляска,바퀴 달린 의자,轮椅,車椅子
+Health & Medicine,CategoryHealth.png,8,crutches.jpg,crutches,béquilles,krukken,Krücken,stampelle,muletas,костыли,협장,拐杖,松葉杖
+Health & Medicine,CategoryHealth.png,8,bandage.jpg,bandage,bandage,verband,Bandage,bendare,vendaje,повязка,붕대,绷带,包帯
+Health & Medicine,CategoryHealth.png,8,plaster.jpg,plaster,plâtre,gips,Gips,malta,yeso,штукатурка,벽토,石膏,石膏
+Health & Medicine,CategoryHealth.png,8,cast.jpg,cast,casting,vorm,gießen,lancio,elenco,бросать,깁스,投掷,キャスト
+Health & Medicine,CategoryHealth.png,8,syringe.jpg,syringe,seringue,spuit,Spritze,siringa,jeringuilla,шприц,주사기,注射器,注射器
+Health & Medicine,CategoryHealth.png,8,needle.jpg,needle,aiguille,naald,Nadel,ago,aguja,иголка,바늘,针,針
+Health & Medicine,CategoryHealth.png,8,thermometer.jpg,thermometer,thermomètre,thermometer,Thermometer,termometro,termómetro,термометр,온도계,温度计,温度計
+Health & Medicine,CategoryHealth.png,8,stethoscope.jpg,stethoscope,stéthoscope,stethoscoop,Stethoskop,stetoscopio,estetoscopio,стетоскоп,청진기,听诊器,聴診器
+Health & Medicine,CategoryHealth.png,8,scalpel.jpg,scalpel,scalpel,scalpel,Skalpell,bisturi,bisturí,скальпель,메스,解剖刀,メス
+Health & Medicine,CategoryHealth.png,8,medicine.jpg,medicine,médecine,geneesmiddel,Medizin,medicinale,medicamento,лекарство,약,药品,薬
+Health & Medicine,CategoryHealth.png,8,pill.jpg,pill,pilule,pil,Pille,pillola,píldora,таблетка,알약,丸,ピル
+Health & Medicine,CategoryHealth.png,8,capsule.jpg,capsule,capsule,capsule,Kapsel,capsula,cápsula,капсула,캡슐,胶囊,カプセル
+Health & Medicine,CategoryHealth.png,8,syrup.jpg,syrup,sirop,siroop,Sirup,sciroppo,jarabe,сироп,시럽,糖浆,シロップ
+Health & Medicine,CategoryHealth.png,8,ointment.jpg,ointment,pommade,zalf,Salbe,unguento,ungüento,мазь,연고,软膏,軟膏
+Health & Medicine,CategoryHealth.png,8,cream.jpg,cream,crème,room,Creme,crema,crema,крем,크림,奶油,クリーム
+Health & Medicine,CategoryHealth.png,8,drops.jpg,drops,gouttes,druppels,Tropfen,gocce,gotas,капли,액,滴,滴る
+Health & Medicine,CategoryHealth.png,8,vaccine.jpg,vaccine,vaccin,vaccin,Impfstoff,vaccino,vacuna,вакцина,백신,疫苗,ワクチン
+Health & Medicine,CategoryHealth.png,8,injection.jpg,injection,injection,injectie,Injektion,iniezione,inyección,инъекция,주입,注射,注射
+Health & Medicine,CategoryHealth.png,8,prescription.jpg,prescription,ordonnance,recept,Rezept,prescrizione,prescripción,рецепт,처방,处方,処方箋
+Health & Medicine,CategoryHealth.png,8,blood.jpg,blood,sang,bloed,Blut,sangue,sangre,кровь,피,血,血
+Health & Medicine,CategoryHealth.png,8,pulse.jpg,pulse,impulsion,pols,Impuls,impulso,legumbres,пульс,맥박,脉冲,脈
+Health & Medicine,CategoryHealth.png,8,blood_pressure.jpg,blood pressure,pression artérielle,bloeddruk,Blutdruck,pressione sanguigna,presión arterial,артериальное давление,혈압,血压,血圧
+Health & Medicine,CategoryHealth.png,8,fever.jpg,fever,fièvre,koorts,Fieber,febbre,fiebre,высокая температура,발열,发烧,熱
+Health & Medicine,CategoryHealth.png,8,cough.jpg,cough,toux,hoest,Husten,tosse,tos,кашель,기침,咳嗽,咳
+Health & Medicine,CategoryHealth.png,8,sneeze.jpg,sneeze,éternuer,niezen,niesen,starnuto,estornudo,чихать,재채기,喷嚏,くしゃみ
+Health & Medicine,CategoryHealth.png,8,pain.jpg,pain,douleur,pijn,Schmerz,Dolore,dolor,боль,통증,疼痛,痛み
+Health & Medicine,CategoryHealth.png,8,ache.jpg,ache,mal,pijn,schmerzen,dolore,dolor,болеть,아픔,疼痛,痛み
+Health & Medicine,CategoryHealth.png,8,headache.jpg,headache,mal de tête,hoofdpijn,Kopfschmerzen,mal di testa,dolor de cabeza,головная боль,두통,头痛,頭痛
+Health & Medicine,CategoryHealth.png,8,stomachache.jpg,stomachache,mal de ventre,buikpijn,Bauchschmerzen,mal di stomaco,Dolor de estómago,боли в животе,복통,腹痛,腹痛
+Health & Medicine,CategoryHealth.png,8,toothache.jpg,toothache,mal aux dents,kiespijn,Zahnschmerzen,mal di denti,dolor de muelas,зубная боль,치통,牙疼,歯痛
+Health & Medicine,CategoryHealth.png,8,injury.jpg,injury,blessure,blessure,Verletzung,infortunio,lesión,рана,부상,受伤,けが
+Health & Medicine,CategoryHealth.png,8,wound.jpg,wound,blesser,wond,Wunde,ferita,herida,ранить,상처,伤口,傷
+Health & Medicine,CategoryHealth.png,8,cut.jpg,cut,couper,snee,schneiden,taglio,cortar,резать,자르다,切,カット
+Health & Medicine,CategoryHealth.png,8,bruise.jpg,bruise,hématome,kneuzing,Prellung,ammaccare,moretón,синяк,타박상,挫伤,あざ
+Health & Medicine,CategoryHealth.png,8,burn.jpg,burn,brûler,brandwond,brennen,bruciare,quemar,гореть,불타다,烧伤,やけど
+Health & Medicine,CategoryHealth.png,8,infection.jpg,infection,infection,infectie,Infektion,infezione,infección,инфекция,전염병,感染,感染
+Health & Medicine,CategoryHealth.png,8,disease.jpg,disease,maladie,ziekte,Krankheit,malattia,enfermedad,болезнь,질병,疾病,病気
+Health & Medicine,CategoryHealth.png,8,illness.jpg,illness,maladie,ziekte,Erkrankung,malattia,enfermedad,болезнь,병,疾病,病気
+Health & Medicine,CategoryHealth.png,8,sickness.jpg,sickness,maladie,ziekte,Krankheit,malattia,enfermedad,болезнь,병,疾病,病気
+Health & Medicine,CategoryHealth.png,8,health.jpg,health,santé,gezondheid,Gesundheit,salute,salud,здоровье,건강,健康,健康
+Health & Medicine,CategoryHealth.png,8,healthy.jpg,healthy,en bonne santé,gezond,gesund,salutare,saludable,здоровый,건강한,健康,健康
+Health & Medicine,CategoryHealth.png,8,sick.jpg,sick,malade,ziek,krank,malato,enfermo,больной,아픈,生病的,病気
+everyday objects,CategoryObjects.png,5,stapler.jpg,stapler,agrafeuse,nietmachine,Hefter,cucitrice,grapadora,степлер,호치키스,订书机,ホッチキス
+personal belongings,CategoryPersonal.png,4,hairbrush.jpg,hairbrush,brosse à cheveux,haarborstel,Haarbürste,spazzola per capelli,cepillo para el pelo,расческа,머리 빗는 솔,发刷,ヘアブラシ
+personal belongings,CategoryPersonal.png,4,tweezers.jpg,tweezers,pince à épiler,pincet,Pinzette,pinzette,pinzas,пинцеты,족집게,镊子,ピンセット
+personal belongings,CategoryPersonal.png,4,lotion.jpg,lotion,lotion,lotion,Lotion,lozione,loción,лосьон,외용 물약,洗剂,ローション
+personal belongings,CategoryPersonal.png,4,sunscreen.jpg,sunscreen,crème solaire,zonnebrandcrème,Sonnenschutz,protezione solare,protector solar,солнцезащитный крем,자외선 차단제,防晒霜,日焼け止め
+personal belongings,CategoryPersonal.png,4,lip_balm.jpg,lip balm,baume à lèvres,lippenbalsem,Lippenbalsam,balsamo per le labbra,pomada para labios,бальзам для губ,립밤,润唇膏,リップクリーム
+personal belongings,CategoryPersonal.png,4,compact.jpg,compact,compact,compact,kompakt,compatto,compacto,компактный,콤팩트,袖珍的,コンパクト
+Nature & Environment,CategoryNature.png,4,volcano.jpg,volcano,volcan,vulkaan,Vulkan,vulcano,volcán,вулкан,화산,火山,火山
+Nature & Environment,CategoryNature.png,4,iceberg.jpg,iceberg,iceberg,ijsberg,Eisberg,iceberg,iceberg,айсберг,빙산,冰山,氷山
+Nature & Environment,CategoryNature.png,4,tornado.jpg,tornado,tornade,tornado,Tornado,tornado,tornado,торнадо,폭풍,龙卷风,竜巻
+Nature & Environment,CategoryNature.png,4,earthquake.jpg,earthquake,tremblement de terre,aardbeving,Erdbeben,terremoto,terremoto,землетрясение,지진,地震,地震
+Nature & Environment,CategoryNature.png,4,galaxy.jpg,galaxy,galaxie,sterrenstelsel,Galaxis,galassia,galaxia,галактика,은하,星系,銀河
+Nature & Environment,CategoryNature.png,4,comet.jpg,comet,comète,komeet,Komet,cometa,cometa,комета,혜성,彗星,彗星
+Nature & Environment,CategoryNature.png,4,pebble.jpg,pebble,caillou,kiezelsteen,Kiesel,ciottolo,guijarro,галька,다루기 완고한 동물,卵石,小石
+Nature & Environment,CategoryNature.png,4,moss.jpg,moss,mousse,mos,Moos,muschio,musgo,мох,이끼,苔藓,苔
+Nature & Environment,CategoryNature.png,4,glacier.jpg,glacier,glacier,gletsjer,Gletscher,ghiacciaio,glaciar,ледник,빙하,冰川,氷河
+Nature & Environment,CategoryNature.png,4,coral.jpg,coral,corail,koraal,Koralle,corallo,coral,коралл,산호,珊瑚,コーラル
+Professions,CategoryProfessions.png,5,surgeon.jpg,surgeon,chirurgien,chirurg,Chirurg,chirurgo,cirujano,хирург,외과 의사,外科医生,外科医
+Professions,CategoryProfessions.png,5,therapist.jpg,therapist,thérapeute,therapeut,Therapeut,terapista,terapeuta,терапевт,치료사,治疗师,セラピスト
+Professions,CategoryProfessions.png,5,psychologist.jpg,psychologist,psychologue,psycholoog,Psychologe,psicologo,psicólogo,психолог,심리학자,心理学家,心理学者
+Professions,CategoryProfessions.png,5,psychiatrist.jpg,psychiatrist,psychiatre,psychiater,Psychiater,psichiatra,psiquiatra,психиатр,정신과 의사,精神科医生,精神科医
+Professions,CategoryProfessions.png,5,pediatrician.jpg,pediatrician,pédiatre,kinderarts,Kinderarzt,pediatra,pediatra,педиатр,소아과 의사,儿科医生,小児科医
+Professions,CategoryProfessions.png,5,optometrist.jpg,optometrist,optométriste,optometrist,Optiker,optometrista,optometrista,оптометрист,검안사,验光师,検眼医
+Professions,CategoryProfessions.png,5,dermatologist.jpg,dermatologist,dermatologue,dermatoloog,Dermatologe,dermatologo,dermatólogo,дерматолог,피부과 전문의,皮肤科医生,皮膚科医
+Professions,CategoryProfessions.png,5,cardiologist.jpg,cardiologist,cardiologue,cardioloog,Kardiologe,cardiologo,cardiólogo,кардиолог,심장 전문의,心脏病专家,心臓専門医
+Professions,CategoryProfessions.png,5,barista.jpg,barista,barista,barista,Barista,barista,barista,бариста,바리스타,咖啡师,バリスタ
+Professions,CategoryProfessions.png,5,sommelier.jpg,sommelier,sommelier,sommelier,Sommelier,sommelier,sumiller,сомелье,소믈리에,侍酒师,ソムリエ
+Clothing & Accessories,CategoryClothing.png,5,tuxedo.jpg,tuxedo,smoking,smoking,Smoking,smoking,smoking,смокинг,턱시도,燕尾服,タキシード
+Clothing & Accessories,CategoryClothing.png,5,cufflinks.jpg,cufflinks,boutons de manchette,manchetknopen,Manschettenknöpfe,gemelli,gemelos,запонки,커프스 링크,袖扣,カフスボタン
+Clothing & Accessories,CategoryClothing.png,5,suspenders.jpg,suspenders,bretelles,bretels,Hosenträger,bretelle,tirantes,подтяжки,멜빵,吊带,サスペンダー
+Clothing & Accessories,CategoryClothing.png,5,trenchcoat.jpg,trenchcoat,trench-coat,trenchcoat,Trenchcoat,trench,gabardina,плащ,트렌치코트,风衣,トレンチコート
+Clothing & Accessories,CategoryClothing.png,5,parka.jpg,parka,parka,parka,Parka,parka,anorak,парка,파카,派克大衣,パーカー
+Clothing & Accessories,CategoryClothing.png,5,windbreaker.jpg,windbreaker,coupe-vent,windjak,Windjacke,giacca a vento,cortavientos,ветровка,윈드 브레이커,风衣,ウインドブレーカー
+Clothing & Accessories,CategoryClothing.png,5,poncho.jpg,poncho,poncho,poncho,Poncho,poncho,poncho,пончо,판초,雨披,ポンチョ
+Clothing & Accessories,CategoryClothing.png,5,leggings.jpg,leggings,guêtres,leggings,Gamaschen,ghette,polainas,леггинсы,레깅스,绑腿,レギンス
+Clothing & Accessories,CategoryClothing.png,5,pantyhose.jpg,pantyhose,collants,panty,Strumpfhose,collant,pantys,колготки,팬티스타킹,连裤袜,パンスト
+Clothing & Accessories,CategoryClothing.png,5,kimono.jpg,kimono,kimono,kimono,Kimono,kimono,kimono,кимоно,키모노,和服,着物
+Clothing & Accessories,CategoryClothing.png,5,sari.jpg,sari,sari,sari,Sari,sari,sari,сари,사리,纱丽,サリー
+Clothing & Accessories,CategoryClothing.png,5,kilt.jpg,kilt,kilt,kilt,Kilt,kilt,falda escocesa,килт,킬트,短裙,キルト
+Clothing & Accessories,CategoryClothing.png,5,toga.jpg,toga,toge,toga,Toga,toga,toga,тога,예복,长袍,トーガ
+Clothing & Accessories,CategoryClothing.png,5,sombrero.jpg,sombrero,sombrero,sombrero,Sombrero,sombrero,sombrero,сомбреро,솜브레로,阔边帽,ソンブレロ
+Clothing & Accessories,CategoryClothing.png,5,fedora.jpg,fedora,feutre,gleufhoed,Fedora,cappello di feltro,sombrero de fieltro,шляпа-федора,페도라,软呢帽,フェドーラ帽
+Clothing & Accessories,CategoryClothing.png,5,beret.jpg,beret,béret,baret,Baskenmütze,berretto,boina,берет,베레모,贝雷帽,ベレー
+Clothing & Accessories,CategoryClothing.png,5,bandana.jpg,bandana,bandana,bandana,Bandana,bandana,pañuelo,бандана,두건,头巾,バンダナ
+Clothing & Accessories,CategoryClothing.png,5,visor.jpg,visor,visière,vizier,Visier,visiera,visera,козырек,챙,遮阳板,バイザー
+Technology & Electronics,CategoryTech.png,6,server.jpg,server,serveur,server,Server,server,servidor,сервер,섬기는 사람,服务器,サーバ
+Technology & Electronics,CategoryTech.png,6,microchip.jpg,microchip,puce,microchip,Mikrochip,microchip,pastilla,микрочип,마이크로칩,微芯片,マイクロチップ
+Technology & Electronics,CategoryTech.png,6,processor.jpg,processor,processeur,verwerker,Prozessor,processore,procesador,процессор,프로세서,处理器,プロセッサー
+Technology & Electronics,CategoryTech.png,6,motherboard.jpg,motherboard,carte mère,moederbord,Hauptplatine,scheda madre,placa madre,материнская плата,마더보드,母板,マザーボード
+Technology & Electronics,CategoryTech.png,6,usb.jpg,usb,USB,usb,USB,USB,USB,USB,USB,USB,USB
+Technology & Electronics,CategoryTech.png,6,antenna.jpg,antenna,antenne,antenne,Antenne,antenna,antena,антенна,안테나,天线,アンテナ
+Technology & Electronics,CategoryTech.png,6,software.jpg,software,logiciel,software,Software,software,software,программное обеспечение,소프트웨어,软件,ソフトウェア
+Technology & Electronics,CategoryTech.png,6,hardware.jpg,hardware,matériel,hardware,Hardware,hardware,hardware,аппаратное обеспечение,하드웨어,硬件,ハードウェア
+Musical Instruments,CategoryMusic.png,6,theremin.jpg,theremin,thérémine,daarmin,Theremin,theremin,teremín,терменвокс,테레민,特雷门琴,テルミン
+Health & Medicine,CategoryHealth.png,6,pacemaker.jpg,pacemaker,stimulateur cardiaque,pacemaker,Schrittmacher,pacemaker,marcapasos,кардиостимулятор,맥박 조정 장치,起搏器,ペースメーカー
+Health & Medicine,CategoryHealth.png,6,defibrillator.jpg,defibrillator,défibrillateur,defibrillator,Defibrillator,defibrillatore,desfibrilador,дефибриллятор,제세동기,除颤器,除細動器
+Health & Medicine,CategoryHealth.png,6,ultrasound.jpg,ultrasound,ultrason,echografie,Ultraschall,ultrasuoni,ultrasonido,УЗИ,초음파,超声波,超音波
+Health & Medicine,CategoryHealth.png,6,mri.jpg,mri,IRM,MRI,mri,mri,resonancia magnética,МРТ,MRI,磁共振成像,ミスターリー
+Health & Medicine,CategoryHealth.png,6,xray.jpg,xray,radiographie,röntgenfoto,Röntgen,raggi X,radiografía,рентген,엑스레이,X射线,X線

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launch background color matching app branding (primary blue) -->
+    <color name="launch_background_color">#2563EB</color>
+    <!-- Accent colors for splash -->
+    <color name="splash_start_color">#2563EB</color>
+    <color name="splash_end_color">#1E3A8A</color>
+    <!-- Launcher icon foreground color -->
+    <color name="ic_launcher_foreground_color">#2563EB</color>
+    <!-- Launcher icon background color -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>

@@ -1,0 +1,165 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_GB",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "86118FFF",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "E0CC7140",
+      "localizations" : [
+        {
+          "description" : "Expand your vocabulary with Set 1",
+          "displayName" : "Vocabulary Set 1",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "vocabulary_pack_1",
+      "referenceName" : "Vocabulary Set 1",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "E3DFA42C",
+      "localizations" : [
+        {
+          "description" : "Expand your vocabulary with Set 2",
+          "displayName" : "Vocabulary Set 2",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "vocabulary_pack_2",
+      "referenceName" : "Vocabulary Set 2",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "4721D794",
+      "localizations" : [
+        {
+          "description" : "Expand your vocabulary with Set 3",
+          "displayName" : "Vocabulary Set 3",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "vocabulary_pack_3",
+      "referenceName" : "Vocabulary Set 3",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "A7CF5DF0",
+      "localizations" : [
+        {
+          "description" : "Expand your vocabulary with Set 4",
+          "displayName" : "Vocabulary Set 4",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "vocabulary_pack_4",
+      "referenceName" : "Vocabulary Set 4",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "C0196DE9",
+      "localizations" : [
+        {
+          "description" : "Expand your vocabulary with Set 5",
+          "displayName" : "Vocabulary Set 5",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "vocabulary_pack_5",
+      "referenceName" : "Vocabulary Set 5",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "7B4118EC",
+      "localizations" : [
+        {
+          "description" : "Get all 5 vocabulary sets at a discounted price",
+          "displayName" : "Complete Vocabulary Bundle",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "all_vocabulary_packs",
+      "referenceName" : "All Vocabulary Sets",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
