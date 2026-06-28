@@ -1,3 +1,6 @@
+import 'dart:io' show Platform;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +11,9 @@ import 'providers/user_provider.dart';
 import 'screens/splash_screen.dart';
 import 'services/iap_service.dart';
 import 'services/local_storage_service.dart';
+
+bool get _isDesktop =>
+    !kIsWeb && (Platform.isWindows || Platform.isMacOS || Platform.isLinux);
 
 final locator = GetIt.I;
 
@@ -45,7 +51,7 @@ class MemoLingoApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'MemoLingo Remix',
+        title: 'MemoLingo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'CaviarDreams',
@@ -88,6 +94,19 @@ class MemoLingoApp extends StatelessWidget {
             ),
           ),
         ),
+        builder: _isDesktop
+            ? (context, child) {
+                return Container(
+                  color: const Color(0xFF3D4D9D),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 480),
+                      child: child,
+                    ),
+                  ),
+                );
+              }
+            : null,
         home: const SplashScreen(),
       ),
     );

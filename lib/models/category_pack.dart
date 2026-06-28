@@ -19,8 +19,8 @@ class CategoryPack {
   final bool isFree;
   bool owned;
 
-  List<int> get levels {
-    final values = words.map((w) => w.level).toSet().toList()..sort();
+  List<int> get tiers {
+    final values = words.map((w) => w.tier).toSet().toList()..sort();
     return values;
   }
 

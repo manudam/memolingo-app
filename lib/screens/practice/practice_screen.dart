@@ -150,118 +150,118 @@ class _JourneyNode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Zig-zag offset
-    final currentOffset = sin(index * 1.5) * 80.0;
-    final nextOffset = sin((index + 1) * 1.5) * 80.0;
-    
-    // We want the node itself to be 140px tall so there's space between nodes.
     const double nodeHeight = 160.0;
     const double buttonSize = 80.0;
 
     return SizedBox(
       height: nodeHeight,
       width: double.infinity,
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: [
-          // Path to the next node (drawn UPWARDS, so towards y = -nodeHeight/2)
-          if (!isLastNode)
-            Positioned.fill(
-              child: CustomPaint(
-                painter: _PathPainter(
-                  currentXOffset: currentOffset,
-                  nextXOffset: nextOffset,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final availableWidth = constraints.maxWidth;
+          final maxSwing = (availableWidth / 2) - (buttonSize / 2) - 20;
+          final swing = maxSwing.clamp(0.0, 80.0);
+          final currentOffset = sin(index * 1.5) * swing;
+          final nextOffset = sin((index + 1) * 1.5) * swing;
+
+          return Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
+            children: [
+              if (!isLastNode)
+                Positioned.fill(
+                  child: CustomPaint(
+                    painter: _PathPainter(
+                      currentXOffset: currentOffset,
+                      nextXOffset: nextOffset,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            
-          // The node button itself
-          Positioned(
-            left: (MediaQuery.of(context).size.width / 2) + currentOffset - (buttonSize / 2),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => GameStartScreen(categoryId: category.id),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: buttonSize,
-                    height: buttonSize,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      border: Border.all(
-                        color: mastery == 100 ? Colors.amber : Colors.blue.shade300,
-                        width: 5,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
+              Positioned(
+                left: (availableWidth / 2) + currentOffset - (buttonSize / 2),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => GameStartScreen(categoryId: category.id),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: buttonSize,
+                        height: buttonSize,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          border: Border.all(
+                            color: mastery == 100 ? Colors.amber : Colors.blue.shade300,
+                            width: 5,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.1),
+                              blurRadius: 8,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: ClipOval(
-                      child: CategoryIcon(
-                        categoryName: category.name,
-                        size: 80,
+                        child: ClipOval(
+                          child: CategoryIcon(
+                            categoryName: category.name,
+                            size: 80,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
+                    const SizedBox(height: 6),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Text(
-                    category.name,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          
-          // Mastery crown/star indicator if fully mastered, or small progress badge
-          if (mastery > 0)
-            Positioned(
-              left: (MediaQuery.of(context).size.width / 2) + currentOffset + (buttonSize / 4),
-              top: nodeHeight / 2 - (buttonSize / 2) - 10,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                  color: mastery == 100 ? Colors.amber : Colors.blue.shade600,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.white, width: 2),
-                ),
-                child: Text(
-                  mastery == 100 ? '⭐' : '$mastery%',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      child: Text(
+                        category.name,
+                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-        ],
+              if (mastery > 0)
+                Positioned(
+                  left: (availableWidth / 2) + currentOffset + (buttonSize / 4),
+                  top: nodeHeight / 2 - (buttonSize / 2) - 10,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: mastery == 100 ? Colors.amber : Colors.blue.shade600,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white, width: 2),
+                    ),
+                    child: Text(
+                      mastery == 100 ? '⭐' : '$mastery%',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          );
+        },
       ),
     );
   }

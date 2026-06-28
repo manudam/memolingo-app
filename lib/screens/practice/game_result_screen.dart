@@ -51,7 +51,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(won ? 'Level Complete' : 'Game Over'),
+        title: Text(won ? 'Complete!' : 'Game Over'),
       ),
       body: Stack(
         children: [
@@ -158,7 +158,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                               ),
                             ),
                             title: Text(word.translationFor(context.read<UserProvider>().user.targetLanguage)),
-                            subtitle: Text('Level ${word.level}'),
+                            subtitle: Text(word.tierLabel),
                             trailing: Icon(Icons.volume_up_rounded, color: Colors.grey.shade600, size: 20),
                             onTap: () async {
                               final userProvider = context.read<UserProvider>();

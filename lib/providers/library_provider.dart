@@ -79,8 +79,8 @@ class LibraryProvider with ChangeNotifier {
     return _allWords.where((w) => w.categoryName == category.name).toList();
   }
 
-  List<MemoWord> wordsInCategoryAndLevel(CategoryPack category, int level) {
-    return category.words.where((w) => w.level == level).toList();
+  List<MemoWord> wordsInCategoryAndTier(CategoryPack category, int tier) {
+    return category.words.where((w) => w.tier == tier).toList();
   }
 
   String priceFor(CategoryPack category) {
@@ -181,6 +181,15 @@ class LibraryProvider with ChangeNotifier {
     final byCategory = <String, List<MemoWord>>{};
     final categoryIcons = <String, String>{};
     final categoryWordCounts = <String, int>{};
+    final categorySizes = <String, int>{};
+
+    // First pass: count words per category for tier assignment.
+    for (int i = 1; i < rows.length; i++) {
+      final row = rows[i];
+      if (row.length < 14) continue;
+      final name = row[0].toString().trim();
+      categorySizes[name] = (categorySizes[name] ?? 0) + 1;
+    }
 
     for (int i = 1; i < rows.length; i++) {
       final row = rows[i];
@@ -193,16 +202,18 @@ class LibraryProvider with ChangeNotifier {
       final imageFile = row[3].toString().trim();
       final english = row[4].toString().trim();
 
-      // Dynamic Level Chunking: 10 words per level
+      // Frequency-based tiers: split each category into 3 tiers.
       final currentCount = categoryWordCounts[categoryName] ?? 0;
-      final level = (currentCount ~/ 10) + 1;
+      final total = categorySizes[categoryName] ?? 1;
+      final tierSize = (total / 3).ceil();
+      final tier = (currentCount ~/ tierSize) + 1;
       categoryWordCounts[categoryName] = currentCount + 1;
 
       final word = MemoWord(
-        id: '${slugify(categoryName)}-$level-${imageFile.toLowerCase()}',
+        id: '${slugify(categoryName)}-${imageFile.toLowerCase()}',
         categoryName: categoryName,
         categoryImageName: categoryImage,
-        level: level,
+        tier: tier.clamp(1, 3),
         imageFileName: imageFile,
         english: english,
         translations: {

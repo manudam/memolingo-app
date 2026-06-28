@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
 import 'package:in_app_purchase/in_app_purchase.dart';
 
 class IapService {
-  final InAppPurchase _inAppPurchase = InAppPurchase.instance;
+  static bool get _supported =>
+      Platform.isIOS || Platform.isAndroid || Platform.isMacOS;
+
+  late final InAppPurchase _inAppPurchase;
   StreamSubscription<List<PurchaseDetails>>? _purchaseSub;
 
   final List<ProductDetails> _products = [];
@@ -20,11 +24,17 @@ class IapService {
   Stream<Set<String>> get purchaseUpdates => _purchaseUpdatesController.stream;
 
   Future<void> initialize(Set<String> productIds) async {
+    if (!_supported) {
+      storeAvailable = false;
+      return;
+    }
+
     if (productIds.isEmpty) {
       return;
     }
 
     if (!_isInitialized) {
+      _inAppPurchase = InAppPurchase.instance;
       _purchaseSub = _inAppPurchase.purchaseStream.listen(
         _onPurchaseUpdate,
         onError: (Object e) {
@@ -52,6 +62,8 @@ class IapService {
   }
 
   Future<bool> buyProduct(String productId) async {
+    if (!_supported) return false;
+
     final product = productById(productId);
     if (product == null) {
       error = 'Product not found: $productId';
@@ -63,6 +75,8 @@ class IapService {
   }
 
   Future<void> restorePurchases() async {
+    if (!_supported) return;
+
     try {
       await _inAppPurchase.restorePurchases();
     } catch (e) {
@@ -71,6 +85,8 @@ class IapService {
   }
 
   Future<void> _loadProducts(Set<String> productIds) async {
+    if (!_supported) return;
+
     storeAvailable = await _inAppPurchase.isAvailable();
     if (!storeAvailable) {
       error = 'In-app purchases are unavailable on this device.';

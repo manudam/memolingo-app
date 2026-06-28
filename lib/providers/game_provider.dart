@@ -16,7 +16,7 @@ class GameProvider with ChangeNotifier {
   final Random _random = Random();
 
   CategoryPack? _category;
-  int _level = 1;
+  int _tier = 1;
   GameState _state = GameState.idle;
 
   List<MemoWord> _questionOrder = <MemoWord>[];
@@ -35,7 +35,7 @@ class GameProvider with ChangeNotifier {
   final Map<String, int> _incorrectByWordId = <String, int>{};
 
   CategoryPack? get category => _category;
-  int get level => _level;
+  int get tier => _tier;
   GameState get state => _state;
   List<MemoWord> get options => List.unmodifiable(_currentOptions);
   MemoWord? get currentCorrectWord => _currentCorrectWord;
@@ -57,13 +57,13 @@ class GameProvider with ChangeNotifier {
 
   Future<void> startGame({
     required CategoryPack category,
-    required int level,
+    required int tier,
   }) async {
     _category = category;
-    _level = level;
+    _tier = tier;
     _state = GameState.idle;
 
-    final levelWords = category.words.where((w) => w.level == level).toList();
+    final levelWords = category.words.where((w) => w.tier == tier).toList();
     if (levelWords.isEmpty) {
       _questionOrder = <MemoWord>[];
       _currentOptions = <MemoWord>[];
@@ -89,7 +89,7 @@ class GameProvider with ChangeNotifier {
 
   Future<void> startReviewGame(List<MemoWord> reviewWords, CategoryPack category) async {
     _category = category;
-    _level = 1;
+    _tier = 1;
     _state = GameState.idle;
 
     if (reviewWords.isEmpty) {
@@ -120,7 +120,7 @@ class GameProvider with ChangeNotifier {
     if (existingCategory == null) {
       return;
     }
-    await startGame(category: existingCategory, level: _level);
+    await startGame(category: existingCategory, tier: _tier);
   }
 
   Future<void> answer(MemoWord selectedWord) async {
@@ -235,21 +235,22 @@ class GameProvider with ChangeNotifier {
 
     _currentCorrectWord = _questionOrder[_currentIndex];
     final correct = _currentCorrectWord!;
-    
-    // Mix question types dynamically to keep the brain engaged
+
+    // Progressive question difficulty: harder types unlock as mastery grows.
+    final mastery = _userProvider.user.wordMastery[correct.id] ?? 0;
     final randType = _random.nextDouble();
-    if (randType < 0.15) {
-      _currentQuestionType = GameQuestionType.reverse;
-    } else if (randType < 0.30) {
-      _currentQuestionType = GameQuestionType.audioOnly;
-    } else if (randType < 0.35) {
+    if (mastery >= 5 && randType < 0.20) {
       _currentQuestionType = GameQuestionType.spelling;
+    } else if (mastery >= 3 && randType < 0.35) {
+      _currentQuestionType = GameQuestionType.audioOnly;
+    } else if (mastery >= 1 && randType < 0.45) {
+      _currentQuestionType = GameQuestionType.reverse;
     } else {
       _currentQuestionType = GameQuestionType.standard;
     }
 
     final sameLevelPool = _category!.words
-        .where((w) => w.level == _level && w.id != correct.id)
+        .where((w) => w.tier == _tier && w.id != correct.id)
         .toList();
 
     final fallbackPool =

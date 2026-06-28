@@ -46,7 +46,7 @@ class CategoryWordsScreen extends StatelessWidget {
                 ),
               ),
               title: Text(word.translationFor(context.read<UserProvider>().user.targetLanguage)),
-              subtitle: Text('Level ${word.level} · ${_masteryLabel(mastery)}'),
+              subtitle: Text('${word.tierLabel} · ${_masteryLabel(mastery)}'),
               trailing: _MasteryDots(level: mastery),
             ),
           );

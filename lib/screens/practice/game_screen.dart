@@ -482,50 +482,44 @@ class _GameScreenState extends State<GameScreen> {
     final showPromptCard = qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
     final showRepeatButton = qType == GameQuestionType.standard || qType == GameQuestionType.audioOnly;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Column(
       children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.35,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        _buildHeader(context, game),
+        const SizedBox(height: 12),
+        _buildProgressBar(game),
+        const SizedBox(height: 16),
+        Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Column(
-                children: [
-                  _buildHeader(context, game),
-                  const SizedBox(height: 12),
-                  _buildProgressBar(game),
-                ],
-              ),
-              if (showPromptCard)
-                Expanded(
-                  child: Center(
-                    child: SingleChildScrollView(
-                      child: Card(
-                        margin: const EdgeInsets.symmetric(vertical: 8),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 12,
+              SizedBox(
+                width: 260,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (showPromptCard)
+                      SingleChildScrollView(
+                        child: Card(
+                          margin: const EdgeInsets.symmetric(vertical: 8),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 12,
+                            ),
+                            child: _buildTopPrompt(context, game, targetLanguage),
                           ),
-                          child: _buildTopPrompt(context, game, targetLanguage),
                         ),
                       ),
-                    ),
-                  ),
+                    if (showRepeatButton) _buildRepeatButton(),
+                  ],
                 ),
-              if (showRepeatButton)
-                Expanded(
-                  child: Center(
-                    child: _buildRepeatButton(),
-                  ),
-                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: _buildOptionsList(context, game, targetLanguage, labelLanguage, showLabels),
+              ),
             ],
           ),
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: _buildOptionsList(context, game, targetLanguage, labelLanguage, showLabels),
         ),
       ],
     );
@@ -557,12 +551,20 @@ class _GameScreenState extends State<GameScreen> {
           key: _shakeKey,
           child: Padding(
             padding: const EdgeInsets.all(16),
-            child: OrientationBuilder(
-              builder: (context, orientation) {
-                if (orientation == Orientation.portrait) {
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final width = constraints.maxWidth;
+                if (width < 600) {
                   return _buildPortraitLayout(context, game, targetLanguage, labelLanguage, showLabels);
-                } else {
+                } else if (width < 900) {
                   return _buildLandscapeLayout(context, game, targetLanguage, labelLanguage, showLabels);
+                } else {
+                  return Center(
+                    child: SizedBox(
+                      width: 900,
+                      child: _buildLandscapeLayout(context, game, targetLanguage, labelLanguage, showLabels),
+                    ),
+                  );
                 }
               },
             ),
