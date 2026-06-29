@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/library_provider.dart';
 import '../providers/user_provider.dart';
+import 'onboarding_screen.dart';
 import 'practice/practice_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -44,9 +45,13 @@ class _SplashScreenState extends State<SplashScreen>
       return;
     }
 
+    final destination = userProvider.user.onboardingComplete
+        ? const PracticeScreen()
+        : const OnboardingScreen();
+
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const PracticeScreen(),
+        pageBuilder: (_, __, ___) => destination,
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(opacity: animation, child: child);
         },

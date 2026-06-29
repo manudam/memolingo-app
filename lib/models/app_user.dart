@@ -9,12 +9,13 @@ class AppUser {
     this.totalIncorrect = 0,
     this.audioEnabled = true,
     this.showLabels = true,
-    this.targetLanguage = 'es', // Default to Spanish to showcase multi-lang
+    this.targetLanguage = 'es',
     this.nativeLanguage = 'en',
     this.labelLanguage = 'en',
     this.currentXP = 0,
     this.currentStreak = 0,
     this.lastPlayedDate,
+    this.onboardingComplete = false,
     Map<String, DateTime>? wordNextReview,
   })  : unlockedCategoryIds = unlockedCategoryIds ?? <String>{},
         wordMastery = wordMastery ?? <String, int>{},
@@ -37,6 +38,7 @@ class AppUser {
   int currentXP;
   int currentStreak;
   DateTime? lastPlayedDate;
+  bool onboardingComplete;
 
   int get totalPlayed => totalCorrect + totalIncorrect;
 
@@ -69,6 +71,7 @@ class AppUser {
       'currentXP': currentXP,
       'currentStreak': currentStreak,
       'lastPlayedDate': lastPlayedDate?.toIso8601String(),
+      'onboardingComplete': onboardingComplete,
     };
   }
 
@@ -121,9 +124,12 @@ class AppUser {
       labelLanguage: map['labelLanguage'] as String? ?? 'en',
       currentXP: (map['currentXP'] as num?)?.toInt() ?? 0,
       currentStreak: (map['currentStreak'] as num?)?.toInt() ?? 0,
-      lastPlayedDate: map['lastPlayedDate'] != null 
-          ? DateTime.tryParse(map['lastPlayedDate'].toString()) 
+      lastPlayedDate: map['lastPlayedDate'] != null
+          ? DateTime.tryParse(map['lastPlayedDate'].toString())
           : null,
+      onboardingComplete: map['onboardingComplete'] as bool? ??
+          (map['gamesPlayed'] as num?)?.toInt() != null &&
+              (map['gamesPlayed'] as num).toInt() > 0,
     );
   }
 }

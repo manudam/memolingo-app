@@ -34,6 +34,11 @@ class UserProvider with ChangeNotifier {
     await _persist();
   }
 
+  Future<void> completeOnboarding() async {
+    _user.onboardingComplete = true;
+    await _persist();
+  }
+
   Future<void> setAudioEnabled(bool enabled) async {
     _user.audioEnabled = enabled;
     await _persist();

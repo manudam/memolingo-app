@@ -17,7 +17,30 @@ class GameStartScreen extends StatefulWidget {
 }
 
 class _GameStartScreenState extends State<GameStartScreen> {
-  int? selectedTier;
+  bool _starting = false;
+
+  Future<void> _playTier(int tier) async {
+    if (_starting) return;
+    final library = context.read<LibraryProvider>();
+    final category = library.categoryById(widget.categoryId);
+    if (category == null) return;
+    final words = library.wordsInCategoryAndTier(category, tier);
+    if (words.length < 4) return;
+
+    setState(() => _starting = true);
+    await context.read<GameProvider>().startGame(
+          category: category,
+          tier: tier,
+        );
+    if (!mounted) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => const GameScreen(),
+        fullscreenDialog: true,
+      ),
+    );
+    setState(() => _starting = false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +52,6 @@ class _GameStartScreenState extends State<GameStartScreen> {
         body: Center(child: Text('Category not found.')),
       );
     }
-
-    selectedTier ??= category.tiers.first;
-    final wordsInSelectedTier =
-        library.wordsInCategoryAndTier(category, selectedTier!);
-    final tierLabel = MemoWord.tierLabels[selectedTier] ?? 'Tier $selectedTier';
 
     return Scaffold(
       appBar: AppBar(
@@ -87,9 +105,9 @@ class _GameStartScreenState extends State<GameStartScreen> {
               ),
               const SizedBox(height: 10),
               ...category.tiers.map((tier) {
-                final selected = selectedTier == tier;
                 final label = MemoWord.tierLabels[tier] ?? 'Tier $tier';
                 final count = category.words.where((w) => w.tier == tier).length;
+                final hasEnoughWords = count >= 4;
                 final descriptions = <int, String>{
                   1: 'The most common words to get you started',
                   2: 'Useful words for daily conversations',
@@ -100,21 +118,17 @@ class _GameStartScreenState extends State<GameStartScreen> {
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: BorderSide(
-                        color: selected ? Theme.of(context).colorScheme.primary : Colors.transparent,
-                        width: 2,
-                      ),
                     ),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(12),
-                      onTap: () => setState(() => selectedTier = tier),
+                      onTap: hasEnoughWords && !_starting ? () => _playTier(tier) : null,
                       child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Row(
                           children: [
                             Icon(
                               tier == 1 ? Icons.star_rounded : tier == 2 ? Icons.trending_up_rounded : Icons.rocket_launch_rounded,
-                              color: selected ? Theme.of(context).colorScheme.primary : Colors.grey,
+                              color: hasEnoughWords ? Theme.of(context).colorScheme.primary : Colors.grey.shade400,
                               size: 28,
                             ),
                             const SizedBox(width: 12),
@@ -127,7 +141,7 @@ class _GameStartScreenState extends State<GameStartScreen> {
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
-                                      color: selected ? Theme.of(context).colorScheme.primary : null,
+                                      color: hasEnoughWords ? null : Colors.grey.shade400,
                                     ),
                                   ),
                                   const SizedBox(height: 2),
@@ -138,9 +152,25 @@ class _GameStartScreenState extends State<GameStartScreen> {
                                 ],
                               ),
                             ),
-                            Text(
-                              '$count words',
-                              style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  '$count words',
+                                  style: TextStyle(fontSize: 13, color: Colors.grey.shade500),
+                                ),
+                                if (hasEnoughWords)
+                                  Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Theme.of(context).colorScheme.primary,
+                                    size: 20,
+                                  )
+                                else
+                                  Text(
+                                    'Not enough words',
+                                    style: TextStyle(fontSize: 11, color: Colors.grey.shade400),
+                                  ),
+                              ],
                             ),
                           ],
                         ),
@@ -149,34 +179,6 @@ class _GameStartScreenState extends State<GameStartScreen> {
                   ),
                 );
               }),
-              const SizedBox(height: 16),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: wordsInSelectedTier.length < 4
-                      ? null
-                      : () async {
-                          await context.read<GameProvider>().startGame(
-                                category: category,
-                                tier: selectedTier!,
-                              );
-                          if (!context.mounted) {
-                            return;
-                          }
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const GameScreen(),
-                              fullscreenDialog: true,
-                            ),
-                          );
-                        },
-                  icon: const Icon(Icons.play_arrow_rounded),
-                  label: Text('Play $tierLabel'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
