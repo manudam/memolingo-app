@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/tts_helper.dart';
 import '../../models/game_state.dart';
 import '../../models/memo_word.dart';
 import '../../providers/game_provider.dart';
@@ -34,23 +35,7 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   Future<void> _configureTts(String languageCode) async {
-    final Map<String, String> languageMap = {
-      'en': 'en-GB',
-      'es': 'es-ES',
-      'fr': 'fr-FR',
-      'de': 'de-DE',
-      'it': 'it-IT',
-      'ru': 'ru-RU',
-      'ko': 'ko-KR',
-      'zh-CN': 'zh-CN',
-      'ja': 'ja-JP',
-      'nl': 'nl-NL',
-    };
-    
-    final ttsLanguage = languageMap[languageCode] ?? 'en-GB';
-    await _tts.setLanguage(ttsLanguage);
-    await _tts.setSpeechRate(0.42);
-    await _tts.setVolume(1.0);
+    await configureTts(_tts, languageCode);
   }
 
   Future<void> _speakCurrentWord() async {

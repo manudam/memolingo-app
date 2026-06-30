@@ -1,1 +1,0 @@
-["sand", "soil", "root", "jungle", "actress", "architect", "baker", "banker", "builder", "cashier", "chef", "designer", "driver", "engineer", "farmer", "pharmacist", "pilot"]

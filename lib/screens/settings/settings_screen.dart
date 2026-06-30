@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/tts_helper.dart';
 import '../../providers/user_provider.dart';
 import '../../widgets/bottom_bar.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  Set<String>? _availableLanguages;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAvailableLanguages();
+  }
+
+  Future<void> _loadAvailableLanguages() async {
+    final available = await getAvailableTtsLanguages();
+    if (!mounted) return;
+    setState(() => _availableLanguages = available);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +112,11 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     DropdownButton<String>(
                       value: targetLanguage,
-                      items: languageNames.entries.map((e) {
+                      items: languageNames.entries
+                          .where((e) =>
+                              _availableLanguages == null ||
+                              _availableLanguages!.contains(e.key))
+                          .map((e) {
                         return DropdownMenuItem(
                           value: e.key,
                           child: Text(e.value),

@@ -477,7 +477,7 @@
 				DEVELOPMENT_TEAM = TATHW8QFKV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "11+ Vocabulary";
+				INFOPLIST_KEY_CFBundleDisplayName = MemoLingo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,7 +662,7 @@
 				DEVELOPMENT_TEAM = TATHW8QFKV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "11+ Vocabulary";
+				INFOPLIST_KEY_CFBundleDisplayName = MemoLingo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -687,7 +687,7 @@
 				DEVELOPMENT_TEAM = TATHW8QFKV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "11+ Vocabulary";
+				INFOPLIST_KEY_CFBundleDisplayName = MemoLingo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

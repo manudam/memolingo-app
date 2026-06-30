@@ -24,4 +24,4 @@
 -dontwarn io.flutter.embedding.android.FlutterPlayStoreSplitApplication
 
 # Keep your model classes if using JSON serialization
-# -keep class com.elevenplusvocabularywords.eleven_plus_vocabulary.models.** { *; }
+# -keep class com.memolingo.app.models.** { *; }

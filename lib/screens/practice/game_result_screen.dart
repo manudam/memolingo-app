@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+import '../../helpers/tts_helper.dart';
 import '../../models/game_state.dart';
 import '../../providers/game_provider.dart';
 import '../../providers/user_provider.dart';
@@ -164,7 +165,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                               final userProvider = context.read<UserProvider>();
                               if (userProvider.user.audioEnabled) {
                                 final lang = userProvider.user.targetLanguage;
-                                await _flutterTts.setLanguage(lang);
+                                await configureTts(_flutterTts, lang);
                                 await _flutterTts.speak(word.translationFor(lang));
                               }
                             },

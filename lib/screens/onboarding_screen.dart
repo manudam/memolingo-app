@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../helpers/tts_helper.dart';
 import '../providers/user_provider.dart';
 import 'practice/practice_screen.dart';
 
@@ -28,6 +29,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   };
 
   String _selectedLanguage = 'es';
+  Set<String> _availableLanguages = {};
+  bool _languagesLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAvailableLanguages();
+  }
+
+  Future<void> _loadAvailableLanguages() async {
+    final available = await getAvailableTtsLanguages();
+    if (!mounted) return;
+    setState(() {
+      _availableLanguages = available;
+      _languagesLoaded = true;
+      if (!available.contains(_selectedLanguage) && available.isNotEmpty) {
+        _selectedLanguage = available.first;
+      }
+    });
+  }
 
   void _next() {
     if (_page < 2) {
@@ -80,7 +101,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     _WelcomePage(onNext: _next),
                     _HowItWorksPage(onNext: _next),
                     _LanguagePage(
-                      languages: _languages,
+                      languages: _languagesLoaded
+                          ? Map.fromEntries(
+                              _languages.entries.where(
+                                (e) => _availableLanguages.contains(e.key),
+                              ),
+                            )
+                          : _languages,
                       selected: _selectedLanguage,
                       onSelected: (code) =>
                           setState(() => _selectedLanguage = code),
