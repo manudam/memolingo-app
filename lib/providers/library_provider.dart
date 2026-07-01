@@ -79,10 +79,6 @@ class LibraryProvider with ChangeNotifier {
     return _allWords.where((w) => w.categoryName == category.name).toList();
   }
 
-  List<MemoWord> wordsInCategoryAndTier(CategoryPack category, int tier) {
-    return category.words.where((w) => w.tier == tier).toList();
-  }
-
   String priceFor(CategoryPack category) {
     return _iapService.productById(category.productId)?.price ?? r'$1.99';
   }

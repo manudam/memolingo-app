@@ -11,7 +11,6 @@ import '../../models/memo_word.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/category_icon.dart';
 import 'game_screen.dart';
-import 'game_start_screen.dart';
 
 class PracticeScreen extends StatelessWidget {
   const PracticeScreen({super.key});
@@ -54,7 +53,10 @@ class PracticeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    _HeaderCard(ownedCount: 0, streak: user.currentStreak, xp: user.currentXP),
+                    _HeaderCard(
+                        ownedCount: 0,
+                        streak: user.currentStreak,
+                        xp: user.currentXP),
                     const Spacer(),
                     const Card(
                       child: Padding(
@@ -90,22 +92,33 @@ class PracticeScreen extends StatelessWidget {
                             Card(
                               color: Colors.amber.shade50,
                               child: ListTile(
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                                leading: const Icon(Icons.psychology, size: 40, color: Colors.orange),
-                                title: const Text('Daily Review', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                                subtitle: Text('${dueWords.length} words due for review'),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 12),
+                                leading: const Icon(Icons.psychology,
+                                    size: 40, color: Colors.orange),
+                                title: const Text('Daily Review',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18)),
+                                subtitle: Text(
+                                    '${dueWords.length} words due for review'),
                                 trailing: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.orange),
                                   onPressed: () async {
                                     final game = context.read<GameProvider>();
-                                    await game.startReviewGame(List.from(dueWords), ownedCategories.first);
+                                    await game.startReviewGame(
+                                        List.from(dueWords),
+                                        ownedCategories.first);
                                     if (context.mounted) {
                                       Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (_) => const GameScreen()),
+                                        MaterialPageRoute(
+                                            builder: (_) => const GameScreen()),
                                       );
                                     }
                                   },
-                                  child: const Text('Review', style: TextStyle(color: Colors.white)),
+                                  child: const Text('Review',
+                                      style: TextStyle(color: Colors.white)),
                                 ),
                               ),
                             ),
@@ -118,7 +131,8 @@ class PracticeScreen extends StatelessWidget {
 
                   // A category node.
                   final category = ownedCategories[index];
-                  final isLast = index == ownedCategories.length - 1; // Top-most node
+                  final isLast =
+                      index == ownedCategories.length - 1; // Top-most node
                   final mastery = category.masteryPercent(user.wordMastery);
 
                   return _JourneyNode(
@@ -183,42 +197,93 @@ class _JourneyNode extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     GestureDetector(
-                      onTap: () {
+                      onTap: () async {
+                        if (category.words.length < 4) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content:
+                                  Text('Not enough words to start a game.'),
+                            ),
+                          );
+                          return;
+                        }
+
+                        final game = context.read<GameProvider>();
+                        await game.startGame(category: category);
+
+                        if (!context.mounted) return;
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => GameStartScreen(categoryId: category.id),
+                            builder: (_) => const GameScreen(),
+                            fullscreenDialog: true,
                           ),
                         );
                       },
-                      child: Container(
-                        width: buttonSize,
-                        height: buttonSize,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                          border: Border.all(
-                            color: mastery == 100 ? Colors.amber : Colors.blue.shade300,
-                            width: 5,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.1),
-                              blurRadius: 8,
-                              offset: const Offset(0, 4),
+                      child: Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          Container(
+                            width: buttonSize,
+                            height: buttonSize,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                              border: Border.all(
+                                color: mastery == 100
+                                    ? Colors.amber
+                                    : Colors.blue.shade300,
+                                width: 5,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.1),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: ClipOval(
-                          child: CategoryIcon(
-                            categoryName: category.name,
-                            size: 80,
+                            child: ClipOval(
+                              child: CategoryIcon(
+                                categoryName: category.name,
+                                size: 80,
+                              ),
+                            ),
                           ),
-                        ),
+                          Positioned(
+                            right: -4,
+                            bottom: -4,
+                            child: Container(
+                              width: 34,
+                              height: 34,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Theme.of(context).colorScheme.primary,
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 3,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.18),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: const Icon(
+                                Icons.play_arrow_rounded,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 6),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
@@ -232,7 +297,8 @@ class _JourneyNode extends StatelessWidget {
                       ),
                       child: Text(
                         category.name,
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 13),
                       ),
                     ),
                   ],
@@ -243,9 +309,11 @@ class _JourneyNode extends StatelessWidget {
                   left: (availableWidth / 2) + currentOffset + (buttonSize / 4),
                   top: nodeHeight / 2 - (buttonSize / 2) - 10,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
-                      color: mastery == 100 ? Colors.amber : Colors.blue.shade600,
+                      color:
+                          mastery == 100 ? Colors.amber : Colors.blue.shade600,
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: Colors.white, width: 2),
                     ),
@@ -284,18 +352,22 @@ class _PathPainter extends CustomPainter {
     final path = Path();
     final startX = size.width / 2 + currentXOffset;
     final startY = size.height / 2;
-    
+
     final endX = size.width / 2 + nextXOffset;
-    final endY = -size.height / 2; // the center of the next node (which is drawn above)
+    final endY =
+        -size.height / 2; // the center of the next node (which is drawn above)
 
     path.moveTo(startX, startY);
-    
+
     // Draw a smooth bezier curve between the two nodes
     path.cubicTo(
-      startX, startY - size.height / 2, // Control point 1 (pulls curve up from start)
-      endX, endY + size.height / 2,     // Control point 2 (pulls curve down from end)
-      endX, endY                        // End point
-    );
+        startX,
+        startY - size.height / 2, // Control point 1 (pulls curve up from start)
+        endX,
+        endY + size.height / 2, // Control point 2 (pulls curve down from end)
+        endX,
+        endY // End point
+        );
 
     canvas.drawPath(path, paint);
   }
@@ -303,7 +375,7 @@ class _PathPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _PathPainter oldDelegate) {
     return oldDelegate.currentXOffset != currentXOffset ||
-           oldDelegate.nextXOffset != nextXOffset;
+        oldDelegate.nextXOffset != nextXOffset;
   }
 }
 
@@ -360,7 +432,8 @@ class _HeaderCard extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -371,14 +444,17 @@ class _HeaderCard extends StatelessWidget {
                             const SizedBox(width: 4),
                             Text(
                               '$streak',
-                              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.orange),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.orange),
                             ),
                           ],
                         ),
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -389,7 +465,9 @@ class _HeaderCard extends StatelessWidget {
                             const SizedBox(width: 4),
                             Text(
                               '$xp XP',
-                              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.amber.shade700),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.amber.shade700),
                             ),
                           ],
                         ),

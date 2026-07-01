@@ -47,7 +47,7 @@ class _GameScreenState extends State<GameScreen> {
     final game = context.read<GameProvider>();
     final currentWord = game.currentCorrectWord;
     if (currentWord == null) return;
-    
+
     final wordText = currentWord.translationFor(user.targetLanguage);
     if (wordText.isEmpty) return;
 
@@ -74,11 +74,15 @@ class _GameScreenState extends State<GameScreen> {
     await _speakCurrentWord();
   }
 
-  Future<void> _submitSpelling(String text, GameProvider game, String targetLanguage) async {
+  Future<void> _submitSpelling(
+      String text, GameProvider game, String targetLanguage) async {
     if (_processingAnswer || text.trim().isEmpty) return;
     setState(() => _processingAnswer = true);
 
-    final expected = game.currentCorrectWord!.translationFor(targetLanguage).trim().toLowerCase();
+    final expected = game.currentCorrectWord!
+        .translationFor(targetLanguage)
+        .trim()
+        .toLowerCase();
     if (text.trim().toLowerCase() == expected) {
       HapticFeedback.lightImpact();
     } else {
@@ -89,7 +93,8 @@ class _GameScreenState extends State<GameScreen> {
     final wasCombo = game.currentCombo;
     await game.answerSpelling(text, targetLanguage);
     final newCombo = game.currentCombo;
-    if (newCombo > wasCombo && (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
+    if (newCombo > wasCombo &&
+        (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
       HapticFeedback.heavyImpact();
     }
     setState(() => _processingAnswer = false);
@@ -103,7 +108,8 @@ class _GameScreenState extends State<GameScreen> {
     super.dispose();
   }
 
-  Widget _buildTopPrompt(BuildContext context, GameProvider game, String targetLanguage) {
+  Widget _buildTopPrompt(
+      BuildContext context, GameProvider game, String targetLanguage) {
     final correctWord = game.currentCorrectWord!;
     final qType = game.currentQuestionType;
 
@@ -133,6 +139,13 @@ class _GameScreenState extends State<GameScreen> {
               child: Image.asset(
                 'assets/memolingo/images/${correctWord.imageFileName}',
                 fit: BoxFit.contain,
+                errorBuilder: (_, __, ___) {
+                  return const Icon(
+                    Icons.image_not_supported,
+                    size: 38,
+                    color: Colors.grey,
+                  );
+                },
               ),
             ),
           ),
@@ -154,7 +167,8 @@ class _GameScreenState extends State<GameScreen> {
     }
   }
 
-  Widget _buildOptionsList(BuildContext context, GameProvider game, String targetLanguage, String labelLanguage, bool showLabels) {
+  Widget _buildOptionsList(BuildContext context, GameProvider game,
+      String targetLanguage, String labelLanguage, bool showLabels) {
     final qType = game.currentQuestionType;
 
     if (qType == GameQuestionType.spelling) {
@@ -173,9 +187,11 @@ class _GameScreenState extends State<GameScreen> {
                 hintText: 'Enter text here...',
                 filled: true,
                 fillColor: Colors.white,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               ),
-              onSubmitted: (text) => _submitSpelling(text, game, targetLanguage),
+              onSubmitted: (text) =>
+                  _submitSpelling(text, game, targetLanguage),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
@@ -208,18 +224,19 @@ class _GameScreenState extends State<GameScreen> {
               ? null
               : () async {
                   setState(() => _processingAnswer = true);
-                  
+
                   if (isCorrect) {
                     HapticFeedback.lightImpact();
                   } else {
                     HapticFeedback.vibrate();
                     _shakeKey.currentState?.shake();
                   }
-                  
+
                   final wasCombo = game.currentCombo;
                   await game.answer(option);
                   final newCombo = game.currentCombo;
-                  if (newCombo > wasCombo && (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
+                  if (newCombo > wasCombo &&
+                      (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
                     HapticFeedback.heavyImpact();
                   }
                   setState(() => _processingAnswer = false);
@@ -235,68 +252,52 @@ class _GameScreenState extends State<GameScreen> {
             ),
             child: Stack(
               children: [
-                if (qType != GameQuestionType.reverse)
-                  Positioned.fill(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(11),
-                      child: Image.asset(
-                        'assets/memolingo/images/${option.imageFileName}',
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) {
-                          return Container(
-                            color: Colors.grey.shade100,
-                            alignment: Alignment.center,
-                            child: const Icon(
-                              Icons.image_not_supported,
-                              size: 38,
-                              color: Colors.grey,
-                            ),
-                          );
-                        },
+                Positioned.fill(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(11),
+                    child: Image.asset(
+                      'assets/memolingo/images/${option.imageFileName}',
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) {
+                        return Container(
+                          color: Colors.grey.shade100,
+                          alignment: Alignment.center,
+                          child: const Icon(
+                            Icons.image_not_supported,
+                            size: 38,
+                            color: Colors.grey,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                if (showLabels && qType != GameQuestionType.reverse)
+                  Positioned(
+                    bottom: 12,
+                    left: 12,
+                    right: 12,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(217), // 0.85 * 255
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        option.translationFor(labelLanguage),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          color: Colors.black87,
+                        ),
                       ),
                     ),
                   ),
-                if (showLabels || qType == GameQuestionType.reverse)
-                  qType == GameQuestionType.reverse
-                      ? Center(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              option.translationFor(labelLanguage),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        )
-                      : Positioned(
-                          bottom: 12,
-                          left: 12,
-                          right: 12,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withAlpha(217), // 0.85 * 255
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              option.translationFor(labelLanguage),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
               ],
             ),
           ),
@@ -366,7 +367,8 @@ class _GameScreenState extends State<GameScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (game.currentCombo > 1) ...[
-              const Icon(Icons.local_fire_department, color: Colors.orange, size: 20),
+              const Icon(Icons.local_fire_department,
+                  color: Colors.orange, size: 20),
               Text(
                 '${game.currentCombo}  ',
                 style: const TextStyle(
@@ -399,8 +401,8 @@ class _GameScreenState extends State<GameScreen> {
   Widget _buildProgressBar(GameProvider game) {
     return UniqueProgressBar(
       progress: game.progress,
-      secondaryProgress: game.totalQuestions > 0 
-          ? game.maxProgress / game.totalQuestions 
+      secondaryProgress: game.totalQuestions > 0
+          ? game.maxProgress / game.totalQuestions
           : 0.0,
     );
   }
@@ -424,8 +426,10 @@ class _GameScreenState extends State<GameScreen> {
     bool showLabels,
   ) {
     final qType = game.currentQuestionType;
-    final showPromptCard = qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
-    final showRepeatButton = qType == GameQuestionType.standard || qType == GameQuestionType.audioOnly;
+    final showPromptCard =
+        qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
+    final showRepeatButton = qType == GameQuestionType.standard ||
+        qType == GameQuestionType.audioOnly;
 
     return Column(
       children: [
@@ -446,7 +450,8 @@ class _GameScreenState extends State<GameScreen> {
         ],
         const SizedBox(height: 16),
         Expanded(
-          child: _buildOptionsList(context, game, targetLanguage, labelLanguage, showLabels),
+          child: _buildOptionsList(
+              context, game, targetLanguage, labelLanguage, showLabels),
         ),
         if (showRepeatButton) ...[
           const SizedBox(height: 16),
@@ -464,8 +469,10 @@ class _GameScreenState extends State<GameScreen> {
     bool showLabels,
   ) {
     final qType = game.currentQuestionType;
-    final showPromptCard = qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
-    final showRepeatButton = qType == GameQuestionType.standard || qType == GameQuestionType.audioOnly;
+    final showPromptCard =
+        qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
+    final showRepeatButton = qType == GameQuestionType.standard ||
+        qType == GameQuestionType.audioOnly;
 
     return Column(
       children: [
@@ -491,7 +498,8 @@ class _GameScreenState extends State<GameScreen> {
                               horizontal: 12,
                               vertical: 12,
                             ),
-                            child: _buildTopPrompt(context, game, targetLanguage),
+                            child:
+                                _buildTopPrompt(context, game, targetLanguage),
                           ),
                         ),
                       ),
@@ -501,7 +509,8 @@ class _GameScreenState extends State<GameScreen> {
               ),
               const SizedBox(width: 16),
               Expanded(
-                child: _buildOptionsList(context, game, targetLanguage, labelLanguage, showLabels),
+                child: _buildOptionsList(
+                    context, game, targetLanguage, labelLanguage, showLabels),
               ),
             ],
           ),
@@ -540,14 +549,17 @@ class _GameScreenState extends State<GameScreen> {
               builder: (context, constraints) {
                 final width = constraints.maxWidth;
                 if (width < 600) {
-                  return _buildPortraitLayout(context, game, targetLanguage, labelLanguage, showLabels);
+                  return _buildPortraitLayout(
+                      context, game, targetLanguage, labelLanguage, showLabels);
                 } else if (width < 900) {
-                  return _buildLandscapeLayout(context, game, targetLanguage, labelLanguage, showLabels);
+                  return _buildLandscapeLayout(
+                      context, game, targetLanguage, labelLanguage, showLabels);
                 } else {
                   return Center(
                     child: SizedBox(
                       width: 900,
-                      child: _buildLandscapeLayout(context, game, targetLanguage, labelLanguage, showLabels),
+                      child: _buildLandscapeLayout(context, game,
+                          targetLanguage, labelLanguage, showLabels),
                     ),
                   );
                 }

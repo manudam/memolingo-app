@@ -21,8 +21,10 @@ class CategoryWordsScreen extends StatelessWidget {
       );
     }
 
-    final words = [...category.words]
-      ..sort((a, b) => a.translationFor(context.read<UserProvider>().user.targetLanguage).compareTo(b.translationFor(context.read<UserProvider>().user.targetLanguage)));
+    final words = [...category.words]..sort((a, b) => a
+        .translationFor(context.read<UserProvider>().user.targetLanguage)
+        .compareTo(b
+            .translationFor(context.read<UserProvider>().user.targetLanguage)));
 
     return Scaffold(
       appBar: AppBar(
@@ -43,9 +45,23 @@ class CategoryWordsScreen extends StatelessWidget {
                   width: 44,
                   height: 44,
                   fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) {
+                    return Container(
+                      width: 44,
+                      height: 44,
+                      color: Colors.grey.shade100,
+                      alignment: Alignment.center,
+                      child: const Icon(
+                        Icons.image_not_supported,
+                        size: 24,
+                        color: Colors.grey,
+                      ),
+                    );
+                  },
                 ),
               ),
-              title: Text(word.translationFor(context.read<UserProvider>().user.targetLanguage)),
+              title: Text(word.translationFor(
+                  context.read<UserProvider>().user.targetLanguage)),
               subtitle: Text('${word.tierLabel} · ${_masteryLabel(mastery)}'),
               trailing: _MasteryDots(level: mastery),
             ),

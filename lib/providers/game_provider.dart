@@ -16,7 +16,6 @@ class GameProvider with ChangeNotifier {
   final Random _random = Random();
 
   CategoryPack? _category;
-  int _tier = 1;
   GameState _state = GameState.idle;
 
   List<MemoWord> _questionOrder = <MemoWord>[];
@@ -35,7 +34,6 @@ class GameProvider with ChangeNotifier {
   final Map<String, int> _incorrectByWordId = <String, int>{};
 
   CategoryPack? get category => _category;
-  int get tier => _tier;
   GameState get state => _state;
   List<MemoWord> get options => List.unmodifiable(_currentOptions);
   MemoWord? get currentCorrectWord => _currentCorrectWord;
@@ -57,14 +55,11 @@ class GameProvider with ChangeNotifier {
 
   Future<void> startGame({
     required CategoryPack category,
-    required int tier,
   }) async {
     _category = category;
-    _tier = tier;
     _state = GameState.idle;
 
-    final levelWords = category.words.where((w) => w.tier == tier).toList();
-    if (levelWords.isEmpty) {
+    if (category.words.isEmpty) {
       _questionOrder = <MemoWord>[];
       _currentOptions = <MemoWord>[];
       _currentCorrectWord = null;
@@ -72,7 +67,7 @@ class GameProvider with ChangeNotifier {
       return;
     }
 
-    _questionOrder = List<MemoWord>.from(levelWords)..shuffle(_random);
+    _questionOrder = List<MemoWord>.from(category.words)..shuffle(_random);
     _currentIndex = 0;
     _lives = 3;
     _maxProgress = 0;
@@ -87,9 +82,9 @@ class GameProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> startReviewGame(List<MemoWord> reviewWords, CategoryPack category) async {
+  Future<void> startReviewGame(
+      List<MemoWord> reviewWords, CategoryPack category) async {
     _category = category;
-    _tier = 1;
     _state = GameState.idle;
 
     if (reviewWords.isEmpty) {
@@ -120,7 +115,7 @@ class GameProvider with ChangeNotifier {
     if (existingCategory == null) {
       return;
     }
-    await startGame(category: existingCategory, tier: _tier);
+    await startGame(category: existingCategory);
   }
 
   Future<void> answer(MemoWord selectedWord) async {
@@ -138,7 +133,7 @@ class GameProvider with ChangeNotifier {
       if (_currentCombo > _maxCombo) {
         _maxCombo = _currentCombo;
       }
-      
+
       if (_currentIndex > _maxProgress) {
         _maxProgress = _currentIndex;
       }
@@ -182,9 +177,7 @@ class GameProvider with ChangeNotifier {
     }
 
     _lives -= 1;
-    // Add the missed word to the end of the queue so they have to try again later
-    _questionOrder.add(correctWord);
-    _currentIndex += 1;
+    _currentIndex = 0;
     _prepareRound();
     notifyListeners();
   }
@@ -195,14 +188,16 @@ class GameProvider with ChangeNotifier {
     }
 
     final correctWord = _currentCorrectWord!;
-    final expected = correctWord.translationFor(targetLanguage).trim().toLowerCase();
+    final expected =
+        correctWord.translationFor(targetLanguage).trim().toLowerCase();
     final actual = typedWord.trim().toLowerCase();
 
     if (expected == actual) {
       await answer(correctWord); // This is correct, triggers win logic
     } else {
       // Find a dummy wrong word to pass to answer() to trigger loss logic
-      final wrongWord = _category!.words.firstWhere((w) => w.id != correctWord.id);
+      final wrongWord =
+          _category!.words.firstWhere((w) => w.id != correctWord.id);
       await answer(wrongWord);
     }
   }
@@ -249,18 +244,11 @@ class GameProvider with ChangeNotifier {
       _currentQuestionType = GameQuestionType.standard;
     }
 
-    final sameLevelPool = _category!.words
-        .where((w) => w.tier == _tier && w.id != correct.id)
-        .toList();
-
     final fallbackPool =
         _category!.words.where((w) => w.id != correct.id).toList();
 
     final distractors = <MemoWord>[];
-    _appendRandomUnique(distractors, sameLevelPool, 3);
-    if (distractors.length < 3) {
-      _appendRandomUnique(distractors, fallbackPool, 3 - distractors.length);
-    }
+    _appendRandomUnique(distractors, fallbackPool, 3);
 
     // Guard for small categories.
     while (distractors.length < 3 && fallbackPool.isNotEmpty) {
