@@ -16,38 +16,73 @@ const Map<String, String> _ttsLocaleMap = {
 String ttsLocaleFor(String languageCode) =>
     _ttsLocaleMap[languageCode] ?? 'en-GB';
 
-Future<void> configureTts(FlutterTts tts, String languageCode) async {
+const double defaultTtsSpeechRate = 0.42;
+
+Future<void> configureTts(
+  FlutterTts tts,
+  String languageCode, {
+  double? speechRate,
+  Map<String, String>? voice,
+}) async {
   final locale = ttsLocaleFor(languageCode);
   final langPrefix = locale.split('-').first;
 
-  final voices = await tts.getVoices;
-  if (voices is List) {
-    Map<String, String>? exactMatch;
-    Map<String, String>? langMatch;
+  if (voice != null) {
+    await tts.setVoice(voice);
+  } else {
+    final voices = await tts.getVoices;
+    if (voices is List) {
+      Map<String, String>? exactMatch;
+      Map<String, String>? langMatch;
 
-    for (final v in voices) {
-      if (v is! Map) continue;
-      final voiceLocale = (v['locale'] ?? '') as String;
-      final voiceName = (v['name'] ?? '') as String;
-      if (voiceLocale == locale) {
-        exactMatch ??= {'name': voiceName, 'locale': voiceLocale};
-      } else if (voiceLocale.startsWith(langPrefix)) {
-        langMatch ??= {'name': voiceName, 'locale': voiceLocale};
+      for (final v in voices) {
+        if (v is! Map) continue;
+        final voiceLocale = (v['locale'] ?? '') as String;
+        final voiceName = (v['name'] ?? '') as String;
+        if (voiceLocale == locale) {
+          exactMatch ??= {'name': voiceName, 'locale': voiceLocale};
+        } else if (voiceLocale.startsWith(langPrefix)) {
+          langMatch ??= {'name': voiceName, 'locale': voiceLocale};
+        }
       }
-    }
 
-    final match = exactMatch ?? langMatch;
-    if (match != null) {
-      await tts.setVoice(match);
+      final match = exactMatch ?? langMatch;
+      if (match != null) {
+        await tts.setVoice(match);
+      } else {
+        await tts.setLanguage(locale);
+      }
     } else {
       await tts.setLanguage(locale);
     }
-  } else {
-    await tts.setLanguage(locale);
   }
 
-  await tts.setSpeechRate(0.42);
+  await tts.setSpeechRate(speechRate ?? defaultTtsSpeechRate);
   await tts.setVolume(1.0);
+}
+
+/// Returns the on-device voices available for [languageCode], for use in a
+/// voice picker. Each entry has 'name' and 'locale' keys.
+Future<List<Map<String, String>>> getVoicesForLanguage(
+    String languageCode) async {
+  final locale = ttsLocaleFor(languageCode);
+  final langPrefix = locale.split('-').first;
+
+  final tts = FlutterTts();
+  final voices = await tts.getVoices;
+  if (voices is! List) return [];
+
+  final matches = <Map<String, String>>[];
+  for (final v in voices) {
+    if (v is! Map) continue;
+    final voiceLocale = (v['locale'] ?? '') as String;
+    final voiceName = (v['name'] ?? '') as String;
+    if (voiceName.isEmpty) continue;
+    if (voiceLocale == locale || voiceLocale.startsWith(langPrefix)) {
+      matches.add({'name': voiceName, 'locale': voiceLocale});
+    }
+  }
+  return matches;
 }
 
 /// Returns the set of app language codes that have a TTS voice on this device.

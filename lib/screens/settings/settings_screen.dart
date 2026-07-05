@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../helpers/tts_helper.dart';
 import '../../providers/user_provider.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/language_picker.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -14,6 +15,8 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   Set<String>? _availableLanguages;
+  List<Map<String, String>>? _voicesForTargetLanguage;
+  String? _voicesLoadedForLanguage;
 
   @override
   void initState() {
@@ -27,6 +30,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
     setState(() => _availableLanguages = available);
   }
 
+  Future<void> _loadVoicesFor(String languageCode) async {
+    final voices = await getVoicesForLanguage(languageCode);
+    if (!mounted) return;
+    setState(() {
+      _voicesForTargetLanguage = voices;
+      _voicesLoadedForLanguage = languageCode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final userProvider = context.watch<UserProvider>();
@@ -34,19 +46,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final showLabels = userProvider.user.showLabels;
     final targetLanguage = userProvider.user.targetLanguage;
     final labelLanguage = userProvider.user.labelLanguage;
+    final speechRate = userProvider.user.speechRate;
+    final selectedVoiceName =
+        userProvider.user.voiceOverrides[targetLanguage]?['name'];
 
-    final languageNames = {
-      'en': 'English',
-      'es': 'Spanish',
-      'fr': 'French',
-      'de': 'German',
-      'it': 'Italian',
-      'ru': 'Russian',
-      'ko': 'Korean',
-      'zh-CN': 'Chinese (Simplified)',
-      'ja': 'Japanese',
-      'nl': 'Dutch',
-    };
+    if (_voicesLoadedForLanguage != targetLanguage) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _loadVoicesFor(targetLanguage);
+      });
+    }
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),
@@ -80,6 +88,69 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 12),
             Card(
+              child: InkWell(
+                onTap: () async {
+                  final selected = await showTargetLanguagePicker(
+                    context: context,
+                    selectedLanguage: targetLanguage,
+                    availableLanguages: _availableLanguages,
+                  );
+                  if (selected == null || selected == targetLanguage) return;
+                  await userProvider.setTargetLanguage(selected);
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content:
+                          Text('Now learning ${languageNameFor(selected)}'),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(18),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 52,
+                        height: 52,
+                        decoration: BoxDecoration(
+                          color:
+                              const Color(0xFF2563EB).withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: const Icon(
+                          Icons.language_rounded,
+                          color: Color(0xFF2563EB),
+                          size: 30,
+                        ),
+                      ),
+                      const SizedBox(width: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Learning ${languageNameFor(targetLanguage)}',
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            const Text(
+                              'Tap to change the language you practise',
+                              style: TextStyle(color: Colors.black54),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.chevron_right_rounded),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Card(
               child: SwitchListTile(
                 title: const Text('Word Pronunciation'),
                 subtitle: const Text('Speak target words during gameplay'),
@@ -91,41 +162,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 8),
             Card(
-              child: SwitchListTile(
-                title: const Text('Show Image Labels'),
-                subtitle: const Text('Display translated text on images during gameplay'),
-                value: showLabels,
-                onChanged: (value) async {
-                  await userProvider.setShowLabels(value);
-                },
-              ),
-            ),
-            const SizedBox(height: 8),
-            Card(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Expanded(
-                      child: Text('Learning Language', style: TextStyle(fontSize: 16)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Speech Speed',
+                            style: TextStyle(fontSize: 16)),
+                        Text('${speechRate.toStringAsFixed(2)}x',
+                            style: const TextStyle(color: Colors.grey)),
+                      ],
                     ),
-                    DropdownButton<String>(
-                      value: targetLanguage,
-                      items: languageNames.entries
-                          .where((e) =>
-                              _availableLanguages == null ||
-                              _availableLanguages!.contains(e.key))
-                          .map((e) {
-                        return DropdownMenuItem(
-                          value: e.key,
-                          child: Text(e.value),
-                        );
-                      }).toList(),
+                    Slider(
+                      value: speechRate,
+                      min: 0.2,
+                      max: 0.8,
+                      divisions: 12,
+                      label: '${speechRate.toStringAsFixed(2)}x',
                       onChanged: (value) async {
-                        if (value != null) {
-                          await userProvider.setTargetLanguage(value);
-                        }
+                        await userProvider.setSpeechRate(value);
                       },
                     ),
                   ],
@@ -134,13 +193,75 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             const SizedBox(height: 8),
             Card(
+              child: SwitchListTile(
+                title: const Text('Show Image Labels'),
+                subtitle: const Text(
+                    'Display translated text on images during gameplay'),
+                value: showLabels,
+                onChanged: (value) async {
+                  await userProvider.setShowLabels(value);
+                },
+              ),
+            ),
+            const SizedBox(height: 8),
+            if (_voicesForTargetLanguage != null &&
+                _voicesForTargetLanguage!.isNotEmpty)
+              Card(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                            'Voice (${languageNameFor(targetLanguage)})',
+                            style: const TextStyle(fontSize: 16)),
+                      ),
+                      DropdownButton<String>(
+                        value: selectedVoiceName ?? '__auto__',
+                        items: [
+                          const DropdownMenuItem(
+                            value: '__auto__',
+                            child: Text('Automatic'),
+                          ),
+                          ..._voicesForTargetLanguage!.map((v) {
+                            return DropdownMenuItem(
+                              value: v['name'],
+                              child: Text(v['name']!,
+                                  overflow: TextOverflow.ellipsis),
+                            );
+                          }),
+                        ],
+                        onChanged: (value) async {
+                          if (value == null || value == '__auto__') {
+                            await userProvider.setVoiceOverride(
+                                targetLanguage, null);
+                          } else {
+                            final voice = _voicesForTargetLanguage!
+                                .firstWhere((v) => v['name'] == value);
+                            await userProvider.setVoiceOverride(
+                                targetLanguage, voice);
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            if (_voicesForTargetLanguage != null &&
+                _voicesForTargetLanguage!.isNotEmpty)
+              const SizedBox(height: 8),
+            Card(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Expanded(
-                      child: Text('Label Language', style: TextStyle(fontSize: 16)),
+                      child: Text('Label Language',
+                          style: TextStyle(fontSize: 16)),
                     ),
                     DropdownButton<String>(
                       value: labelLanguage,

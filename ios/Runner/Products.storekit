@@ -10,98 +10,261 @@
     ]
   },
   "identifier" : "86118FFF",
-  "nonRenewingSubscriptions" : [
-
-  ],
+  "nonRenewingSubscriptions" : [],
   "products" : [
     {
-      "displayPrice" : "1.99",
+      "displayPrice" : "9.99",
       "familyShareable" : false,
-      "internalID" : "E0CC7140",
+      "internalID" : "ECA2E076",
       "localizations" : [
         {
-          "description" : "Expand your vocabulary with Set 1",
-          "displayName" : "Vocabulary Set 1",
+          "description" : "Unlock every MemoLingo category pack.",
+          "displayName" : "All Categories",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "vocabulary_pack_1",
-      "referenceName" : "Vocabulary Set 1",
+      "productID" : "memolingo_all_categories",
+      "referenceName" : "All Categories",
       "type" : "NonConsumable"
     },
     {
       "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "E3DFA42C",
+      "internalID" : "FBBE3ECB",
       "localizations" : [
         {
-          "description" : "Expand your vocabulary with Set 2",
-          "displayName" : "Vocabulary Set 2",
+          "description" : "Unlock the Animals category pack.",
+          "displayName" : "Animals",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "vocabulary_pack_2",
-      "referenceName" : "Vocabulary Set 2",
+      "productID" : "memolingo_category_animals",
+      "referenceName" : "Animals",
       "type" : "NonConsumable"
     },
     {
       "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "4721D794",
+      "internalID" : "9A24F10B",
       "localizations" : [
         {
-          "description" : "Expand your vocabulary with Set 3",
-          "displayName" : "Vocabulary Set 3",
+          "description" : "Unlock the In The Home category pack.",
+          "displayName" : "In The Home",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "vocabulary_pack_3",
-      "referenceName" : "Vocabulary Set 3",
+      "productID" : "memolingo_category_in_the_home",
+      "referenceName" : "In The Home",
       "type" : "NonConsumable"
     },
     {
       "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "A7CF5DF0",
+      "internalID" : "A35EDEB4",
       "localizations" : [
         {
-          "description" : "Expand your vocabulary with Set 4",
-          "displayName" : "Vocabulary Set 4",
+          "description" : "Unlock the Food category pack.",
+          "displayName" : "Food",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "vocabulary_pack_4",
-      "referenceName" : "Vocabulary Set 4",
+      "productID" : "memolingo_category_food",
+      "referenceName" : "Food",
       "type" : "NonConsumable"
     },
     {
       "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "C0196DE9",
+      "internalID" : "5BC55750",
       "localizations" : [
         {
-          "description" : "Expand your vocabulary with Set 5",
-          "displayName" : "Vocabulary Set 5",
+          "description" : "Unlock the Personal Belongings category pack.",
+          "displayName" : "Personal Belongings",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "vocabulary_pack_5",
-      "referenceName" : "Vocabulary Set 5",
+      "productID" : "memolingo_category_personal_belongings",
+      "referenceName" : "Personal Belongings",
       "type" : "NonConsumable"
     },
     {
-      "displayPrice" : "5.99",
+      "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "7B4118EC",
+      "internalID" : "AA54B1DD",
       "localizations" : [
         {
-          "description" : "Get all 5 vocabulary sets at a discounted price",
-          "displayName" : "Complete Vocabulary Bundle",
+          "description" : "Unlock the Verbs category pack.",
+          "displayName" : "Verbs",
           "locale" : "en_GB"
         }
       ],
-      "productID" : "all_vocabulary_packs",
-      "referenceName" : "All Vocabulary Sets",
+      "productID" : "memolingo_category_verbs",
+      "referenceName" : "Verbs",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "8FB92C38",
+      "localizations" : [
+        {
+          "description" : "Unlock the Describing Things category pack.",
+          "displayName" : "Describing Things",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_describing_things",
+      "referenceName" : "Describing Things",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6B77C30C",
+      "localizations" : [
+        {
+          "description" : "Unlock the Places category pack.",
+          "displayName" : "Places",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_places",
+      "referenceName" : "Places",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "B7EA507A",
+      "localizations" : [
+        {
+          "description" : "Unlock the People category pack.",
+          "displayName" : "People",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_people",
+      "referenceName" : "People",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "0DE7A2EE",
+      "localizations" : [
+        {
+          "description" : "Unlock the Sports category pack.",
+          "displayName" : "Sports",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_sports",
+      "referenceName" : "Sports",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "AC57439E",
+      "localizations" : [
+        {
+          "description" : "Unlock the Transport category pack.",
+          "displayName" : "Transport",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_transport",
+      "referenceName" : "Transport",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "515070B6",
+      "localizations" : [
+        {
+          "description" : "Unlock the Nature & Environment category pack.",
+          "displayName" : "Nature & Environment",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_nature_environment",
+      "referenceName" : "Nature & Environment",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "DBD9E4A0",
+      "localizations" : [
+        {
+          "description" : "Unlock the Professions category pack.",
+          "displayName" : "Professions",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_professions",
+      "referenceName" : "Professions",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "F8D69707",
+      "localizations" : [
+        {
+          "description" : "Unlock the Clothing & Accessories category pack.",
+          "displayName" : "Clothing & Accessories",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_clothing_accessories",
+      "referenceName" : "Clothing & Accessories",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "37B522FF",
+      "localizations" : [
+        {
+          "description" : "Unlock the Technology & Electronics category pack.",
+          "displayName" : "Technology & Electronics",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_technology_electronics",
+      "referenceName" : "Technology & Electronics",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "1CC90ADF",
+      "localizations" : [
+        {
+          "description" : "Unlock the Musical Instruments category pack.",
+          "displayName" : "Musical Instruments",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_musical_instruments",
+      "referenceName" : "Musical Instruments",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "E5A0F30F",
+      "localizations" : [
+        {
+          "description" : "Unlock the Health & Medicine category pack.",
+          "displayName" : "Health & Medicine",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "memolingo_category_health_medicine",
+      "referenceName" : "Health & Medicine",
       "type" : "NonConsumable"
     }
   ],
@@ -155,9 +318,7 @@
       }
     ]
   },
-  "subscriptionGroups" : [
-
-  ],
+  "subscriptionGroups" : [],
   "version" : {
     "major" : 4,
     "minor" : 0

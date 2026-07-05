@@ -10,6 +10,7 @@ import '../../providers/user_provider.dart';
 import '../../models/memo_word.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/category_icon.dart';
+import '../../widgets/language_picker.dart';
 import 'game_screen.dart';
 
 class PracticeScreen extends StatelessWidget {
@@ -56,7 +57,8 @@ class PracticeScreen extends StatelessWidget {
                     _HeaderCard(
                         ownedCount: 0,
                         streak: user.currentStreak,
-                        xp: user.currentXP),
+                        xp: user.currentXP,
+                        targetLanguage: user.targetLanguage),
                     const Spacer(),
                     const Card(
                       child: Padding(
@@ -86,6 +88,7 @@ class PracticeScreen extends StatelessWidget {
                             ownedCount: ownedCategories.length,
                             streak: user.currentStreak,
                             xp: user.currentXP,
+                            targetLanguage: user.targetLanguage,
                           ),
                           if (dueWords.isNotEmpty) ...[
                             const SizedBox(height: 20),
@@ -384,11 +387,13 @@ class _HeaderCard extends StatelessWidget {
     required this.ownedCount,
     required this.streak,
     required this.xp,
+    required this.targetLanguage,
   });
 
   final int ownedCount;
   final int streak;
   final int xp;
+  final String targetLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -428,6 +433,8 @@ class _HeaderCard extends StatelessWidget {
                     '$ownedCount categories unlocked',
                     style: TextStyle(color: Colors.grey.shade700),
                   ),
+                  const SizedBox(height: 8),
+                  _LearningLanguagePill(targetLanguage: targetLanguage),
                   const SizedBox(height: 8),
                   Row(
                     children: [
@@ -478,6 +485,73 @@ class _HeaderCard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _LearningLanguagePill extends StatelessWidget {
+  const _LearningLanguagePill({required this.targetLanguage});
+
+  final String targetLanguage;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Material(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () async {
+            final selected = await showTargetLanguagePicker(
+              context: context,
+              selectedLanguage: targetLanguage,
+            );
+            if (selected == null || selected == targetLanguage) return;
+            if (!context.mounted) return;
+            await context.read<UserProvider>().setTargetLanguage(selected);
+            if (!context.mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Now learning ${languageNameFor(selected)}'),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.language_rounded,
+                  size: 16,
+                  color: Color(0xFF2563EB),
+                ),
+                const SizedBox(width: 6),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 190),
+                  child: Text(
+                    'Learning: ${languageNameFor(targetLanguage)}',
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Color(0xFF1E3A8A),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 2),
+                const Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  size: 18,
+                  color: Color(0xFF1E3A8A),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

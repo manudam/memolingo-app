@@ -64,10 +64,31 @@ class UserProvider with ChangeNotifier {
     await _persist();
   }
 
+  Future<void> setSpeechRate(double rate) async {
+    _user.speechRate = rate;
+    await _persist();
+  }
+
+  Future<void> setVoiceOverride(
+      String languageCode, Map<String, String>? voice) async {
+    if (voice == null) {
+      _user.voiceOverrides.remove(languageCode);
+    } else {
+      _user.voiceOverrides[languageCode] = voice;
+    }
+    await _persist();
+  }
+
   Future<void> applyWordMasteryDelta(String wordId, int delta) async {
-    final current = _user.wordMastery[wordId] ?? 0;
+    final lang = _user.targetLanguage;
+    final masteryMap =
+        _user.wordMasteryByLanguage.putIfAbsent(lang, () => <String, int>{});
+    final reviewMap = _user.wordNextReviewByLanguage
+        .putIfAbsent(lang, () => <String, DateTime>{});
+
+    final current = masteryMap[wordId] ?? 0;
     final next = (current + delta).clamp(0, 99);
-    _user.wordMastery[wordId] = next;
+    masteryMap[wordId] = next;
 
     // Spaced Repetition System (SRS) Update
     if (delta > 0) {
@@ -83,11 +104,11 @@ class UserProvider with ChangeNotifier {
       } else if (next >= 2) {
         daysToAdd = 3;
       }
-      
-      _user.wordNextReview[wordId] = DateTime.now().add(Duration(days: daysToAdd));
+
+      reviewMap[wordId] = DateTime.now().add(Duration(days: daysToAdd));
     } else {
       // If answered incorrectly, reset review to today so they review it soon.
-      _user.wordNextReview[wordId] = DateTime.now();
+      reviewMap[wordId] = DateTime.now();
     }
 
     await _persist();
@@ -101,47 +122,56 @@ class UserProvider with ChangeNotifier {
     required int incorrect,
     required int maxCombo,
   }) async {
-    _user.gamesPlayed += 1;
+    final lang = _user.targetLanguage;
+
+    _user.gamesPlayedByLanguage[lang] =
+        (_user.gamesPlayedByLanguage[lang] ?? 0) + 1;
     if (won) {
-      _user.gamesWon += 1;
+      _user.gamesWonByLanguage[lang] =
+          (_user.gamesWonByLanguage[lang] ?? 0) + 1;
     }
 
-    final currentBest = _user.bestProgressByLanguage[_user.targetLanguage] ?? 0;
-    _user.bestProgressByLanguage[_user.targetLanguage] =
+    final currentBest = _user.bestProgressByLanguage[lang] ?? 0;
+    _user.bestProgressByLanguage[lang] =
         maxProgress > currentBest ? maxProgress : currentBest;
-    _user.totalCorrect += correct;
-    _user.totalIncorrect += incorrect;
+    _user.totalCorrectByLanguage[lang] =
+        (_user.totalCorrectByLanguage[lang] ?? 0) + correct;
+    _user.totalIncorrectByLanguage[lang] =
+        (_user.totalIncorrectByLanguage[lang] ?? 0) + incorrect;
 
     // Reward full completion with a best-progress bump to total questions.
-    if (won && totalQuestions > (_user.bestProgressByLanguage[_user.targetLanguage] ?? 0)) {
-      _user.bestProgressByLanguage[_user.targetLanguage] = totalQuestions;
+    if (won && totalQuestions > (_user.bestProgressByLanguage[lang] ?? 0)) {
+      _user.bestProgressByLanguage[lang] = totalQuestions;
     }
 
     // Gamification: XP with Combo Multiplier
     final baseXP = (correct * 10) + (won ? 50 : 0);
     final comboMultiplier = 1.0 + (maxCombo * 0.1); // e.g., 5 combo = 1.5x XP
     final xpEarned = (baseXP * comboMultiplier).round();
-    _user.currentXP += xpEarned;
+    _user.currentXPByLanguage[lang] =
+        (_user.currentXPByLanguage[lang] ?? 0) + xpEarned;
 
     // Gamification: Streaks
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
-    
-    if (_user.lastPlayedDate != null) {
-      final lastPlayed = _user.lastPlayedDate!;
-      final lastPlayedDay = DateTime(lastPlayed.year, lastPlayed.month, lastPlayed.day);
-      
+
+    final lastPlayed = _user.lastPlayedDateByLanguage[lang];
+    if (lastPlayed != null) {
+      final lastPlayedDay =
+          DateTime(lastPlayed.year, lastPlayed.month, lastPlayed.day);
+
       final difference = today.difference(lastPlayedDay).inDays;
       if (difference == 1) {
-        _user.currentStreak += 1;
+        _user.currentStreakByLanguage[lang] =
+            (_user.currentStreakByLanguage[lang] ?? 0) + 1;
       } else if (difference > 1) {
-        _user.currentStreak = 1; // reset streak
+        _user.currentStreakByLanguage[lang] = 1; // reset streak
       }
       // If difference == 0, it means they already played today, so streak stays the same.
     } else {
-      _user.currentStreak = 1;
+      _user.currentStreakByLanguage[lang] = 1;
     }
-    _user.lastPlayedDate = now;
+    _user.lastPlayedDateByLanguage[lang] = now;
 
     await _persist();
   }

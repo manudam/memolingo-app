@@ -186,7 +186,13 @@ class _GameResultScreenState extends State<GameResultScreen> {
                                   if (userProvider.user.audioEnabled) {
                                     final lang =
                                         userProvider.user.targetLanguage;
-                                    await configureTts(_flutterTts, lang);
+                                    await configureTts(
+                                      _flutterTts,
+                                      lang,
+                                      speechRate: userProvider.user.speechRate,
+                                      voice: userProvider
+                                          .user.voiceOverrides[lang],
+                                    );
                                     await _flutterTts
                                         .speak(word.translationFor(lang));
                                   }

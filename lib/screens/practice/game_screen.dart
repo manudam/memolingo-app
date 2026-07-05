@@ -23,7 +23,6 @@ class _GameScreenState extends State<GameScreen> {
   final FlutterTts _tts = FlutterTts();
   bool _processingAnswer = false;
   bool _resultPushed = false;
-  final TextEditingController _spellingController = TextEditingController();
   final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
 
   @override
@@ -35,7 +34,13 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   Future<void> _configureTts(String languageCode) async {
-    await configureTts(_tts, languageCode);
+    final user = context.read<UserProvider>().user;
+    await configureTts(
+      _tts,
+      languageCode,
+      speechRate: user.speechRate,
+      voice: user.voiceOverrides[languageCode],
+    );
   }
 
   Future<void> _speakCurrentWord() async {
@@ -70,151 +75,17 @@ class _GameScreenState extends State<GameScreen> {
       return;
     }
 
-    _spellingController.clear();
     await _speakCurrentWord();
-  }
-
-  Future<void> _submitSpelling(
-      String text, GameProvider game, String targetLanguage) async {
-    if (_processingAnswer || text.trim().isEmpty) return;
-    setState(() => _processingAnswer = true);
-
-    final expected = game.currentCorrectWord!
-        .translationFor(targetLanguage)
-        .trim()
-        .toLowerCase();
-    if (text.trim().toLowerCase() == expected) {
-      HapticFeedback.lightImpact();
-    } else {
-      HapticFeedback.vibrate();
-      _shakeKey.currentState?.shake();
-    }
-
-    final wasCombo = game.currentCombo;
-    await game.answerSpelling(text, targetLanguage);
-    final newCombo = game.currentCombo;
-    if (newCombo > wasCombo &&
-        (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
-      HapticFeedback.heavyImpact();
-    }
-    setState(() => _processingAnswer = false);
-    await _onAnswer();
   }
 
   @override
   void dispose() {
     _tts.stop();
-    _spellingController.dispose();
     super.dispose();
   }
 
-  Widget _buildTopPrompt(
-      BuildContext context, GameProvider game, String targetLanguage) {
-    final correctWord = game.currentCorrectWord!;
-    final qType = game.currentQuestionType;
-
-    if (qType == GameQuestionType.reverse) {
-      return Row(
-        children: [
-          Expanded(
-            child: Text(
-              correctWord.english,
-              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ],
-      );
-    } else if (qType == GameQuestionType.spelling) {
-      return Row(
-        children: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                'assets/memolingo/images/${correctWord.imageFileName}',
-                fit: BoxFit.contain,
-                errorBuilder: (_, __, ___) {
-                  return const Icon(
-                    Icons.image_not_supported,
-                    size: 38,
-                    color: Colors.grey,
-                  );
-                },
-              ),
-            ),
-          ),
-          const SizedBox(width: 16),
-          const Expanded(
-            child: Text(
-              'Type the translation',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-            ),
-          ),
-          IconButton(
-            onPressed: _speakCurrentWord,
-            icon: const Icon(Icons.volume_up_rounded, size: 30),
-          ),
-        ],
-      );
-    } else {
-      return const SizedBox.shrink();
-    }
-  }
-
   Widget _buildOptionsList(BuildContext context, GameProvider game,
-      String targetLanguage, String labelLanguage, bool showLabels) {
-    final qType = game.currentQuestionType;
-
-    if (qType == GameQuestionType.spelling) {
-      return Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _spellingController,
-              autofocus: true,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                hintText: 'Enter text here...',
-                filled: true,
-                fillColor: Colors.white,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              ),
-              onSubmitted: (text) =>
-                  _submitSpelling(text, game, targetLanguage),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                final text = _spellingController.text;
-                if (text.isNotEmpty) {
-                  FocusScope.of(context).unfocus();
-                  _submitSpelling(text, game, targetLanguage);
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              child: const Text('Submit', style: TextStyle(fontSize: 18)),
-            ),
-          ],
-        ),
-      );
-    }
-
+      String labelLanguage, bool showLabels) {
     Widget buildOptionWidget(MemoWord option) {
       final isCorrect = option.id == game.currentCorrectWord?.id;
       return Expanded(
@@ -273,7 +144,7 @@ class _GameScreenState extends State<GameScreen> {
                     ),
                   ),
                 ),
-                if (showLabels && qType != GameQuestionType.reverse)
+                if (showLabels)
                   Positioned(
                     bottom: 12,
                     left: 12,
@@ -421,13 +292,10 @@ class _GameScreenState extends State<GameScreen> {
   Widget _buildPortraitLayout(
     BuildContext context,
     GameProvider game,
-    String targetLanguage,
     String labelLanguage,
     bool showLabels,
   ) {
     final qType = game.currentQuestionType;
-    final showPromptCard =
-        qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
     final showRepeatButton = qType == GameQuestionType.standard ||
         qType == GameQuestionType.audioOnly;
 
@@ -436,22 +304,9 @@ class _GameScreenState extends State<GameScreen> {
         _buildHeader(context, game),
         const SizedBox(height: 12),
         _buildProgressBar(game),
-        if (showPromptCard) ...[
-          const SizedBox(height: 16),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 18,
-              ),
-              child: _buildTopPrompt(context, game, targetLanguage),
-            ),
-          ),
-        ],
         const SizedBox(height: 16),
         Expanded(
-          child: _buildOptionsList(
-              context, game, targetLanguage, labelLanguage, showLabels),
+          child: _buildOptionsList(context, game, labelLanguage, showLabels),
         ),
         if (showRepeatButton) ...[
           const SizedBox(height: 16),
@@ -464,13 +319,10 @@ class _GameScreenState extends State<GameScreen> {
   Widget _buildLandscapeLayout(
     BuildContext context,
     GameProvider game,
-    String targetLanguage,
     String labelLanguage,
     bool showLabels,
   ) {
     final qType = game.currentQuestionType;
-    final showPromptCard =
-        qType == GameQuestionType.spelling || qType == GameQuestionType.reverse;
     final showRepeatButton = qType == GameQuestionType.standard ||
         qType == GameQuestionType.audioOnly;
 
@@ -489,28 +341,14 @@ class _GameScreenState extends State<GameScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (showPromptCard)
-                      SingleChildScrollView(
-                        child: Card(
-                          margin: const EdgeInsets.symmetric(vertical: 8),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 12,
-                              vertical: 12,
-                            ),
-                            child:
-                                _buildTopPrompt(context, game, targetLanguage),
-                          ),
-                        ),
-                      ),
                     if (showRepeatButton) _buildRepeatButton(),
                   ],
                 ),
               ),
               const SizedBox(width: 16),
               Expanded(
-                child: _buildOptionsList(
-                    context, game, targetLanguage, labelLanguage, showLabels),
+                child:
+                    _buildOptionsList(context, game, labelLanguage, showLabels),
               ),
             ],
           ),
@@ -523,7 +361,6 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     final game = context.watch<GameProvider>();
     final user = context.watch<UserProvider>().user;
-    final targetLanguage = user.targetLanguage;
     final labelLanguage = user.labelLanguage;
     final showLabels = user.showLabels;
 
@@ -550,16 +387,16 @@ class _GameScreenState extends State<GameScreen> {
                 final width = constraints.maxWidth;
                 if (width < 600) {
                   return _buildPortraitLayout(
-                      context, game, targetLanguage, labelLanguage, showLabels);
+                      context, game, labelLanguage, showLabels);
                 } else if (width < 900) {
                   return _buildLandscapeLayout(
-                      context, game, targetLanguage, labelLanguage, showLabels);
+                      context, game, labelLanguage, showLabels);
                 } else {
                   return Center(
                     child: SizedBox(
                       width: 900,
-                      child: _buildLandscapeLayout(context, game,
-                          targetLanguage, labelLanguage, showLabels),
+                      child: _buildLandscapeLayout(
+                          context, game, labelLanguage, showLabels),
                     ),
                   );
                 }

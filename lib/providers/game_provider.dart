@@ -7,7 +7,7 @@ import '../models/game_state.dart';
 import '../models/memo_word.dart';
 import 'user_provider.dart';
 
-enum GameQuestionType { standard, audioOnly, reverse, spelling }
+enum GameQuestionType { standard, audioOnly }
 
 class GameProvider with ChangeNotifier {
   GameProvider(this._userProvider);
@@ -182,26 +182,6 @@ class GameProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> answerSpelling(String typedWord, String targetLanguage) async {
-    if (_state != GameState.playing || _currentCorrectWord == null) {
-      return;
-    }
-
-    final correctWord = _currentCorrectWord!;
-    final expected =
-        correctWord.translationFor(targetLanguage).trim().toLowerCase();
-    final actual = typedWord.trim().toLowerCase();
-
-    if (expected == actual) {
-      await answer(correctWord); // This is correct, triggers win logic
-    } else {
-      // Find a dummy wrong word to pass to answer() to trigger loss logic
-      final wrongWord =
-          _category!.words.firstWhere((w) => w.id != correctWord.id);
-      await answer(wrongWord);
-    }
-  }
-
   List<MemoWord> topWordsToReview() {
     final categoryWords = _category?.words ?? <MemoWord>[];
 
@@ -231,15 +211,11 @@ class GameProvider with ChangeNotifier {
     _currentCorrectWord = _questionOrder[_currentIndex];
     final correct = _currentCorrectWord!;
 
-    // Progressive question difficulty: harder types unlock as mastery grows.
+    // Progressive question difficulty: audio-only unlocks as mastery grows.
     final mastery = _userProvider.user.wordMastery[correct.id] ?? 0;
     final randType = _random.nextDouble();
-    if (mastery >= 5 && randType < 0.20) {
-      _currentQuestionType = GameQuestionType.spelling;
-    } else if (mastery >= 3 && randType < 0.35) {
+    if (mastery >= 3 && randType < 0.35) {
       _currentQuestionType = GameQuestionType.audioOnly;
-    } else if (mastery >= 1 && randType < 0.45) {
-      _currentQuestionType = GameQuestionType.reverse;
     } else {
       _currentQuestionType = GameQuestionType.standard;
     }
