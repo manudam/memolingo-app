@@ -166,72 +166,100 @@ class _TargetLanguagePickerSheetState
             else
               const SizedBox(height: 2),
             Expanded(
-              child: ListView.separated(
-                controller: scrollController,
-                padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
-                itemCount: languages.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 8),
-                itemBuilder: (context, index) {
-                  final entry = languages[index];
-                  final isSelected = entry.key == widget.selectedLanguage;
-
-                  return Material(
-                    color: isSelected
-                        ? const Color(0xFF2563EB)
-                        : const Color(0xFFF3F6FB),
-                    borderRadius: BorderRadius.circular(14),
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(14),
-                      onTap: () => Navigator.of(context).pop(entry.key),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 14,
+              child: languages.isEmpty && !_isLoadingLanguages
+                  ? ListView(
+                      controller: scrollController,
+                      padding: const EdgeInsets.fromLTRB(24, 14, 24, 24),
+                      children: const [
+                        SizedBox(height: 40),
+                        Icon(Icons.record_voice_over_outlined,
+                            size: 40, color: Colors.black26),
+                        SizedBox(height: 16),
+                        Text(
+                          'No extra voices found on this device.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                        SizedBox(height: 8),
+                        Text(
+                          'Install a language voice pack in your system '
+                          'speech settings to practise it here.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.black54),
+                        ),
+                      ],
+                    )
+                  : ListView.separated(
+                      controller: scrollController,
+                      padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
+                      itemCount: languages.length,
+                      separatorBuilder: (_, __) => const SizedBox(height: 8),
+                      itemBuilder: (context, index) {
+                        final entry = languages[index];
+                        final isSelected = entry.key == widget.selectedLanguage;
+
+                        return Material(
+                          color: isSelected
+                              ? const Color(0xFF2563EB)
+                              : const Color(0xFFF3F6FB),
+                          borderRadius: BorderRadius.circular(14),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(14),
+                            onTap: () => Navigator.of(context).pop(entry.key),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                                vertical: 14,
+                              ),
+                              child: Row(
                                 children: [
-                                  Text(
-                                    entry.value,
-                                    style: TextStyle(
-                                      color: isSelected
-                                          ? Colors.white
-                                          : Colors.black87,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w800,
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          entry.value,
+                                          style: TextStyle(
+                                            color: isSelected
+                                                ? Colors.white
+                                                : Colors.black87,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 3),
+                                        Text(
+                                          targetLanguageGreetingFor(entry.key),
+                                          style: TextStyle(
+                                            color: isSelected
+                                                ? Colors.white
+                                                    .withValues(alpha: 0.78)
+                                                : Colors.black54,
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  const SizedBox(height: 3),
-                                  Text(
-                                    targetLanguageGreetingFor(entry.key),
-                                    style: TextStyle(
-                                      color: isSelected
-                                          ? Colors.white.withValues(alpha: 0.78)
-                                          : Colors.black54,
-                                      fontSize: 14,
-                                    ),
+                                  Icon(
+                                    isSelected
+                                        ? Icons.check_circle_rounded
+                                        : Icons.radio_button_unchecked_rounded,
+                                    color: isSelected
+                                        ? Colors.white
+                                        : Colors.grey.shade500,
                                   ),
                                 ],
                               ),
                             ),
-                            Icon(
-                              isSelected
-                                  ? Icons.check_circle_rounded
-                                  : Icons.radio_button_unchecked_rounded,
-                              color: isSelected
-                                  ? Colors.white
-                                  : Colors.grey.shade500,
-                            ),
-                          ],
-                        ),
-                      ),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
             ),
           ],
         );
