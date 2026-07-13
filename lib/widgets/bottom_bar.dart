@@ -9,23 +9,30 @@ class BottomBar extends StatelessWidget {
   const BottomBar({required this.selectedIndex, super.key});
 
   final int selectedIndex;
+  static const _selectedColor = Color(0xFF2563EB);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
+        border: Border(
+          top: BorderSide(
+            color: Colors.black.withValues(alpha: 0.08),
+            width: 1,
+          ),
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
-            blurRadius: 12,
-            offset: const Offset(0, -4),
+            color: Colors.black.withValues(alpha: 0.14),
+            blurRadius: 18,
+            offset: const Offset(0, -6),
           ),
         ],
       ),
       child: SafeArea(
         child: SizedBox(
-          height: 64,
+          height: 72,
           child: Row(
             children: [
               _buildItem(context, 0, Icons.school_rounded, 'Practice'),
@@ -42,28 +49,45 @@ class BottomBar extends StatelessWidget {
   Widget _buildItem(
       BuildContext context, int index, IconData icon, String label) {
     final selected = index == selectedIndex;
-    final color = selected ? const Color(0xFF2563EB) : Colors.grey.shade500;
+    final color = selected ? _selectedColor : Colors.grey.shade700;
 
     return Expanded(
       child: InkWell(
         onTap: () => _navigate(context, index),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(8),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, size: 22, color: color),
-              const SizedBox(height: 4),
-              Text(
-                label,
-                style: TextStyle(
-                  color: color,
-                  fontSize: 11,
-                  fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 160),
+            curve: Curves.easeOut,
+            decoration: BoxDecoration(
+              color: selected
+                  ? _selectedColor.withValues(alpha: 0.12)
+                  : Colors.transparent,
+              borderRadius: BorderRadius.circular(8),
+              border: selected
+                  ? Border.all(
+                      color: _selectedColor.withValues(alpha: 0.22),
+                    )
+                  : null,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, size: selected ? 24 : 23, color: color),
+                const SizedBox(height: 4),
+                Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: color,
+                    fontSize: 12,
+                    fontWeight: selected ? FontWeight.w800 : FontWeight.w600,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
