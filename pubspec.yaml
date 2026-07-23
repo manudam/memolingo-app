@@ -2,7 +2,7 @@ name: memolingo_app
 description: "MemoLingo Flutter language learning app."
 publish_to: 'none'
 
-version: 1.0.3+17
+version: 2.0.0+18
 
 environment:
   sdk: '>=3.3.2 <4.0.0'

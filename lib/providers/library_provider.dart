@@ -16,6 +16,10 @@ class LibraryProvider with ChangeNotifier {
   static const String csvAssetPath =
       'assets/memolingo/data/words_list_full.csv';
   static const String bundleProductId = 'memolingo_all_categories';
+  static const Set<String> freeCategoryIds = {
+    'animals',
+    'everyday objects',
+  };
 
   final IapService _iapService;
   final UserProvider _userProvider;
@@ -94,10 +98,7 @@ class LibraryProvider with ChangeNotifier {
 
     if (!_iapService.storeAvailable ||
         _iapService.productById(category.productId) == null) {
-      // Local fallback for development environments without store metadata.
-      await _userProvider.unlockCategory(category.id);
-      await refreshOwnershipFromStore();
-      return true;
+      return false;
     }
 
     final started = await _iapService.buyProduct(category.productId);
@@ -105,7 +106,6 @@ class LibraryProvider with ChangeNotifier {
       return false;
     }
 
-    await Future<void>.delayed(const Duration(milliseconds: 400));
     await refreshOwnershipFromStore();
     return category.owned;
   }
@@ -117,10 +117,7 @@ class LibraryProvider with ChangeNotifier {
 
     if (!_iapService.storeAvailable ||
         _iapService.productById(bundleProductId) == null) {
-      await _userProvider.unlockCategories(
-          _categories.where((c) => !c.isFree).map((c) => c.id));
-      await refreshOwnershipFromStore();
-      return true;
+      return false;
     }
 
     final started = await _iapService.buyProduct(bundleProductId);
@@ -128,19 +125,18 @@ class LibraryProvider with ChangeNotifier {
       return false;
     }
 
-    await Future<void>.delayed(const Duration(milliseconds: 400));
     await refreshOwnershipFromStore();
     return hasBundlePurchased;
   }
 
   Future<void> restorePurchases() async {
     await _iapService.restorePurchases();
-    await Future<void>.delayed(const Duration(milliseconds: 400));
     await refreshOwnershipFromStore();
   }
 
   Future<void> refreshOwnershipFromStore() async {
     final unlocked = <String>{..._userProvider.user.unlockedCategoryIds};
+    unlocked.addAll(_categories.where((c) => c.isFree).map((c) => c.id));
 
     if (hasBundlePurchased) {
       unlocked.addAll(_categories.where((c) => !c.isFree).map((c) => c.id));
@@ -152,7 +148,7 @@ class LibraryProvider with ChangeNotifier {
       }
     }
 
-    if (unlocked.length != _userProvider.user.unlockedCategoryIds.length) {
+    if (!setEquals(unlocked, _userProvider.user.unlockedCategoryIds)) {
       await _userProvider.unlockCategories(unlocked);
     }
 
@@ -230,11 +226,6 @@ class LibraryProvider with ChangeNotifier {
       categoryIcons[categoryName] = categoryImage;
     }
 
-    final defaultFreeId = slugify('everyday objects');
-    final categoryIds = byCategory.keys.map(slugify).toList();
-    final freeCategoryId =
-        categoryIds.contains(defaultFreeId) ? defaultFreeId : categoryIds.first;
-
     for (final entry in byCategory.entries) {
       final id = slugify(entry.key);
       _categories.add(
@@ -244,8 +235,8 @@ class LibraryProvider with ChangeNotifier {
           iconFileName: categoryIcons[entry.key] ?? '',
           words: entry.value,
           productId: 'memolingo_category_${id.replaceAll('-', '_')}',
-          isFree: id == freeCategoryId,
-          owned: id == freeCategoryId,
+          isFree: freeCategoryIds.contains(id),
+          owned: freeCategoryIds.contains(id),
         ),
       );
     }

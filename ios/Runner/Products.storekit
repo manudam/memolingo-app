@@ -30,21 +30,6 @@
     {
       "displayPrice" : "1.99",
       "familyShareable" : false,
-      "internalID" : "FBBE3ECB",
-      "localizations" : [
-        {
-          "description" : "Unlock the Animals category pack.",
-          "displayName" : "Animals",
-          "locale" : "en_GB"
-        }
-      ],
-      "productID" : "memolingo_category_animals",
-      "referenceName" : "Animals",
-      "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "1.99",
-      "familyShareable" : false,
       "internalID" : "9A24F10B",
       "localizations" : [
         {

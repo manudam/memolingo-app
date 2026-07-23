@@ -12,6 +12,8 @@ class IapService {
 
   final List<ProductDetails> _products = [];
   final Set<String> _purchasedIds = <String>{};
+  final Map<String, Completer<bool>> _pendingPurchases =
+      <String, Completer<bool>>{};
   final StreamController<Set<String>> _purchaseUpdatesController =
       StreamController<Set<String>>.broadcast();
 
@@ -70,8 +72,30 @@ class IapService {
       return false;
     }
 
-    final parameter = PurchaseParam(productDetails: product);
-    return _inAppPurchase.buyNonConsumable(purchaseParam: parameter);
+    // A `true` result here only means that the store sheet opened. Wait for the
+    // purchase stream before reporting success or unlocking any content.
+    if (_pendingPurchases.containsKey(productId)) {
+      error = 'A purchase for this product is already in progress.';
+      return false;
+    }
+
+    final completion = Completer<bool>();
+    _pendingPurchases[productId] = completion;
+
+    try {
+      final started = await _inAppPurchase.buyNonConsumable(
+        purchaseParam: PurchaseParam(productDetails: product),
+      );
+      if (!started) {
+        _pendingPurchases.remove(productId);
+        return false;
+      }
+      return completion.future;
+    } catch (e) {
+      _pendingPurchases.remove(productId);
+      error = e.toString();
+      return false;
+    }
   }
 
   Future<void> restorePurchases() async {
@@ -101,6 +125,11 @@ class IapService {
 
     if (response.error != null) {
       error = response.error!.message;
+    } else if (response.notFoundIDs.isNotEmpty) {
+      error = 'Products are not configured in the store: '
+          '${response.notFoundIDs.join(', ')}';
+    } else {
+      error = null;
     }
   }
 
@@ -110,6 +139,12 @@ class IapService {
           details.status == PurchaseStatus.restored) {
         _purchasedIds.add(details.productID);
         _purchaseUpdatesController.add(Set.unmodifiable(_purchasedIds));
+        _completePendingPurchase(details.productID, true);
+      } else if (details.status == PurchaseStatus.error) {
+        error = details.error?.message ?? 'Purchase failed.';
+        _completePendingPurchase(details.productID, false);
+      } else if (details.status == PurchaseStatus.canceled) {
+        _completePendingPurchase(details.productID, false);
       }
 
       if (details.pendingCompletePurchase) {
@@ -118,8 +153,21 @@ class IapService {
     }
   }
 
+  void _completePendingPurchase(String productId, bool succeeded) {
+    final completion = _pendingPurchases.remove(productId);
+    if (completion != null && !completion.isCompleted) {
+      completion.complete(succeeded);
+    }
+  }
+
   void dispose() {
     _purchaseSub?.cancel();
+    for (final completion in _pendingPurchases.values) {
+      if (!completion.isCompleted) {
+        completion.complete(false);
+      }
+    }
+    _pendingPurchases.clear();
     _purchaseUpdatesController.close();
   }
 }
