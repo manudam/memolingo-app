@@ -1,4 +1,7 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:win32_registry/win32_registry.dart';
 
 const Map<String, String> _ttsLocaleMap = {
   'en': 'en-GB',
@@ -85,17 +88,49 @@ Future<List<Map<String, String>>> getVoicesForLanguage(
   return matches;
 }
 
+/// On Windows, `flutter_tts` only enumerates the classic desktop SAPI5 voice
+/// registry, not the newer "OneCore" voices installed via Settings > Time &
+/// Language > Speech. Those are registered as subkeys named like
+/// `MSTTS_V110_frFR_HortenseM`, so we read the locale straight out of the
+/// key name rather than duplicating the LCID lookup `flutter_tts` does.
+Set<String> _oneCoreVoiceLocales() {
+  final locales = <String>{};
+  if (!Platform.isWindows) return locales;
+
+  try {
+    final key = Registry.openPath(
+      RegistryHive.localMachine,
+      path: r'SOFTWARE\Microsoft\Speech_OneCore\Voices\Tokens',
+    );
+    final localePattern = RegExp(r'^([a-z]{2,3})([A-Z]{2})$');
+    for (final subKeyName in key.subkeyNames) {
+      final parts = subKeyName.split('_');
+      if (parts.length < 3) continue;
+      final match = localePattern.firstMatch(parts[2]);
+      if (match != null) {
+        locales.add('${match.group(1)}-${match.group(2)}');
+      }
+    }
+    key.close();
+  } catch (_) {
+    // Registry path may not exist on this device; ignore.
+  }
+
+  return locales;
+}
+
 /// Returns the set of app language codes that have a TTS voice on this device.
 Future<Set<String>> getAvailableTtsLanguages() async {
   final tts = FlutterTts();
   final voices = await tts.getVoices;
-  if (voices is! List) return {};
 
-  final deviceLocales = <String>{};
-  for (final v in voices) {
-    if (v is! Map) continue;
-    final locale = (v['locale'] ?? '') as String;
-    if (locale.isNotEmpty) deviceLocales.add(locale);
+  final deviceLocales = <String>{..._oneCoreVoiceLocales()};
+  if (voices is List) {
+    for (final v in voices) {
+      if (v is! Map) continue;
+      final locale = (v['locale'] ?? '') as String;
+      if (locale.isNotEmpty) deviceLocales.add(locale);
+    }
   }
 
   final available = <String>{};
@@ -107,5 +142,6 @@ Future<Set<String>> getAvailableTtsLanguages() async {
       available.add(entry.key);
     }
   }
+
   return available;
 }
