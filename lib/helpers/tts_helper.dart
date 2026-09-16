@@ -42,16 +42,24 @@ Future<void> configureTts(
       IosTextToSpeechAudioMode.spokenAudio,
     );
     await tts.setSharedInstance(true);
+    await tts.autoStopSharedSession(false);
+  }
+
+  Future<void> setLanguageWithFallback() async {
+    final result = await tts.setLanguage(locale);
+    if (result != 1 && langPrefix != locale) {
+      await tts.setLanguage(langPrefix);
+    }
   }
 
   if (voice != null) {
     // A saved voice may no longer be installed; fall back to the locale.
     final result = await tts.setVoice(voice);
-    if (result != 1) await tts.setLanguage(locale);
+    if (result != 1) await setLanguageWithFallback();
   } else if (Platform.isIOS) {
     // On iOS the first voice listed for a locale isn't guaranteed to be
     // usable, so let the system pick its default voice for the language.
-    await tts.setLanguage(locale);
+    await setLanguageWithFallback();
   } else {
     final voices = await tts.getVoices;
     if (voices is List) {
@@ -73,10 +81,10 @@ Future<void> configureTts(
       if (match != null) {
         await tts.setVoice(match);
       } else {
-        await tts.setLanguage(locale);
+        await setLanguageWithFallback();
       }
     } else {
-      await tts.setLanguage(locale);
+      await setLanguageWithFallback();
     }
   }
 
