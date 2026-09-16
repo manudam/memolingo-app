@@ -9,6 +9,7 @@ import 'providers/game_provider.dart';
 import 'providers/library_provider.dart';
 import 'providers/user_provider.dart';
 import 'screens/splash_screen.dart';
+import 'services/analytics_service.dart';
 import 'services/iap_service.dart';
 import 'services/local_storage_service.dart';
 
@@ -26,9 +27,10 @@ void setupLocator() {
   }
 }
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
+  await AnalyticsService.instance.initialize();
   runApp(const MemoLingoApp());
 }
 
@@ -53,6 +55,10 @@ class MemoLingoApp extends StatelessWidget {
       child: MaterialApp(
         title: 'MemoLingo',
         debugShowCheckedModeBanner: false,
+        navigatorObservers: [
+          if (AnalyticsService.instance.observer != null)
+            AnalyticsService.instance.observer!,
+        ],
         theme: ThemeData(
           fontFamily: 'CaviarDreams',
           colorScheme: ColorScheme.fromSeed(

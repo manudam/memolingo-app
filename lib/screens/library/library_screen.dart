@@ -392,6 +392,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
+              settings: const RouteSettings(name: 'category_words'),
               builder: (context) => CategoryWordsScreen(categoryId: category.id),
             ),
           );

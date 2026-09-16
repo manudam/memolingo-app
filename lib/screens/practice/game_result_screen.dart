@@ -214,7 +214,10 @@ class _GameResultScreenState extends State<GameResultScreen> {
                           return;
                         }
                         Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (_) => const GameScreen()),
+                          MaterialPageRoute(
+                            settings: const RouteSettings(name: 'game'),
+                            builder: (_) => const GameScreen(),
+                          ),
                         );
                       },
                       icon: const Icon(Icons.replay_rounded),
@@ -231,6 +234,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                       onPressed: () {
                         Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
+                              settings: const RouteSettings(name: 'practice'),
                               builder: (_) => const PracticeScreen()),
                           (route) => false,
                         );

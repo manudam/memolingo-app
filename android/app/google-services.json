@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "969062143426",
+    "firebase_url": "https://memolingo-197dc.firebaseio.com",
+    "project_id": "memolingo-197dc",
+    "storage_bucket": "memolingo-197dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969062143426:android:36ac5962eb74e4bc",
+        "android_client_info": {
+          "package_name": "com.trianglecarrot.memolingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969062143426-cfutet470lfvvdha058d4tpmduebum2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMfY-6OJvcX514HF9bjCG4vsQydCqESYg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-3698266672452941~3257198910"
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,8 @@ import 'dart:io' show Platform;
 
 import 'package:in_app_purchase/in_app_purchase.dart';
 
+import 'analytics_service.dart';
+
 class IapService {
   static bool get _supported =>
       Platform.isIOS || Platform.isAndroid || Platform.isMacOS;
@@ -137,6 +139,10 @@ class IapService {
     for (final details in detailsList) {
       if (details.status == PurchaseStatus.purchased ||
           details.status == PurchaseStatus.restored) {
+        if (details.status == PurchaseStatus.purchased) {
+          unawaited(AnalyticsService.instance
+              .logCategoryPurchase(productId: details.productID));
+        }
         _purchasedIds.add(details.productID);
         _purchaseUpdatesController.add(Set.unmodifiable(_purchasedIds));
         _completePendingPurchase(details.productID, true);

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import '../models/category_pack.dart';
 import '../models/game_state.dart';
 import '../models/memo_word.dart';
+import '../services/analytics_service.dart';
 import 'user_provider.dart';
 
 enum GameQuestionType { standard, audioOnly }
@@ -78,6 +80,12 @@ class GameProvider with ChangeNotifier {
     _incorrectByWordId.clear();
     _state = GameState.playing;
 
+    unawaited(AnalyticsService.instance.logGameStart(
+      categoryId: category.id,
+      targetLanguage: _userProvider.user.targetLanguage,
+      isReview: false,
+    ));
+
     _prepareRound();
     notifyListeners();
   }
@@ -105,6 +113,12 @@ class GameProvider with ChangeNotifier {
     _maxCombo = 0;
     _incorrectByWordId.clear();
     _state = GameState.playing;
+
+    unawaited(AnalyticsService.instance.logGameStart(
+      categoryId: category.id,
+      targetLanguage: _userProvider.user.targetLanguage,
+      isReview: true,
+    ));
 
     _prepareRound();
     notifyListeners();
@@ -148,6 +162,13 @@ class GameProvider with ChangeNotifier {
           incorrect: _incorrectAnswers,
           maxCombo: _maxCombo,
         );
+        unawaited(AnalyticsService.instance.logGameComplete(
+          categoryId: _category?.id ?? 'unknown',
+          won: true,
+          correct: _correctAnswers,
+          incorrect: _incorrectAnswers,
+          maxCombo: _maxCombo,
+        ));
       } else {
         _prepareRound();
       }
@@ -172,6 +193,13 @@ class GameProvider with ChangeNotifier {
         incorrect: _incorrectAnswers,
         maxCombo: _maxCombo,
       );
+      unawaited(AnalyticsService.instance.logGameComplete(
+        categoryId: _category?.id ?? 'unknown',
+        won: false,
+        correct: _correctAnswers,
+        incorrect: _incorrectAnswers,
+        maxCombo: _maxCombo,
+      ));
       notifyListeners();
       return;
     }

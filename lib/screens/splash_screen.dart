@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/library_provider.dart';
 import '../providers/user_provider.dart';
+import '../services/analytics_service.dart';
 import 'onboarding_screen.dart';
 import 'practice/practice_screen.dart';
 
@@ -29,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen>
     )..forward();
     _fade = CurvedAnimation(parent: _fadeController, curve: Curves.easeOut);
 
+    unawaited(AnalyticsService.instance.logScreenView('splash'));
     unawaited(_bootstrap());
   }
 
@@ -45,12 +47,15 @@ class _SplashScreenState extends State<SplashScreen>
       return;
     }
 
-    final destination = userProvider.user.onboardingComplete
-        ? const PracticeScreen()
-        : const OnboardingScreen();
+    final onboardingComplete = userProvider.user.onboardingComplete;
+    final destination =
+        onboardingComplete ? const PracticeScreen() : const OnboardingScreen();
 
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
+        settings: RouteSettings(
+          name: onboardingComplete ? 'practice' : 'onboarding',
+        ),
         pageBuilder: (_, __, ___) => destination,
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(opacity: animation, child: child);

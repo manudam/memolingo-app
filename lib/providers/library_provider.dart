@@ -84,11 +84,11 @@ class LibraryProvider with ChangeNotifier {
   }
 
   String priceFor(CategoryPack category) {
-    return _iapService.productById(category.productId)?.price ?? r'$1.99';
+    return _iapService.productById(category.productId)?.price ?? r'£0.99';
   }
 
   String bundlePrice() {
-    return _iapService.productById(bundleProductId)?.price ?? r'$9.99';
+    return _iapService.productById(bundleProductId)?.price ?? r'£4.99';
   }
 
   Future<bool> purchaseCategory(CategoryPack category) async {

@@ -100,18 +100,23 @@ class BottomBar extends StatelessWidget {
     }
 
     Widget destination;
+    String screenName;
     switch (index) {
       case 0:
         destination = const PracticeScreen();
+        screenName = 'practice';
         break;
       case 1:
         destination = const StatsScreen();
+        screenName = 'stats';
         break;
       case 2:
         destination = const LibraryScreen();
+        screenName = 'library';
         break;
       case 3:
         destination = const SettingsScreen();
+        screenName = 'settings';
         break;
       default:
         return;
@@ -119,6 +124,7 @@ class BottomBar extends StatelessWidget {
 
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
+        settings: RouteSettings(name: screenName),
         pageBuilder: (_, __, ___) => destination,
         transitionDuration: Duration.zero,
         reverseTransitionDuration: Duration.zero,

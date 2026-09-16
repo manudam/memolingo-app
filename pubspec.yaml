@@ -2,7 +2,7 @@ name: memolingo_app
 description: "MemoLingo Flutter language learning app."
 publish_to: 'none'
 
-version: 2.0.0+18
+version: 2.0.1+19
 
 environment:
   sdk: '>=3.3.2 <4.0.0'
@@ -21,6 +21,8 @@ dependencies:
   flutter_tts: ^4.0.2
   confetti: ^0.8.0
   win32_registry: ^2.1.0
+  firebase_core: ^4.14.0
+  firebase_analytics: ^12.5.0
 
 dev_dependencies:
   flutter_test:

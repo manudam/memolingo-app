@@ -70,7 +70,10 @@ class _GameScreenState extends State<GameScreen> {
       if (_resultPushed) return;
       _resultPushed = true;
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const GameResultScreen()),
+        MaterialPageRoute(
+          settings: const RouteSettings(name: 'game_result'),
+          builder: (_) => const GameResultScreen(),
+        ),
       );
       return;
     }
@@ -336,16 +339,16 @@ class _GameScreenState extends State<GameScreen> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
-                width: 260,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (showRepeatButton) _buildRepeatButton(),
-                  ],
+              if (showRepeatButton) ...[
+                SizedBox(
+                  width: 140,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [_buildRepeatButton()],
+                  ),
                 ),
-              ),
-              const SizedBox(width: 16),
+                const SizedBox(width: 16),
+              ],
               Expanded(
                 child:
                     _buildOptionsList(context, game, labelLanguage, showLabels),
@@ -385,21 +388,25 @@ class _GameScreenState extends State<GameScreen> {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 final width = constraints.maxWidth;
-                if (width < 600) {
+                final height = constraints.maxHeight;
+                final isLandscape = width > height;
+
+                if (!isLandscape) {
                   return _buildPortraitLayout(
                       context, game, labelLanguage, showLabels);
-                } else if (width < 900) {
-                  return _buildLandscapeLayout(
-                      context, game, labelLanguage, showLabels);
-                } else {
-                  return Center(
-                    child: SizedBox(
-                      width: 900,
-                      child: _buildLandscapeLayout(
-                          context, game, labelLanguage, showLabels),
-                    ),
-                  );
                 }
+
+                final landscapeContent = _buildLandscapeLayout(
+                    context, game, labelLanguage, showLabels);
+                if (width < 900) {
+                  return landscapeContent;
+                }
+                return Center(
+                  child: SizedBox(
+                    width: 900,
+                    child: landscapeContent,
+                  ),
+                );
               },
             ),
           ),

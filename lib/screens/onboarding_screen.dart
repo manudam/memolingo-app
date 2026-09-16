@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../helpers/tts_helper.dart';
 import '../providers/user_provider.dart';
+import '../services/analytics_service.dart';
 import 'practice/practice_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -63,9 +66,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final userProvider = context.read<UserProvider>();
     await userProvider.setTargetLanguage(_selectedLanguage);
     await userProvider.completeOnboarding();
+    unawaited(AnalyticsService.instance.logOnboardingComplete());
     if (!mounted) return;
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
+        settings: const RouteSettings(name: 'practice'),
         pageBuilder: (_, __, ___) => const PracticeScreen(),
         transitionsBuilder: (_, animation, __, child) =>
             FadeTransition(opacity: animation, child: child),

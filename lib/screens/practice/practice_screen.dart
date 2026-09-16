@@ -116,6 +116,8 @@ class PracticeScreen extends StatelessWidget {
                                     if (context.mounted) {
                                       Navigator.of(context).push(
                                         MaterialPageRoute(
+                                            settings: const RouteSettings(
+                                                name: 'game'),
                                             builder: (_) => const GameScreen()),
                                       );
                                     }
@@ -217,6 +219,7 @@ class _JourneyNode extends StatelessWidget {
                         if (!context.mounted) return;
                         Navigator.of(context).push(
                           MaterialPageRoute(
+                            settings: const RouteSettings(name: 'game'),
                             builder: (_) => const GameScreen(),
                             fullscreenDialog: true,
                           ),
