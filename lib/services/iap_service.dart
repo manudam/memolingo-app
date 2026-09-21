@@ -5,9 +5,32 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 
 import 'analytics_service.dart';
 
+/// Outcome of an explicit, user-initiated "Restore Purchases" request.
+class RestoreResult {
+  const RestoreResult({
+    required this.success,
+    required this.restoredCount,
+    this.message,
+  });
+
+  final bool success;
+  final int restoredCount;
+  final String? message;
+
+  bool get restoredAnything => restoredCount > 0;
+}
+
 class IapService {
   static bool get _supported =>
       Platform.isIOS || Platform.isAndroid || Platform.isMacOS;
+
+  /// The store delivers restored transactions asynchronously and never signals
+  /// that it is done, so a restore is considered settled once this long has
+  /// passed without any further transaction arriving.
+  static const Duration _restoreQuietPeriod = Duration(milliseconds: 1500);
+
+  /// Hard upper bound so the UI can never hang on a silent store.
+  static const Duration _restoreTimeout = Duration(seconds: 15);
 
   late final InAppPurchase _inAppPurchase;
   StreamSubscription<List<PurchaseDetails>>? _purchaseSub;
@@ -19,6 +42,12 @@ class IapService {
   final StreamController<Set<String>> _purchaseUpdatesController =
       StreamController<Set<String>>.broadcast();
 
+  final Set<String> _restoredThisRun = <String>{};
+  Completer<void>? _restoreSettled;
+  Timer? _restoreQuietTimer;
+  String? _restoreError;
+  bool _restoreInProgress = false;
+
   bool _isInitialized = false;
   bool storeAvailable = false;
   String? error;
@@ -26,6 +55,7 @@ class IapService {
   List<ProductDetails> get products => List.unmodifiable(_products);
   Set<String> get purchasedIds => Set.unmodifiable(_purchasedIds);
   Stream<Set<String>> get purchaseUpdates => _purchaseUpdatesController.stream;
+  bool get isRestoring => _restoreInProgress;
 
   Future<void> initialize(Set<String> productIds) async {
     if (!_supported) {
@@ -43,13 +73,17 @@ class IapService {
         _onPurchaseUpdate,
         onError: (Object e) {
           error = e.toString();
+          if (_restoreInProgress) {
+            _restoreError = e.toString();
+            _scheduleRestoreSettlement();
+          }
         },
       );
       _isInitialized = true;
     }
 
     await _loadProducts(productIds);
-    await restorePurchases();
+    await _requestRestoreFromStore();
   }
 
   ProductDetails? productById(String productId) {
@@ -100,14 +134,113 @@ class IapService {
     }
   }
 
-  Future<void> restorePurchases() async {
-    if (!_supported) return;
+  /// Restores previously bought products in response to an explicit tap on a
+  /// "Restore Purchases" control. Unlike [_requestRestoreFromStore] this waits
+  /// for the restored transactions to come back so the caller can tell the user
+  /// what actually happened.
+  Future<RestoreResult> restorePurchases() async {
+    if (!_supported || !_isInitialized) {
+      return const RestoreResult(
+        success: false,
+        restoredCount: 0,
+        message: 'In-app purchases are not available on this device.',
+      );
+    }
+
+    if (_restoreInProgress) {
+      return const RestoreResult(
+        success: false,
+        restoredCount: 0,
+        message: 'A restore is already in progress.',
+      );
+    }
+
+    if (!storeAvailable) {
+      storeAvailable = await _inAppPurchase.isAvailable();
+      if (!storeAvailable) {
+        return const RestoreResult(
+          success: false,
+          restoredCount: 0,
+          message: 'The App Store is unavailable right now. '
+              'Please check your connection and try again.',
+        );
+      }
+    }
+
+    _restoreInProgress = true;
+    _restoredThisRun.clear();
+    _restoreError = null;
+    final settled = Completer<void>();
+    _restoreSettled = settled;
+
+    try {
+      await _inAppPurchase.restorePurchases();
+    } catch (e) {
+      error = e.toString();
+      _finishRestore();
+      return RestoreResult(
+        success: false,
+        restoredCount: 0,
+        message: 'Restore failed: $e',
+      );
+    }
+
+    _scheduleRestoreSettlement();
+
+    try {
+      await settled.future.timeout(_restoreTimeout);
+    } on TimeoutException {
+      // Report whatever arrived before the timeout rather than hanging.
+    }
+
+    final restoredCount = _restoredThisRun.length;
+    final restoreError = _restoreError;
+    _finishRestore();
+
+    if (restoredCount == 0 && restoreError != null) {
+      return RestoreResult(
+        success: false,
+        restoredCount: 0,
+        message: restoreError,
+      );
+    }
+
+    return RestoreResult(success: true, restoredCount: restoredCount);
+  }
+
+  /// Fire-and-forget restore used while starting up, to keep ownership in sync
+  /// without blocking the splash screen.
+  Future<void> _requestRestoreFromStore() async {
+    if (!_supported || !_isInitialized) return;
 
     try {
       await _inAppPurchase.restorePurchases();
     } catch (e) {
       error = e.toString();
     }
+  }
+
+  void _scheduleRestoreSettlement() {
+    if (!_restoreInProgress) return;
+
+    _restoreQuietTimer?.cancel();
+    _restoreQuietTimer = Timer(_restoreQuietPeriod, () {
+      final settled = _restoreSettled;
+      if (settled != null && !settled.isCompleted) {
+        settled.complete();
+      }
+    });
+  }
+
+  void _finishRestore() {
+    _restoreQuietTimer?.cancel();
+    _restoreQuietTimer = null;
+    final settled = _restoreSettled;
+    if (settled != null && !settled.isCompleted) {
+      settled.complete();
+    }
+    _restoreSettled = null;
+    _restoreInProgress = false;
   }
 
   Future<void> _loadProducts(Set<String> productIds) async {
@@ -144,12 +277,23 @@ class IapService {
               .logCategoryPurchase(productId: details.productID));
         }
         _purchasedIds.add(details.productID);
+        if (_restoreInProgress) {
+          _restoredThisRun.add(details.productID);
+          _scheduleRestoreSettlement();
+        }
         _purchaseUpdatesController.add(Set.unmodifiable(_purchasedIds));
         _completePendingPurchase(details.productID, true);
       } else if (details.status == PurchaseStatus.error) {
         error = details.error?.message ?? 'Purchase failed.';
+        if (_restoreInProgress) {
+          _restoreError = error;
+          _scheduleRestoreSettlement();
+        }
         _completePendingPurchase(details.productID, false);
       } else if (details.status == PurchaseStatus.canceled) {
+        if (_restoreInProgress) {
+          _scheduleRestoreSettlement();
+        }
         _completePendingPurchase(details.productID, false);
       }
 
@@ -168,6 +312,7 @@ class IapService {
 
   void dispose() {
     _purchaseSub?.cancel();
+    _finishRestore();
     for (final completion in _pendingPurchases.values) {
       if (!completion.isCompleted) {
         completion.complete(false);

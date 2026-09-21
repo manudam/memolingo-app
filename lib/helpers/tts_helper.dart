@@ -30,8 +30,36 @@ Future<void> configureTts(
   final locale = ttsLocaleFor(languageCode);
   final langPrefix = locale.split('-').first;
 
+  if (Platform.isIOS) {
+    // The default audio session category is silenced by the Ring/Silent
+    // switch, so use playback and activate the session before speaking.
+    await tts.setIosAudioCategory(
+      IosTextToSpeechAudioCategory.playback,
+      [
+        IosTextToSpeechAudioCategoryOptions.duckOthers,
+        IosTextToSpeechAudioCategoryOptions.interruptSpokenAudioAndMixWithOthers,
+      ],
+      IosTextToSpeechAudioMode.spokenAudio,
+    );
+    await tts.setSharedInstance(true);
+    await tts.autoStopSharedSession(false);
+  }
+
+  Future<void> setLanguageWithFallback() async {
+    final result = await tts.setLanguage(locale);
+    if (result != 1 && langPrefix != locale) {
+      await tts.setLanguage(langPrefix);
+    }
+  }
+
   if (voice != null) {
-    await tts.setVoice(voice);
+    // A saved voice may no longer be installed; fall back to the locale.
+    final result = await tts.setVoice(voice);
+    if (result != 1) await setLanguageWithFallback();
+  } else if (Platform.isIOS) {
+    // On iOS the first voice listed for a locale isn't guaranteed to be
+    // usable, so let the system pick its default voice for the language.
+    await setLanguageWithFallback();
   } else {
     final voices = await tts.getVoices;
     if (voices is List) {
@@ -53,10 +81,10 @@ Future<void> configureTts(
       if (match != null) {
         await tts.setVoice(match);
       } else {
-        await tts.setLanguage(locale);
+        await setLanguageWithFallback();
       }
     } else {
-      await tts.setLanguage(locale);
+      await setLanguageWithFallback();
     }
   }
 

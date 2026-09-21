@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/restore_messages.dart';
 import '../../helpers/tts_helper.dart';
+import '../../providers/library_provider.dart';
 import '../../providers/user_provider.dart';
 import '../../widgets/bottom_bar.dart';
 import '../../widgets/language_picker.dart';
@@ -20,6 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String? _voicesLoadedForLanguage;
   final FlutterTts _previewTts = FlutterTts();
   bool _isTestingVoice = false;
+  bool _isRestoringPurchases = false;
 
   @override
   void initState() {
@@ -63,6 +66,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
         setState(() => _isTestingVoice = false);
       }
     }
+  }
+
+  Future<void> _restorePurchases() async {
+    if (_isRestoringPurchases) return;
+
+    final messenger = ScaffoldMessenger.of(context);
+    final library = context.read<LibraryProvider>();
+
+    setState(() => _isRestoringPurchases = true);
+    final result = await library.restorePurchases();
+    if (!mounted) return;
+    setState(() => _isRestoringPurchases = false);
+
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(restoreMessageFor(result)),
+        backgroundColor: result.success
+            ? (result.restoredAnything ? Colors.green : Colors.blueGrey)
+            : Colors.red,
+      ),
+    );
   }
 
   @override
@@ -347,6 +371,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ],
                     ),
+                  ),
+                ),
+              ],
+            ),
+            _SettingsSection(
+              title: 'Purchases',
+              children: [
+                Card(
+                  child: ListTile(
+                    leading: _isRestoringPurchases
+                        ? const SizedBox(
+                            width: 24,
+                            height: 24,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.restore_rounded),
+                    title: Text(
+                      _isRestoringPurchases
+                          ? 'Restoring...'
+                          : 'Restore Purchases',
+                      style: const TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                    subtitle: const Text(
+                      'Recover vocabulary sets you already bought with this '
+                      'Apple ID',
+                    ),
+                    trailing: const Icon(Icons.chevron_right_rounded),
+                    onTap: _isRestoringPurchases ? null : _restorePurchases,
                   ),
                 ),
               ],
