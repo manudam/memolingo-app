@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/restore_messages.dart';
 import '../../models/category_pack.dart';
 import '../../providers/library_provider.dart';
 import '../../widgets/bottom_bar.dart';
@@ -16,6 +17,7 @@ class LibraryScreen extends StatefulWidget {
 
 class _LibraryScreenState extends State<LibraryScreen> {
   bool _processing = false;
+  bool _restoring = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildHeaderSection(),
+              const SizedBox(height: 16),
+              _buildRestoreButton(library),
               const SizedBox(height: 24),
               _buildStatsOverview(library),
               const SizedBox(height: 24),
@@ -61,33 +65,42 @@ class _LibraryScreenState extends State<LibraryScreen> {
               ),
               const SizedBox(height: 16),
               ...library.categories.map((category) => _buildCategoryCard(category, library)),
-              const SizedBox(height: 24),
-              Center(
-                child: TextButton.icon(
-                  onPressed: _processing ? null : () => _restorePurchases(library),
-                  icon: Icon(
-                    Icons.restore,
-                    size: 20,
-                    color: _processing ? Colors.grey : Colors.blue.shade600,
-                  ),
-                  label: Text(
-                    _processing ? "Restoring..." : "Restore Purchases",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: _processing ? Colors.grey : Colors.blue.shade600,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  ),
-                ),
-              ),
               const SizedBox(height: 16),
             ],
           ),
         ),
       ),
       bottomNavigationBar: const BottomBar(selectedIndex: 2),
+    );
+  }
+
+  Widget _buildRestoreButton(LibraryProvider library) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton.icon(
+        onPressed: _restoring ? null : () => _restorePurchases(library),
+        icon: _restoring
+            ? const SizedBox(
+                width: 18,
+                height: 18,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+            : const Icon(Icons.restore, size: 20),
+        label: Text(
+          _restoring ? 'Restoring...' : 'Restore Purchases',
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+        ),
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.blue.shade700,
+          disabledBackgroundColor: Colors.white,
+          side: BorderSide(color: Colors.blue.shade700, width: 1.5),
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
+          ),
+        ),
+      ),
     );
   }
 
@@ -577,12 +590,18 @@ class _LibraryScreenState extends State<LibraryScreen> {
 
   Future<void> _restorePurchases(LibraryProvider library) async {
     final messenger = ScaffoldMessenger.of(context);
-    setState(() => _processing = true);
-    await library.restorePurchases();
+    setState(() => _restoring = true);
+    final result = await library.restorePurchases();
     if (!mounted) return;
-    setState(() => _processing = false);
+    setState(() => _restoring = false);
+
     messenger.showSnackBar(
-      const SnackBar(content: Text('Restore purchases requested.')),
+      SnackBar(
+        content: Text(restoreMessageFor(result)),
+        backgroundColor: result.success
+            ? (result.restoredAnything ? Colors.green : Colors.blueGrey)
+            : Colors.red,
+      ),
     );
   }
 

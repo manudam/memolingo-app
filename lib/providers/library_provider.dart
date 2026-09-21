@@ -129,9 +129,12 @@ class LibraryProvider with ChangeNotifier {
     return hasBundlePurchased;
   }
 
-  Future<void> restorePurchases() async {
-    await _iapService.restorePurchases();
+  /// Runs an explicit, user-initiated restore and reports what came back so the
+  /// UI can confirm the outcome to the user.
+  Future<RestoreResult> restorePurchases() async {
+    final result = await _iapService.restorePurchases();
     await refreshOwnershipFromStore();
+    return result;
   }
 
   Future<void> refreshOwnershipFromStore() async {
