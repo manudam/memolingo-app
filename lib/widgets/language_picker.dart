@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../helpers/tts_helper.dart';
+import 'bouncy_button.dart';
 
 const Map<String, String> languageNames = {
   'en': 'English',
@@ -157,7 +158,7 @@ class _TargetLanguagePickerSheetState
                     tooltip: 'Close',
                     onPressed: () => Navigator.of(context).pop(),
                     icon: const Icon(Icons.close_rounded),
-                  ),
+                  ).bouncy(shrinkScale: 0.88, translateY: 1.0),
                 ],
               ),
             ),
@@ -257,7 +258,7 @@ class _TargetLanguagePickerSheetState
                               ),
                             ),
                           ),
-                        );
+                        ).bouncy(shrinkScale: 0.96, translateY: 1.5);
                       },
                     ),
             ),

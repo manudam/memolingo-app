@@ -5,6 +5,7 @@ import '../../helpers/restore_messages.dart';
 import '../../models/category_pack.dart';
 import '../../providers/library_provider.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/bouncy_button.dart';
 import '../../widgets/category_icon.dart';
 import 'category_words_screen.dart';
 
@@ -100,7 +101,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
             borderRadius: BorderRadius.zero,
           ),
         ),
-      ),
+      ).bouncy(shrinkScale: 0.96, translateY: 1.5),
     );
   }
 
@@ -385,7 +386,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                     ),
                     elevation: 2,
                   ),
-                ),
+                ).bouncy(shrinkScale: 0.95, translateY: 1.5),
               ),
             ],
           ),
@@ -501,7 +502,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                           side: BorderSide(color: Colors.blue.shade600),
                           padding: const EdgeInsets.symmetric(vertical: 12),
                         ),
-                      ),
+                      ).bouncy(shrinkScale: 0.95, translateY: 1.5),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
@@ -525,7 +526,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                      ),
+                      ).bouncy(shrinkScale: 0.95, translateY: 1.5),
                     ),
                   ],
                 ),

@@ -1,70 +1,37 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 
-import '../firebase_options.dart';
-
-/// Thin wrapper around Firebase Analytics.
+/// Analytics is currently disabled.
 ///
-/// Firebase is only registered for Android and iOS in the
-/// `memolingo-197dc` project (see [DefaultFirebaseOptions]), so this
-/// no-ops everywhere else (macOS/desktop/web) rather than throwing.
+/// This used to wrap Firebase Analytics. The Firebase dependency has been
+/// removed, but the instrumentation points are kept so analytics can be
+/// restored later by re-implementing the methods below — call sites and
+/// event/parameter names stay as they were.
+///
+/// Note for whoever restores this: Firebase Analytics only accepts `String`
+/// or `num` parameter values. Passing a `bool` compiles fine (the SDK types
+/// parameters as `Map<String, Object>`) but throws at runtime.
 class AnalyticsService {
   AnalyticsService._();
 
   static final AnalyticsService instance = AnalyticsService._();
 
-  FirebaseAnalytics? _analytics;
+  bool get isAvailable => false;
 
-  bool get isAvailable => _analytics != null;
+  /// A navigator observer for automatic `screen_view` logging, or null while
+  /// analytics is disabled.
+  NavigatorObserver? get observer => null;
 
-  /// A navigator observer that automatically logs `screen_view` events
-  /// based on each route's [RouteSettings.name]. Safe to add even when
-  /// analytics isn't available (it just won't log anything).
-  FirebaseAnalyticsObserver? get observer =>
-      _analytics == null ? null : FirebaseAnalyticsObserver(analytics: _analytics!);
+  Future<void> initialize() async {}
 
-  bool get _isSupportedPlatform =>
-      !kIsWeb &&
-      (defaultTargetPlatform == TargetPlatform.android ||
-          defaultTargetPlatform == TargetPlatform.iOS);
+  Future<void> logScreenView(String screenName) async {}
 
-  Future<void> initialize() async {
-    if (!_isSupportedPlatform) {
-      return;
-    }
-    try {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      _analytics = FirebaseAnalytics.instance;
-    } catch (e, stack) {
-      debugPrint('AnalyticsService: Firebase initialization failed: $e\n$stack');
-    }
-  }
-
-  Future<void> logScreenView(String screenName) async {
-    await _analytics?.logScreenView(screenName: screenName);
-  }
-
-  Future<void> logOnboardingComplete() async {
-    await _analytics?.logEvent(name: 'onboarding_complete');
-  }
+  Future<void> logOnboardingComplete() async {}
 
   Future<void> logGameStart({
     required String categoryId,
     required String targetLanguage,
     required bool isReview,
-  }) async {
-    await _analytics?.logEvent(
-      name: 'game_start',
-      parameters: {
-        'category_id': categoryId,
-        'target_language': targetLanguage,
-        'is_review': isReview,
-      },
-    );
-  }
+  }) async {}
 
   Future<void> logGameComplete({
     required String categoryId,
@@ -72,23 +39,7 @@ class AnalyticsService {
     required int correct,
     required int incorrect,
     required int maxCombo,
-  }) async {
-    await _analytics?.logEvent(
-      name: 'game_complete',
-      parameters: {
-        'category_id': categoryId,
-        'result': won ? 'won' : 'lost',
-        'correct': correct,
-        'incorrect': incorrect,
-        'max_combo': maxCombo,
-      },
-    );
-  }
+  }) async {}
 
-  Future<void> logCategoryPurchase({required String productId}) async {
-    await _analytics?.logEvent(
-      name: 'category_purchase',
-      parameters: {'product_id': productId},
-    );
-  }
+  Future<void> logCategoryPurchase({required String productId}) async {}
 }

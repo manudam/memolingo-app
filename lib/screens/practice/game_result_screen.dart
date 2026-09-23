@@ -8,6 +8,7 @@ import '../../helpers/tts_helper.dart';
 import '../../models/game_state.dart';
 import '../../providers/game_provider.dart';
 import '../../providers/user_provider.dart';
+import '../../widgets/bouncy_button.dart';
 import 'game_screen.dart';
 import 'practice_screen.dart';
 
@@ -197,7 +198,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                                         .speak(word.translationFor(lang));
                                   }
                                 },
-                              );
+                              ).bouncy(shrinkScale: 0.98, translateY: 1.0);
                             }),
                           ],
                         ),
@@ -225,7 +226,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                    ),
+                    ).bouncy(shrinkScale: 0.95, translateY: 2.0),
                   ),
                   const SizedBox(height: 8),
                   SizedBox(
@@ -245,7 +246,7 @@ class _GameResultScreenState extends State<GameResultScreen> {
                         foregroundColor: Colors.white70,
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                    ),
+                    ).bouncy(shrinkScale: 0.95, translateY: 1.5),
                   ),
                 ],
               ),

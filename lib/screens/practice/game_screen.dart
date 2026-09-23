@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -8,6 +11,8 @@ import '../../models/game_state.dart';
 import '../../models/memo_word.dart';
 import '../../providers/game_provider.dart';
 import '../../providers/user_provider.dart';
+import '../../widgets/bouncy_button.dart';
+import '../../widgets/hearing_button.dart';
 import '../../widgets/shake_widget.dart';
 import '../../widgets/unique_progress_bar.dart';
 import 'game_result_screen.dart';
@@ -23,13 +28,34 @@ class _GameScreenState extends State<GameScreen> {
   final FlutterTts _tts = FlutterTts();
   bool _processingAnswer = false;
   bool _resultPushed = false;
+  bool _isSpeaking = false;
+  Timer? _speechTimer;
   final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
 
   @override
   void initState() {
     super.initState();
+    _initTts();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _speakCurrentWord();
+    });
+  }
+
+  void _initTts() {
+    _tts.setStartHandler(() {
+      if (mounted) setState(() => _isSpeaking = true);
+    });
+    _tts.setCompletionHandler(() {
+      _speechTimer?.cancel();
+      if (mounted) setState(() => _isSpeaking = false);
+    });
+    _tts.setCancelHandler(() {
+      _speechTimer?.cancel();
+      if (mounted) setState(() => _isSpeaking = false);
+    });
+    _tts.setErrorHandler((_) {
+      _speechTimer?.cancel();
+      if (mounted) setState(() => _isSpeaking = false);
     });
   }
 
@@ -55,6 +81,15 @@ class _GameScreenState extends State<GameScreen> {
 
     final wordText = currentWord.translationFor(user.targetLanguage);
     if (wordText.isEmpty) return;
+
+    setState(() => _isSpeaking = true);
+    _speechTimer?.cancel();
+    final estimatedDurationMs = math.max(1400, wordText.length * 120);
+    _speechTimer = Timer(Duration(milliseconds: estimatedDurationMs), () {
+      if (mounted && _isSpeaking) {
+        setState(() => _isSpeaking = false);
+      }
+    });
 
     await _configureTts(user.targetLanguage);
     await _tts.stop();
@@ -83,6 +118,7 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   void dispose() {
+    _speechTimer?.cancel();
     _tts.stop();
     super.dispose();
   }
@@ -92,37 +128,45 @@ class _GameScreenState extends State<GameScreen> {
     Widget buildOptionWidget(MemoWord option) {
       final isCorrect = option.id == game.currentCorrectWord?.id;
       return Expanded(
-        child: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: _processingAnswer
-              ? null
-              : () async {
-                  setState(() => _processingAnswer = true);
+        child: BouncyButton(
+          enabled: !_processingAnswer,
+          shrinkScale: 0.95,
+          translateY: 2.0,
+          haptic: false,
+          onTap: () async {
+            setState(() => _processingAnswer = true);
 
-                  if (isCorrect) {
-                    HapticFeedback.lightImpact();
-                  } else {
-                    HapticFeedback.vibrate();
-                    _shakeKey.currentState?.shake();
-                  }
+            if (isCorrect) {
+              HapticFeedback.lightImpact();
+            } else {
+              HapticFeedback.vibrate();
+              _shakeKey.currentState?.shake();
+            }
 
-                  final wasCombo = game.currentCombo;
-                  await game.answer(option);
-                  final newCombo = game.currentCombo;
-                  if (newCombo > wasCombo &&
-                      (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
-                    HapticFeedback.heavyImpact();
-                  }
-                  setState(() => _processingAnswer = false);
-                  await _onAnswer();
-                },
-          child: Ink(
+            final wasCombo = game.currentCombo;
+            await game.answer(option);
+            final newCombo = game.currentCombo;
+            if (newCombo > wasCombo &&
+                (newCombo == 3 || newCombo == 5 || newCombo == 10)) {
+              HapticFeedback.heavyImpact();
+            }
+            if (mounted) setState(() => _processingAnswer = false);
+            await _onAnswer();
+          },
+          child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: Colors.grey.shade300,
                 width: 1.5,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.08),
+                  blurRadius: 6,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
             child: Stack(
               children: [
@@ -261,11 +305,16 @@ class _GameScreenState extends State<GameScreen> {
             ),
           ],
         ),
-        GestureDetector(
+        BouncyButton(
           onTap: () => Navigator.of(context).pop(),
-          child: Image.asset(
-            'assets/legacy_icons/GameClose.png',
-            height: 24,
+          shrinkScale: 0.88,
+          translateY: 1.0,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: Image.asset(
+              'assets/legacy_icons/GameClose.png',
+              height: 24,
+            ),
           ),
         ),
       ],
@@ -282,13 +331,9 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   Widget _buildRepeatButton() {
-    return GestureDetector(
+    return HearingButton(
+      isSpeaking: _isSpeaking,
       onTap: _speakCurrentWord,
-      child: Image.asset(
-        'assets/legacy_icons/repeat.png',
-        height: 80,
-        width: 80,
-      ),
     );
   }
 

@@ -1,19 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
 
+import '../../helpers/tts_helper.dart';
 import '../../providers/library_provider.dart';
 import '../../providers/user_provider.dart';
+import '../../widgets/bouncy_button.dart';
 
-class CategoryWordsScreen extends StatelessWidget {
+class CategoryWordsScreen extends StatefulWidget {
   const CategoryWordsScreen({required this.categoryId, super.key});
 
   final String categoryId;
 
   @override
+  State<CategoryWordsScreen> createState() => _CategoryWordsScreenState();
+}
+
+class _CategoryWordsScreenState extends State<CategoryWordsScreen> {
+  final FlutterTts _tts = FlutterTts();
+
+  @override
+  void dispose() {
+    _tts.stop();
+    super.dispose();
+  }
+
+  Future<void> _speakWord(String text, String lang) async {
+    final user = context.read<UserProvider>().user;
+    if (!user.audioEnabled) return;
+    await configureTts(
+      _tts,
+      lang,
+      speechRate: user.speechRate,
+      voice: user.voiceOverrides[lang],
+    );
+    await _tts.speak(text);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final library = context.watch<LibraryProvider>();
     final user = context.watch<UserProvider>().user;
-    final category = library.categoryById(categoryId);
+    final category = library.categoryById(widget.categoryId);
 
     if (category == null) {
       return const Scaffold(
@@ -21,10 +49,10 @@ class CategoryWordsScreen extends StatelessWidget {
       );
     }
 
+    final targetLang = user.targetLanguage;
     final words = [...category.words]..sort((a, b) => a
-        .translationFor(context.read<UserProvider>().user.targetLanguage)
-        .compareTo(b
-            .translationFor(context.read<UserProvider>().user.targetLanguage)));
+        .translationFor(targetLang)
+        .compareTo(b.translationFor(targetLang)));
 
     return Scaffold(
       appBar: AppBar(
@@ -36,6 +64,8 @@ class CategoryWordsScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final word = words[index];
           final mastery = (user.wordMastery[word.id] ?? 0).clamp(0, 3);
+          final wordText = word.translationFor(targetLang);
+
           return Card(
             child: ListTile(
               leading: ClipRRect(
@@ -60,12 +90,23 @@ class CategoryWordsScreen extends StatelessWidget {
                   },
                 ),
               ),
-              title: Text(word.translationFor(
-                  context.read<UserProvider>().user.targetLanguage)),
+              title: Text(wordText),
               subtitle: Text('${word.tierLabel} · ${_masteryLabel(mastery)}'),
-              trailing: _MasteryDots(level: mastery),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _MasteryDots(level: mastery),
+                  const SizedBox(width: 8),
+                  Icon(
+                    Icons.volume_up_rounded,
+                    size: 20,
+                    color: Colors.grey.shade600,
+                  ),
+                ],
+              ),
+              onTap: () => _speakWord(wordText, targetLang),
             ),
-          );
+          ).bouncy(shrinkScale: 0.98, translateY: 1.0);
         },
       ),
     );

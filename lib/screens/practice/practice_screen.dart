@@ -9,6 +9,7 @@ import '../../providers/game_provider.dart';
 import '../../providers/user_provider.dart';
 import '../../models/memo_word.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/bouncy_button.dart';
 import '../../widgets/category_icon.dart';
 import '../../widgets/language_picker.dart';
 import 'game_screen.dart';
@@ -124,7 +125,7 @@ class PracticeScreen extends StatelessWidget {
                                   },
                                   child: const Text('Review',
                                       style: TextStyle(color: Colors.white)),
-                                ),
+                                ).bouncy(shrinkScale: 0.94, translateY: 1.5),
                               ),
                             ),
                           ],
@@ -201,7 +202,9 @@ class _JourneyNode extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    GestureDetector(
+                    BouncyButton(
+                      shrinkScale: 0.90,
+                      translateY: 3.0,
                       onTap: () async {
                         if (category.words.length < 4) {
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -556,7 +559,7 @@ class _LearningLanguagePill extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      ).bouncy(shrinkScale: 0.95, translateY: 1.5),
     );
   }
 }

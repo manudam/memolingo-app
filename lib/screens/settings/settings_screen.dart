@@ -7,6 +7,7 @@ import '../../helpers/tts_helper.dart';
 import '../../providers/library_provider.dart';
 import '../../providers/user_provider.dart';
 import '../../widgets/bottom_bar.dart';
+import '../../widgets/bouncy_button.dart';
 import '../../widgets/language_picker.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -210,7 +211,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                     ),
                   ),
-                ),
+                ).bouncy(shrinkScale: 0.98, translateY: 1.0),
               ],
             ),
             _SettingsSection(
@@ -321,7 +322,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     ),
                                   )
                                 : const Icon(Icons.volume_up_rounded),
-                          ),
+                          ).bouncy(shrinkScale: 0.88, translateY: 1.0),
                         ],
                       ),
                     ),
@@ -434,7 +435,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       );
                     },
                   ),
-                ),
+                ).bouncy(shrinkScale: 0.98, translateY: 1.0),
               ],
             ),
           ],

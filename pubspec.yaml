@@ -21,8 +21,6 @@ dependencies:
   flutter_tts: ^4.0.2
   confetti: ^0.8.0
   win32_registry: ^2.1.0
-  firebase_core: ^4.14.0
-  firebase_analytics: ^12.5.0
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../helpers/tts_helper.dart';
 import '../providers/user_provider.dart';
 import '../services/analytics_service.dart';
+import '../widgets/bouncy_button.dart';
 import 'practice/practice_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -382,7 +383,7 @@ class _LanguagePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
+                  ).bouncy(shrinkScale: 0.97, translateY: 1.5),
                 );
               }).toList(),
             ),
@@ -420,7 +421,7 @@ class _OnboardingButton extends StatelessWidget {
           ),
         ),
         child: Text(label),
-      ),
+      ).bouncy(shrinkScale: 0.96, translateY: 2.0),
     );
   }
 }

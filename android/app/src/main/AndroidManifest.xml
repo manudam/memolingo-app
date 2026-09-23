@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Required for Firebase Analytics and In-App Purchases -->
+    <!-- Required for In-App Purchases -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application

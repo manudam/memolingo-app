@@ -4,6 +4,7 @@ import '../screens/library/library_screen.dart';
 import '../screens/practice/practice_screen.dart';
 import '../screens/settings/settings_screen.dart';
 import '../screens/stats/stats_screen.dart';
+import 'bouncy_button.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({required this.selectedIndex, super.key});
@@ -90,7 +91,7 @@ class BottomBar extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      ).bouncy(shrinkScale: 0.92, translateY: 1.5),
     );
   }
 
